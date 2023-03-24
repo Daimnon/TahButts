@@ -29,6 +29,11 @@ public class PlayerInputHandler : MonoBehaviour
             _controller.OnMove(obj);
         }
 
+        if (obj.action.name == _controls.Player.Jump.name)
+        {
+            _controller.OnJump(obj);
+        }
+
         if (obj.action.name == _controls.Player.Attack.name)
         {
             _controller.OnAttack(obj);

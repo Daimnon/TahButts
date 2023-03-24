@@ -6,17 +6,36 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInputHandler _player;
-    [SerializeField] private float _speed = 10.0f;
+    [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f;
 
     private Vector2 _moveInput = Vector2.zero;
     private Vector3 _moveDirection = Vector3.zero;
-    private bool _isFacingLeft = false, _isCrouching = false;
+    private float _heightBeforeJumping;
+    private bool _isFacingLeft = false, _isJumping = false;
     private bool _isAlive = true, _isStunned = false;
 
     public void OnMove(InputAction.CallbackContext context)
     {
         if (_isStunned) return;
-        _moveInput = context.ReadValue<Vector2>(); // read move input on moving mapped key (left stick)
+        _moveInput = context.ReadValue<Vector2>();
+        // animation speed = Mathf.Abs(_input.x != 0 ? _input.x : _inpt.y)
+    }
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (_isStunned) return;
+
+        if (context.started && !_isJumping)
+        {
+            _heightBeforeJumping = transform.position.y;
+            _isJumping = true;
+            _rb.gravityScale = _gravityScale;
+            _rb.WakeUp();
+            Jump();
+            // animation isJumping = isJumping
+            Debug.Log("Player Jumped.");
+        }
+        else Debug.LogError("Jump action failed: Player is in the air.");
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -29,12 +48,19 @@ public class PlayerController : MonoBehaviour
         else Debug.LogError("Attack action failed: No logic.");
     }
 
+    private void Start()
+    {
+        Initialize();
+    }
     private void Update()
     {
         if (_player.Data.Health <= 0)
             Die();
 
         GetMoveDirection();
+
+        if (transform.position.y < _heightBeforeJumping)
+            Land();
     }
     private void FixedUpdate()
     {
@@ -42,15 +68,16 @@ public class PlayerController : MonoBehaviour
         Walk();
     }
 
+    private void Initialize()
+    {
+        _rb.Sleep();
+        _heightBeforeJumping = transform.position.y;
+        UIManager.Instance.InitializePlayerHealth(_player);
+    }
     private void GetMoveDirection()
     {
         _moveDirection = new(_moveInput.x, _moveInput.y, 0.0f);
     }
-    private void UseGravity(bool isGrounded)
-    {
-
-    }
-
     private void FlipSprite()
     {
         Vector3 tempScale = transform.localScale;
@@ -63,30 +90,29 @@ public class PlayerController : MonoBehaviour
             transform.localScale = tempScale;
         }
     }
+    private void Land()
+    {
+        _isJumping = false;
+        _rb.gravityScale = 0.0f;
+        _rb.Sleep();
+        _heightBeforeJumping = transform.position.y;
+        // animation isJumping = _isJumping
+    }
     private void Walk()
     {
         transform.position += _speed * Time.fixedDeltaTime * _moveDirection;
     }
+    private void Jump()
+    {
+        _rb.AddForce(Vector2.up * _jumpForce);
+    }
     private void TakeDamage(int damage)
     {
         _player.Data.Health -= damage;
+        UIManager.Instance.RemoveHeart();
     }
 
-    private void CheckGround()
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, Vector2.down, out hit, transform.lossyScale.y / 2))
-        {
-            //_rb.useGravity = false;
-
-            //if (_isDebugMessagesOn) Debug.Log($"{name} is grounded");
-        }
-        else
-        {
-            //if (_isDebugMessagesOn) Debug.Log($"{name} is not grounded");
-        }
-    }
+   
     private void Die()
     {
         _isAlive = false;
