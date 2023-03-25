@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     }
     public void RemoveHeart()
     {
-        _currentHearts.RemoveAt(_currentHearts.Count);
+        _currentHearts.RemoveAt(_currentHearts.Count -1);
     }
     public void AddHeart()
     {

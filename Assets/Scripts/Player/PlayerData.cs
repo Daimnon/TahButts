@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    [SerializeField] private GameObject _headPhonesPrefab, _shieldPrefab;
+    public GameObject HeadPhonesPrefab => _headPhonesPrefab;
+    public GameObject ShieldPrefab => _shieldPrefab;
+
     [SerializeField] private int _lives = 3, _health = 5, _power = 1;
     public int Lives { get => _lives; set => _lives = value; }
     public int Health { get => _health; set => _health = value; }

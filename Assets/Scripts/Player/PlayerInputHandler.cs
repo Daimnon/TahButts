@@ -24,6 +24,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnActionTriggered(InputAction.CallbackContext obj)
     {
+        if (!_controller.IsAlive || _controller.IsStunned)
+            return;
+
         if (obj.action.name == _controls.Player.Movement.name)
         {
             _controller.OnMove(obj);
@@ -37,6 +40,16 @@ public class PlayerInputHandler : MonoBehaviour
         if (obj.action.name == _controls.Player.Attack.name)
         {
             _controller.OnAttack(obj);
+        }
+
+        if (obj.action.name == _controls.Player.InteractOne.name)
+        {
+            _controller.OnInteractOne(obj);
+        }
+
+        if (obj.action.name == _controls.Player.InteractTwo.name)
+        {
+            _controller.OnInteractTwo(obj);
         }
     }
 

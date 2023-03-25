@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3406309564434640046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4089452974454256964}
+  m_Layer: 0
+  m_Name: Shield Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4089452974454256964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3406309564434640046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7529188736840930644}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5300842779871878282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854993272246643551}
+  m_Layer: 0
+  m_Name: Headphones Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854993272246643551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300842779871878282}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.45000005, z: 0}
+  m_LocalScale: {x: 1.25, y: 0.25, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7529188736840930644}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7529188736840930647
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,12 +75,12 @@ GameObject:
   - component: {fileID: 6552567432103906994}
   - component: {fileID: 717522144259439809}
   - component: {fileID: 7529188736840930646}
-  - component: {fileID: 534419562651151932}
   - component: {fileID: 8889638828426675569}
+  - component: {fileID: 534419562651151932}
   - component: {fileID: 7529188736840930603}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +96,9 @@ Transform:
   m_LocalPosition: {x: -7.5, y: -2.25, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 854993272246643551}
+  - {fileID: 4089452974454256964}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -134,7 +198,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 2
   m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &7529188736840930646
@@ -167,21 +231,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &534419562651151932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7529188736840930647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c02b5a6b6c2fc9a4791c015bf6e5f0e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lives: 3
-  _health: 5
-  _power: 1
 --- !u!114 &8889638828426675569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +246,23 @@ MonoBehaviour:
   _input: {fileID: 7529188736840930646}
   _data: {fileID: 534419562651151932}
   _controller: {fileID: 7529188736840930603}
+--- !u!114 &534419562651151932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529188736840930647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02b5a6b6c2fc9a4791c015bf6e5f0e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _headPhonesPrefab: {fileID: 3592442650896584032, guid: 4b341aa61fc81cf47b3f3a241fe5a192, type: 3}
+  _shieldPrefab: {fileID: 5356826112866338646, guid: 4851e2354ed8c0345a90367db44f2c9d, type: 3}
+  _lives: 3
+  _health: 5
+  _power: 1
 --- !u!114 &7529188736840930603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 8889638828426675569}
   _rb: {fileID: 717522144259439809}
+  _items:
+  - {fileID: 854993272246643551}
+  - {fileID: 4089452974454256964}
   _gravityScale: 1.5
   _jumpForce: 300
   _speed: 10

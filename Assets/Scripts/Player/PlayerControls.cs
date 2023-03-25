@@ -55,6 +55,24 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InteractOne"",
+                    ""type"": ""Button"",
+                    ""id"": ""8e8eb41c-7d46-4f96-91e8-e50d1c05c6ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InteractTwo"",
+                    ""type"": ""Button"",
+                    ""id"": ""b13ffd77-c887-4002-9e0e-01fe7981eca4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -209,6 +227,28 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78db2bfc-47c0-47a9-b250-25cd82b6a7a8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""InteractOne"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b98100db-1858-41d6-b333-d95c79f35d9b"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""InteractTwo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -799,6 +839,8 @@ namespace UnityEngine.InputSystem
             m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+            m_Player_InteractOne = m_Player.FindAction("InteractOne", throwIfNotFound: true);
+            m_Player_InteractTwo = m_Player.FindAction("InteractTwo", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -873,6 +915,8 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Movement;
         private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Attack;
+        private readonly InputAction m_Player_InteractOne;
+        private readonly InputAction m_Player_InteractTwo;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -880,6 +924,8 @@ namespace UnityEngine.InputSystem
             public InputAction @Movement => m_Wrapper.m_Player_Movement;
             public InputAction @Jump => m_Wrapper.m_Player_Jump;
             public InputAction @Attack => m_Wrapper.m_Player_Attack;
+            public InputAction @InteractOne => m_Wrapper.m_Player_InteractOne;
+            public InputAction @InteractTwo => m_Wrapper.m_Player_InteractTwo;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -898,6 +944,12 @@ namespace UnityEngine.InputSystem
                     @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                     @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
                     @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                    @InteractOne.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractOne;
+                    @InteractOne.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractOne;
+                    @InteractOne.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractOne;
+                    @InteractTwo.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractTwo;
+                    @InteractTwo.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractTwo;
+                    @InteractTwo.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractTwo;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -911,6 +963,12 @@ namespace UnityEngine.InputSystem
                     @Attack.started += instance.OnAttack;
                     @Attack.performed += instance.OnAttack;
                     @Attack.canceled += instance.OnAttack;
+                    @InteractOne.started += instance.OnInteractOne;
+                    @InteractOne.performed += instance.OnInteractOne;
+                    @InteractOne.canceled += instance.OnInteractOne;
+                    @InteractTwo.started += instance.OnInteractTwo;
+                    @InteractTwo.performed += instance.OnInteractTwo;
+                    @InteractTwo.canceled += instance.OnInteractTwo;
                 }
             }
         }
@@ -1070,6 +1128,8 @@ namespace UnityEngine.InputSystem
             void OnMovement(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
             void OnAttack(InputAction.CallbackContext context);
+            void OnInteractOne(InputAction.CallbackContext context);
+            void OnInteractTwo(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
