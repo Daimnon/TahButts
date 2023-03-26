@@ -51,7 +51,7 @@ public class Damager : MonoBehaviour
             yield return null;
         }
 
-        player.transform.position = targetPosition;
+        //player.transform.position = targetPosition;
         player.Controller.IsStunned = false;
     }
 }

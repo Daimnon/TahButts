@@ -116,6 +116,11 @@ public class PlayerController : MonoBehaviour
     }
     private void GetMoveDirection()
     {
+        if (_isStunned)
+        {
+            _moveInput = Vector2.zero;
+            return;
+        }
         _moveDirection = new(_moveInput.x, _moveInput.y, 0.0f);
     }
     private void FlipSprite()
@@ -148,8 +153,8 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        _player.Data.Health -= damage;
         UIManager.Instance.RemoveHeart();
+        _player.Data.Health -= damage;
     }
 
    
@@ -157,7 +162,7 @@ public class PlayerController : MonoBehaviour
     {
         _isAlive = false;
 
-        if (_player.Data.Lives >= 0)
+        if (_player.Data.Lives <= 0)
             Respawn();
     }
     private void Respawn()

@@ -30,7 +30,9 @@ public class UIManager : MonoBehaviour
     }
     public void RemoveHeart()
     {
-        _currentHearts.RemoveAt(_currentHearts.Count -1);
+        GameObject heartToRemove = _currentHearts[_currentHearts.Count - 1];
+        _currentHearts.RemoveAt(_currentHearts.Count - 1);
+        Destroy(heartToRemove);
     }
     public void AddHeart()
     {
