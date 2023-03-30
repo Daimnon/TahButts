@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 tempScale = transform.localScale;
         
-        if (_moveInput.x < 0 && _isFacingLeft || _moveInput.x > 0 && !_isFacingLeft)
+        if (_moveInput.x < 0 && !_isFacingLeft || _moveInput.x > 0 && _isFacingLeft)
         {
             _isFacingLeft = !_isFacingLeft;
             tempScale.x *= -1;
