@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInputHandler _player;
+    [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
 
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 _moveInput = Vector2.zero;
     private Vector3 _moveDirection = Vector3.zero;
     private float _heightBeforeJumping;
-    private bool _isFacingLeft = false, _isJumping = false;
+    private bool _isFacingLeft = true, _isJumping = false;
     public bool IsFacingLeft => _isFacingLeft;
 
     private bool _isUsingHeadphones = false, _isUsingShield = false;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
             _isJumping = true;
             _rb.gravityScale = _gravityScale;
             _rb.WakeUp();
+            _animator.SetBool("IsJumping", true);
             Jump();
             // animation isJumping = isJumping
             Debug.Log("Player Jumped.");
@@ -121,7 +123,14 @@ public class PlayerController : MonoBehaviour
             _moveInput = Vector2.zero;
             return;
         }
-        _moveDirection = new(_moveInput.x, _moveInput.y, 0.0f);
+
+        if (!_isJumping)
+        {
+            _moveDirection = new(_moveInput.x, _moveInput.y, 0.0f);
+            _animator.SetFloat("Speed", Mathf.Abs(_moveInput.x != 0 ? _moveInput.x : _moveInput.y));
+        }
+        else
+            _moveDirection = new(_moveInput.x, 0.0f, 0.0f);
     }
     private void FlipSprite()
     {
@@ -141,6 +150,7 @@ public class PlayerController : MonoBehaviour
         _rb.gravityScale = 0.0f;
         _rb.Sleep();
         _heightBeforeJumping = transform.position.y;
+        _animator.SetBool("IsJumping", false);
         // animation isJumping = _isJumping
     }
     private void Walk()
