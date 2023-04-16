@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BasicEnemy : Enemy
 {
-    [SerializeField] private float _chaseSpeed, _chaseDistance, _stopDistance;
+    [SerializeField] private float _chaseSpeed, _chaseDistance, _stopDistance, _yOffset;
 
     private void Update()
     {
@@ -20,11 +20,12 @@ public class BasicEnemy : Enemy
     public override void LogicWhilePlayerInsight() //chase after player
     {
         if (transform.position.x < _target.transform.position.x)
-            _spriteRenderer.flipX = false;
-        else
             _spriteRenderer.flipX = true;
+        else
+            _spriteRenderer.flipX = false;
 
-        transform.position = Vector2.MoveTowards(transform.position, _target.transform.position, _chaseSpeed * Time.deltaTime);
+        Vector3 offset = new(0.0f, _yOffset, 0.0f);
+        transform.position = Vector2.MoveTowards(transform.position, _target.transform.position + offset, _chaseSpeed * Time.deltaTime);
     }
     public override void LogicWhilePlayerNotInsight() //patrol
     {
