@@ -829,12 +829,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCam: {fileID: 519420031}
-  player: {fileID: 1285575451}
-  minBounds: {x: 9, y: 0}
-  maxBounds: {x: 13.5, y: 0}
-  followSpeed: 2
-  xMargin: 0.5
-  yMargin: 0.5
+  _player: {fileID: 1285575451}
+  _xRange: {x: 9, y: 13.5}
+  _yRange: {x: -2.5, y: 2.5}
+  _followSpeed: 2
+  _xMargin: 8
+  _yMargin: 8
 --- !u!4 &1283864945
 Transform:
   m_ObjectHideFlags: 0

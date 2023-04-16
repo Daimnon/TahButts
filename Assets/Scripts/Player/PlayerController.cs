@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Rb => _rb;
 
     [SerializeField] private Transform[] _items;
-    [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f;
+    [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f, _maxWalkHeight = 0.5f;
 
     private GameObject _currentHeadphones, _currentShield;
     private Vector2 _moveInput = Vector2.zero;
@@ -90,6 +90,9 @@ public class PlayerController : MonoBehaviour
         else Debug.LogError("Jump action failed: Player don't have shield.");
     }
 
+    public float horizontalBounds = 5.0f;
+    public float verticalBounds = 3.0f;
+
     private void Start()
     {
         Initialize();
@@ -155,6 +158,10 @@ public class PlayerController : MonoBehaviour
     }
     private void Walk()
     {
+        //CameraManager.Instance.MainCam.
+        //Vector3 s = CameraManager.Instance.MainCam.ViewportToWorldPoint(transform.position);
+        //if ()
+
         transform.position += _speed * Time.fixedDeltaTime * _moveDirection;
     }
     private void Jump()
