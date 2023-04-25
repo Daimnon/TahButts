@@ -502,7 +502,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
@@ -612,7 +612,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1156593506
 GameObject:
@@ -774,7 +774,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -829,9 +829,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCam: {fileID: 519420031}
-  _player: {fileID: 1285575451}
+  _playerTr: {fileID: 1285575451}
   _xRange: {x: 9, y: 13.5}
   _yRange: {x: -2.5, y: 2.5}
+  _positionFactor: 0
   _followSpeed: 2
   _xMargin: 8
   _yMargin: 1
@@ -959,6 +960,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7529188736840930603, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
+      propertyPath: _xMaxBound
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529188736840930603, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
+      propertyPath: _yBounds.x
+      value: -7.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529188736840930603, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
+      propertyPath: _yBounds.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529188736840930603, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
+      propertyPath: _yMaxBound
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529188736840930603, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
+      propertyPath: _yMinBound
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_RootOrder
       value: 7

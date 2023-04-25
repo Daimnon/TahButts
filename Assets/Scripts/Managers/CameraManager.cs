@@ -10,8 +10,15 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private Camera _mainCam;
     public Camera MainCam => _mainCam;
 
-    [SerializeField] private Transform _player; // Reference to the player's transform
+    [SerializeField] private Transform _playerTr; // Reference to the player's transform
+
     [SerializeField] private Vector2 _xRange = new(9.0f, 13.5f), _yRange = new(-2.5f, 2.5f);
+    public Vector2 XRange => _xRange;
+    public Vector2 YRange => _yRange;
+
+    [SerializeField] private float _positionFactor = 0;
+    public float PositionFactor => _positionFactor;
+
     [SerializeField] private float _followSpeed = 2.0f; // Speed at which the camera follows the player
     [SerializeField] private float _xMargin = 8.0f, _yMargin = 8.0f; // Minimum distance in the x-axis and y-axis the player can move before the camera follows
 
@@ -28,11 +35,11 @@ public class CameraManager : MonoBehaviour
         Vector3 currentPosition = _mainCam.transform.position;
 
         // Calculate the target position for the camera based on the player's position
-        Vector3 targetPosition = new (_player.position.x, _player.position.y, currentPosition.z);
+        Vector3 targetPosition = new (_playerTr.position.x, _playerTr.position.y, currentPosition.z);
 
         // Calculate the x and y distances between the camera and the player
-        float xDistance = Mathf.Abs(currentPosition.x - _player.position.x);
-        float yDistance = Mathf.Abs(currentPosition.y - _player.position.y);
+        float xDistance = Mathf.Abs(currentPosition.x - _playerTr.position.x);
+        float yDistance = Mathf.Abs(currentPosition.y - _playerTr.position.y);
 
         // Move the camera towards the target position if the player is beyond the camera's margin
         if (xDistance > _xMargin)
@@ -47,5 +54,12 @@ public class CameraManager : MonoBehaviour
 
         // Update the camera's position
         _mainCam.transform.position = currentPosition;
+    }
+
+    public void UpdatePositionFactor(int newFactor)
+    {
+        _positionFactor = newFactor;
+        _xRange.x += _positionFactor;
+        _xRange.y += _positionFactor;
     }
 }

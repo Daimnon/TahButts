@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Rb => _rb;
 
     [SerializeField] private Transform[] _items;
+    [SerializeField] private Vector2 _xBounds = Vector2.zero, _yBounds = Vector2.zero;
     [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f, _maxWalkHeight = 0.5f;
 
     private GameObject _currentHeadphones, _currentShield;
@@ -102,6 +103,7 @@ public class PlayerController : MonoBehaviour
         if (_player.Data.Health <= 0)
             Die();
 
+        ClampPlayerToView();
         GetMoveDirection();
 
         if (transform.position.y < _heightBeforeJumping)
@@ -118,6 +120,23 @@ public class PlayerController : MonoBehaviour
         _rb.Sleep();
         _heightBeforeJumping = transform.position.y;
         UIManager.Instance.InitializePlayerHealth(_player);
+    }
+    private void ClampPlayerToView()
+    {
+        _xBounds.x = CameraManager.Instance.XRange.x - 7.8f;
+        _xBounds.y = CameraManager.Instance.XRange.y + 3.5f;
+
+        if (transform.position.x < _xBounds.x)
+            transform.position = new(_xBounds.x, transform.position.y, transform.position.z);
+
+        if (transform.position.x > _xBounds.y)
+            transform.position = new(_xBounds.y, transform.position.y, transform.position.z);
+
+        if (transform.position.y < _yBounds.x)
+            transform.position = new(transform.position.x, _yBounds.x, transform.position.z);
+
+        if (transform.position.y > _yBounds.y)
+            transform.position = new(transform.position.x, _yBounds.y, transform.position.z);
     }
     private void GetMoveDirection()
     {
