@@ -15,13 +15,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f, _maxWalkHeight = 0.5f;
 
     private GameObject _currentHeadphones, _currentShield;
+    private Collider2D _currentHitCollider;
     private Vector2 _moveInput = Vector2.zero;
     private Vector3 _moveDirection = Vector3.zero;
+    private int _comboHitCounter = 0, _maxHitCombo = 3;
+    private float _comboTime = 1.0f, _comboTimer = 1.0f;
     private float _heightBeforeJumping;
+
     private bool _isFacingLeft = true, _isJumping = false;
     public bool IsFacingLeft => _isFacingLeft;
 
     private bool _isUsingHeadphones = false, _isUsingShield = false;
+
     private bool _isAlive = true, _isStunned = false;
     public bool IsAlive => _isAlive;
     public bool IsStunned { get => _isStunned; set => _isStunned = value; }
@@ -50,6 +55,13 @@ public class PlayerController : MonoBehaviour
     {
         if (context.started)
         {
+            if (_comboHitCounter != _maxHitCombo)
+            {
+                StartCoroutine(HandleHitCollider());
+                _comboTimer = _comboTime;
+                _comboHitCounter++;
+            }
+
             Debug.Log("Player Attacked.");
         }
         else Debug.LogError("Attack action failed: No logic.");
@@ -105,6 +117,7 @@ public class PlayerController : MonoBehaviour
 
         ClampPlayerToView();
         GetMoveDirection();
+        ChainCombo();
 
         if (transform.position.y < _heightBeforeJumping)
             Land();
@@ -187,12 +200,31 @@ public class PlayerController : MonoBehaviour
     {
         _rb.AddForce(Vector2.up * _jumpForce);
     }
+    private void ChainCombo()
+    {
+        if (_comboHitCounter > 0)
+        {
+            _comboTimer -= Time.deltaTime;
+
+            if (_comboTimer <= 0)
+                _comboHitCounter = 0;
+        }
+    }
     public void TakeDamage(int damage)
     {
         UIManager.Instance.RemoveHeart();
         _player.Data.Health -= damage;
     }
 
+    private IEnumerator HandleHitCollider()
+    {
+        _currentHitCollider = Instantiate(_player.Data.HitColliderGO, _player.Data.HitColliderTr).GetComponent<Collider2D>();
+        EnemyDamager enemyDamager = _currentHitCollider.GetComponent<EnemyDamager>();
+        enemyDamager.Damage = _player.Data.Power;
+        yield return new WaitForSeconds(0.2f);
+
+        Destroy(_currentHitCollider.gameObject);
+    }
    
     private void Die()
     {

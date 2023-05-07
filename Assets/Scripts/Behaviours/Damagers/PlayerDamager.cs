@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damager : MonoBehaviour
+public class PlayerDamager : Damager
 {
-    [SerializeField] private int _damage = 1;
     [SerializeField] private float _knockbackHeight = 3.0f, _knockbackPower = 3.0f, _knockbackDuration = 1.0f;
-    private const string _playerTag = "Player";
+    protected const string _playerTag = "Player";
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,7 +14,7 @@ public class Damager : MonoBehaviour
             Debug.Log("Hit Player");
             PlayerInputHandler player = other.GetComponent<PlayerInputHandler>();
             player.Controller.TakeDamage(_damage);
-            Knockback(player);
+            //Knockback(player);
         }
     }
 
