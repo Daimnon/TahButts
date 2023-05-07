@@ -6,13 +6,23 @@ public class EnemyDamager : Damager
 {
     protected const string _enemyTag = "Enemy";
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag(_enemyTag))
+        if (collision.collider.CompareTag(_enemyTag))
         {
-            Debug.Log($"Hit {other.name}");
-            Enemy enemy = other.GetComponent<Enemy>();
+            Debug.Log($"Hit {collision.collider.name}");
+            Enemy enemy = collision.collider.GetComponent<Enemy>();
             enemy.TakeDamage(_damage);
         }
     }
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag(_enemyTag))
+    //    {
+    //        Debug.Log($"Hit {other.name}");
+    //        Enemy enemy = other.GetComponent<Enemy>();
+    //        enemy.TakeDamage(_damage);
+    //    }
+    //}
 }
