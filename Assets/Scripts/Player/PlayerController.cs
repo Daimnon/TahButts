@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
 
-    [SerializeField] private Vector2 _xBounds = Vector2.zero, _yBounds = Vector2.zero;
+    [SerializeField] private Vector2 _xBounds = Vector2.zero, _yBounds = new (-7.1f, 0.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
 
     [SerializeField] private Transform[] _items;
