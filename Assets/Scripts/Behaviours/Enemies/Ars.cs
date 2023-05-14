@@ -75,7 +75,7 @@ public class Ars : Enemy
     private IEnumerator HandleHitCollider()
     {
         CurrentHitCollider = Instantiate(Data.HitColliderGO, Data.HitColliderTr).GetComponent<Collider2D>();
-        PlayerDamager1 playerDamager = CurrentHitCollider.GetComponent<PlayerDamager1>();
+        PlayerDamagerKnockback playerDamager = CurrentHitCollider.GetComponent<PlayerDamagerKnockback>();
         playerDamager.Damage = Data.Power;
         yield return new WaitForSeconds(0.2f);
 

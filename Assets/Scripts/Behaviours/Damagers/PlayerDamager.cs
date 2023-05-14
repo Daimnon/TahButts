@@ -4,53 +4,24 @@ using UnityEngine;
 
 public class PlayerDamager : Damager
 {
-    [SerializeField] private float _knockbackHeight = 3.0f, _knockbackPower = 3.0f, _knockbackDuration = 1.0f;
-    protected const string _playerTag = "Player";
+    protected const string PlayerTag = "Player";
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.collider.CompareTag(_enemyTag))
+    //    {
+    //        Debug.Log($"Hit {collision.collider.name}");
+    //        Enemy enemy = collision.collider.GetComponent<Enemy>();
+    //        enemy.TakeDamage(_damage);
+    //    }
+    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(_playerTag))
+        if (other.CompareTag(PlayerTag))
         {
-            Debug.Log("Hit Player");
+            Debug.Log($"Hit {other.name}");
             PlayerInputHandler player = other.GetComponent<PlayerInputHandler>();
             player.Controller.TakeDamage(_damage);
-            //Knockback(player);
         }
-    }
-
-    private void Knockback(PlayerInputHandler player)
-    {
-        Debug.Log("Knocking Back");
-        player.Controller.IsStunned = true;
-        StartCoroutine(LerpKnockback(player, _knockbackDuration));
-    }
-    private IEnumerator LerpKnockback(PlayerInputHandler player, float duration)
-    {
-        float time = 0;
-        Vector3 startPosition = player.transform.position;
-        Vector3 targetPosition = player.transform.position;
-
-        if (player.Controller.IsFacingLeft)
-            targetPosition.x -= _knockbackPower;
-        else if (!player.Controller.IsFacingLeft)
-            targetPosition.x += _knockbackPower;
-
-        Vector3 targetOriginalY = targetPosition;
-        targetOriginalY.y = startPosition.y;
-
-        targetPosition.y += _knockbackHeight;
-
-        while (time < duration)
-        {
-            if (time > duration / 2)
-                targetPosition = Vector3.Lerp(targetPosition, targetOriginalY, time / duration);
-
-            player.transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-
-        //player.transform.position = targetPosition;
-        player.Controller.IsStunned = false;
     }
 }
