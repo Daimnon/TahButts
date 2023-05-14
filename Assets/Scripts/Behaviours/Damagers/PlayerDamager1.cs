@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamager : Damager
+public class PlayerDamager1 : Damager
 {
-    protected const string EnemyTag = "Enemy";
+    protected const string PlayerTag = "Player";
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
     //    if (collision.collider.CompareTag(_enemyTag))
@@ -17,11 +17,11 @@ public class EnemyDamager : Damager
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(EnemyTag))
+        if (other.CompareTag(PlayerTag))
         {
             Debug.Log($"Hit {other.name}");
-            Enemy enemy = other.GetComponent<Enemy>();
-            enemy.TakeDamage(_damage);
+            PlayerInputHandler player = other.GetComponent<PlayerInputHandler>();
+            player.Controller.TakeDamage(_damage);
         }
     }
 }

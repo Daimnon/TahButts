@@ -9,24 +9,29 @@ public class StationaryEnemy : Enemy
 
     private void Update()
     {
-        _distanceFromTarget = Vector2.Distance(transform.position, _target.transform.position);
+        DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
 
-        if (_distanceFromTarget < _chaseDistance && _distanceFromTarget > _stopDistance)
-            LogicWhilePlayerInsight();
+        if (DistanceFromTarget < _chaseDistance && DistanceFromTarget > _stopDistance)
+            PlayerInsight();
         else
-            LogicWhilePlayerNotInsight();
+            PlayerNotInsight();
     }
 
-    public override void LogicWhilePlayerInsight() //chase after player
+    protected override void PlayerInsight() //chase after player
     {
-        if (transform.position.x < _target.transform.position.x)
-            _spriteRenderer.flipX = true;
+        if (transform.position.x < Target.transform.position.x)
+            Renderer.flipX = true;
         else
-            _spriteRenderer.flipX = false;
+            Renderer.flipX = false;
 
     }
-    public override void LogicWhilePlayerNotInsight() //patrol
+    protected override void PlayerNotInsight() //patrol
     {
 
+    }
+
+    protected override void Interacting()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4655246484454779859}
   - component: {fileID: 2834127831636035171}
   - component: {fileID: 8421221016100081915}
-  - component: {fileID: 4655246484454779858}
+  - component: {fileID: 807383948126090671}
   m_Layer: 0
-  m_Name: EnemyDamager
+  m_Name: PlayerDamager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4655246484454779858
+--- !u!114 &807383948126090671
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4655246484454779869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8d063c416bed94b90dd4f1bf993fe5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5117da18a3b0f4a498c08ef9abc5b549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &351253080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351253081}
+  m_Layer: 0
+  m_Name: PlayerDamager Transform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &351253081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351253080}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.1000004, y: 3.9619193, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7768639604896338}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7768639604896337
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,9 +44,10 @@ GameObject:
   - component: {fileID: 3641707401781438900}
   - component: {fileID: 7031159552422730695}
   - component: {fileID: 7031159552422730692}
+  - component: {fileID: 965971402}
   m_Layer: 7
-  m_Name: BasicEnemy
-  m_TagString: Player
+  m_Name: Ars
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,6 +65,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1518621423730501194}
+  - {fileID: 351253081}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -101,7 +134,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 3.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -112,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 6.5}
   m_EdgeRadius: 0
 --- !u!50 &7031159552422730695
 Rigidbody2D:
@@ -147,12 +180,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e55c7c6312acaf489200de061acd658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _spriteRenderer: {fileID: 7768639604896339}
+  Target: {fileID: 0}
+  Renderer: {fileID: 7768639604896339}
+  Data: {fileID: 965971402}
   _chaseSpeed: 2
-  _chaseDistance: 7
-  _stopDistance: 2
+  _chaseDistance: 3
+  _stopDistance: 1
   _yOffset: 0
+  _attackSpeed: 1
+--- !u!114 &965971402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7768639604896337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36513acdff2eb94b9f7921da9b01a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 3
+  _power: 1
+  _hitColliderTr: {fileID: 351253081}
+  _hitColliderGo: {fileID: 4655246484454779869, guid: 18c047bfb89bd004db517920a3d9460f, type: 3}
 --- !u!1 &5152809400314713301
 GameObject:
   m_ObjectHideFlags: 0
