@@ -56,7 +56,7 @@ public class CameraManager : MonoBehaviour
         _mainCam.transform.position = currentPosition;
     }
 
-    public void UpdatePositionFactor(int newFactor)
+    public void UpdatePositionFactor(float newFactor)
     {
         _positionFactor = newFactor;
         _xRange.x += _positionFactor;
