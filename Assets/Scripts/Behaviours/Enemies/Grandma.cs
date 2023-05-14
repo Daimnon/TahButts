@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class Grandma : Enemy
 {
-    [SerializeField] private float _detectionRadius, _lookDistance, _interactionDistance, _yOffset, _stunDuration, _stunCooldown;
+    [SerializeField] private float _lookDistance, _interactionDistance, _yOffset, _stunDuration, _stunCooldown;
     private bool _isPlayerStunned = false;
     private IEnumerator _stunRoutine;
 
     private void Awake()
     {
         EnemyState = PlayerNotInsight;
-        _stunRoutine = StunPlayer();
+        _stunRoutine = StunPlayer(_stunCooldown);
     }
     private void Update()
     {
@@ -24,7 +24,7 @@ public class Grandma : Enemy
 
         if (DistanceFromTarget < _lookDistance && DistanceFromTarget > _interactionDistance)
             EnemyState = PlayerInsight;
-        else if (!_isPlayerStunned && DistanceFromTarget <= _detectionRadius)
+        else if (DistanceFromTarget <= _interactionDistance)
             EnemyState = Interacting;
         else
             EnemyState = PlayerNotInsight;
@@ -42,18 +42,19 @@ public class Grandma : Enemy
         else
             Renderer.flipX = false;
 
+        Debug.Log("Grandma sees you");
         // feedback for seeing player
     }
     protected override void PlayerNotInsight() //patrol
     {
-        if (IsInteracting)
-            IsInteracting = false;
+
     }
     protected override void Interacting()
     {
         if (!IsInteracting)
         {
             StartCoroutine(_stunRoutine);
+            AnimController.SetBool("IsTalking", true);
             IsInteracting = true;
         }
     }
@@ -62,17 +63,38 @@ public class Grandma : Enemy
         Destroy(gameObject);
     }
 
-    private IEnumerator StunPlayer()
+    private IEnumerator StunPlayer(float stunCooldown)
+    {
+        StartCoroutine(HandleStun());
+        _stunRoutine = null;
+        _stunRoutine = StunPlayer(stunCooldown);
+        yield return new WaitForSeconds(stunCooldown);
+        Debug.Log("StunPlayer");
+
+        if (DistanceFromTarget <= _interactionDistance)
+        {
+            StartCoroutine(_stunRoutine);
+            Debug.Log("Grandma is talking");
+        }
+        else
+        {
+            AnimController.SetBool("IsTalking", false);
+            IsInteracting = false;
+            Debug.Log("Grandma is confused");
+        }
+    }
+    private IEnumerator HandleStun()
     {
         _isPlayerStunned = true;
         PlayerInputHandler player = Target.GetComponent<PlayerInputHandler>();
         player.Controller.Rb.velocity = Vector2.zero;
-        player.Controller.IsStunned = true;
+        player.Input.enabled = false;
+        //player.Controller.IsStunned = true;
         yield return new WaitForSeconds(_stunDuration);
 
-        player.Controller.IsStunned = false;
+        Debug.Log("Free");
+        //player.Controller.IsStunned = false;
+        player.Input.enabled = true;
         _isPlayerStunned = false;
-        yield return new WaitForSeconds(_stunCooldown);
-        IsInteracting = false;
     }
 }

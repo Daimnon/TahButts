@@ -62,12 +62,12 @@ public class Ars : Enemy
         Destroy(gameObject);
     }
 
-    private IEnumerator HitPlayer(float attackeSpeed)
+    private IEnumerator HitPlayer(float attackSpeed)
     {
         StartCoroutine(HandleHitCollider());
         _attackRoutine = null;
         _attackRoutine = HitPlayer(_attackSpeed);
-        yield return new WaitForSeconds(attackeSpeed);
+        yield return new WaitForSeconds(attackSpeed);
 
         if (DistanceFromTarget <= _stopDistance)
             StartCoroutine(_attackRoutine);

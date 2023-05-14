@@ -40,18 +40,19 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7768639604896338}
+  - component: {fileID: 5379658856693439269}
   - component: {fileID: 7768639604896339}
   - component: {fileID: 3641707401781438900}
   - component: {fileID: 7031159552422730695}
-  - component: {fileID: 7031159552422730692}
   - component: {fileID: 965971402}
+  - component: {fileID: 7031159552422730692}
   m_Layer: 7
   m_Name: Ars
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7768639604896338
 Transform:
   m_ObjectHideFlags: 0
@@ -69,6 +70,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &5379658856693439269
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7768639604896337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &7768639604896339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -168,26 +189,6 @@ Rigidbody2D:
   m_SleepingMode: 2
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &7031159552422730692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7768639604896337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e55c7c6312acaf489200de061acd658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Target: {fileID: 0}
-  Renderer: {fileID: 7768639604896339}
-  Data: {fileID: 965971402}
-  _chaseSpeed: 2
-  _chaseDistance: 3
-  _stopDistance: 1
-  _yOffset: 0
-  _attackSpeed: 1
 --- !u!114 &965971402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +205,27 @@ MonoBehaviour:
   _power: 1
   _hitColliderTr: {fileID: 351253081}
   _hitColliderGo: {fileID: 4655246484454779869, guid: 18c047bfb89bd004db517920a3d9460f, type: 3}
+--- !u!114 &7031159552422730692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7768639604896337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e55c7c6312acaf489200de061acd658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  AnimController: {fileID: 5379658856693439269}
+  Renderer: {fileID: 7768639604896339}
+  Data: {fileID: 965971402}
+  _chaseSpeed: 2
+  _chaseDistance: 3
+  _stopDistance: 1
+  _yOffset: 0
+  _attackSpeed: 1
 --- !u!1 &5152809400314713301
 GameObject:
   m_ObjectHideFlags: 0

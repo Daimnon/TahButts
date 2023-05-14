@@ -6,6 +6,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected GameObject Target;
+    [SerializeField] protected Animator AnimController;
     [SerializeField] protected SpriteRenderer Renderer;
     [SerializeField] protected EnemyData Data;
     protected Collider2D CurrentHitCollider;

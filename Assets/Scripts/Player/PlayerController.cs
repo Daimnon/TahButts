@@ -33,20 +33,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (_isStunned)
-        {
-            _moveInput = Vector2.zero;
-            return;
-        }
-
         _moveInput = context.ReadValue<Vector2>();
         // animation speed = Mathf.Abs(_input.x != 0 ? _input.x : _inpt.y)
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (_isStunned)
-            return;
-
         if (context.started && !_isJumping)
         {
             _heightBeforeJumping = transform.position.y;
@@ -62,9 +53,6 @@ public class PlayerController : MonoBehaviour
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (_isStunned)
-            return;
-
         if (context.started)
         {
             if (_comboHitCounter != _maxHitCombo)
@@ -80,9 +68,6 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteractOne(InputAction.CallbackContext context)
     {
-        if (_isStunned)
-            return;
-
         if (context.started && !_isUsingHeadphones)
         {
             _currentHeadphones = Instantiate(_player.Data.HeadPhonesPrefab, _items[0]);
@@ -101,9 +86,6 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteractTwo(InputAction.CallbackContext context)
     {
-        if (_isStunned)
-            return;
-
         if (context.started && !_isUsingShield)
         {
             _currentShield = Instantiate(_player.Data.ShieldPrefab, _items[1]);
@@ -133,9 +115,6 @@ public class PlayerController : MonoBehaviour
         if (_player.Data.Health <= 0)
             Die();
 
-        if (_isStunned)
-            return;
-
         ClampPlayerToView();
         GetMoveDirection();
         ChainCombo();
@@ -145,9 +124,6 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (_isStunned)
-            return;
-
         FlipSprite();
         Walk();
     }
@@ -177,12 +153,6 @@ public class PlayerController : MonoBehaviour
     }
     private void GetMoveDirection()
     {
-        if (_isStunned)
-        {
-            _moveInput = Vector2.zero;
-            return;
-        }
-
         if (!_isJumping)
         {
             _moveDirection = new(_moveInput.x, _moveInput.y, 0.0f);

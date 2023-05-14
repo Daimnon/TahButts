@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3028010813621043468}
+  - component: {fileID: 3451481281446577566}
   - component: {fileID: 3028010813621043469}
   - component: {fileID: 1772113495332149994}
   - component: {fileID: 5444161593034500249}
@@ -38,6 +39,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3451481281446577566
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3028010813621043471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2581b54e2abc29240b7f48463f789e41, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &3028010813621043469
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79,12 +100,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1079941580, guid: 5b43241ec9e097b4eaa96ad2c850c311, type: 3}
+  m_Sprite: {fileID: 1799939878, guid: 83fc285551e558e4593d8644accb9961, type: 3}
   m_Color: {r: 1, g: 0.6556604, b: 0.9888563, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.74, y: 3.83}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -107,8 +128,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3.48, y: 6.35}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.74, y: 3.83}
+    newSize: {x: 1.74, y: 3.83}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -166,14 +187,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
+  AnimController: {fileID: 3451481281446577566}
   Renderer: {fileID: 3028010813621043469}
   Data: {fileID: 3034931660076793492}
-  _detectionRadius: 2
   _lookDistance: 4
-  _interactionDistance: 1
+  _interactionDistance: 2
   _yOffset: 0
   _stunDuration: 2
-  _stunCooldown: 2
+  _stunCooldown: 5
 --- !u!1 &3034931660422021382
 GameObject:
   m_ObjectHideFlags: 0
