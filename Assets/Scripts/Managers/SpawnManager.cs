@@ -13,8 +13,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<Enemy> _spawnedEnemyList;
     public List<Enemy> SpawnedEnemyList => _spawnedEnemyList;
 
-    [SerializeField] private Transform _playerSpawn;
-    public Transform PlayerSpawn => _playerSpawn;
+    [SerializeField] private Transform _spawn;
+    public Transform PlayerSpawn => _spawn;
 
     private void Awake()
     {

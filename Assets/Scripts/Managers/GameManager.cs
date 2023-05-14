@@ -17,12 +17,20 @@ public class GameManager : MonoBehaviour
         _instance = this;
     }
 
+    public void UnlockNextArea()
+    {
+        CameraManager.Instance.UpdatePositionFactor();
+        Vector2 newXBounds;
+        newXBounds.x = _player.Controller.XBounds.x + CameraManager.Instance.DistanceToFullArea;
+        newXBounds.y = _player.Controller.XBounds.y + CameraManager.Instance.DistanceToFullArea;
+        _player.Controller.XBounds = newXBounds;
+    }
     public void UnlockNextArea(float factor)
     {
         CameraManager.Instance.UpdatePositionFactor(factor);
         Vector2 newXBounds;
-        newXBounds.x = _player.Controller.TargetXBounds.x + factor;
-        newXBounds.y = _player.Controller.TargetXBounds.x + factor;
-        _player.Controller.TargetXBounds = newXBounds;
+        newXBounds.x = _player.Controller.XBounds.x + factor;
+        newXBounds.y = _player.Controller.XBounds.y + factor;
+        _player.Controller.XBounds = newXBounds;
     }
 }

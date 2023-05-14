@@ -22,6 +22,9 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float _followSpeed = 2.0f; // Speed at which the camera follows the player
     [SerializeField] private float _xMargin = 8.0f, _yMargin = 8.0f; // Minimum distance in the x-axis and y-axis the player can move before the camera follows
 
+    private const float _distanceToFullArea = 24.0f;
+    public float DistanceToFullArea => _distanceToFullArea;
+
     private void Awake()
     {
         if (_instance)
@@ -56,9 +59,15 @@ public class CameraManager : MonoBehaviour
         _mainCam.transform.position = currentPosition;
     }
 
+    public void UpdatePositionFactor()
+    {
+        _positionFactor += _distanceToFullArea;
+        _xRange.x += _positionFactor;
+        _xRange.y += _positionFactor;
+    }
     public void UpdatePositionFactor(float newFactor)
     {
-        _positionFactor = newFactor;
+        _positionFactor += newFactor;
         _xRange.x += _positionFactor;
         _xRange.y += _positionFactor;
     }

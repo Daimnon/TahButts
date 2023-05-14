@@ -10,9 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
 
-    [SerializeField] private Transform[] _items;
     [SerializeField] private Vector2 _xBounds = Vector2.zero, _yBounds = Vector2.zero;
+    public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
+
+    [SerializeField] private Transform[] _items;
     [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f, _maxWalkHeight = 0.5f;
+
 
     private GameObject _currentHeadphones, _currentShield;
     private Collider2D _currentHitCollider;
@@ -171,7 +174,7 @@ public class PlayerController : MonoBehaviour
     private void FlipSprite()
     {
         Vector3 tempScale = transform.localScale;
-        
+
         if (_moveInput.x < 0 && !_isFacingLeft || _moveInput.x > 0 && _isFacingLeft)
         {
             _isFacingLeft = !_isFacingLeft;
@@ -187,14 +190,9 @@ public class PlayerController : MonoBehaviour
         _rb.Sleep();
         _heightBeforeJumping = transform.position.y;
         _animator.SetBool("IsJumping", false);
-        // animation isJumping = _isJumping
     }
     private void Walk()
     {
-        //CameraManager.Instance.MainCam.
-        //Vector3 s = CameraManager.Instance.MainCam.ViewportToWorldPoint(transform.position);
-        //if ()
-
         transform.position += _speed * Time.fixedDeltaTime * _moveDirection;
     }
     private void Jump()
@@ -229,7 +227,7 @@ public class PlayerController : MonoBehaviour
 
         Destroy(_currentHitCollider.gameObject);
     }
-   
+
     private void Die()
     {
         _isAlive = false;
@@ -239,7 +237,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Respawn()
     {
-        transform.position = GameManager.Instance.Spawn.position;
+        transform.position = SpawnManager.Instance.PlayerSpawn.position;
 
         _isAlive = true;
     }
