@@ -60,6 +60,13 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(HandleHitCollider());
                 _comboTimer = _comboTime;
                 _comboHitCounter++;
+
+                if (!(_animator.GetCurrentAnimatorStateInfo(0).IsName("Anim_Player_Punch") && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f))
+                {
+                    _animator.SetBool("IsPunching", false);
+                    _animator.SetBool("IsPunching", true);
+                }
+                _animator.SetBool("IsPunching", true);
             }
 
             Debug.Log("Player Attacked.");
@@ -201,7 +208,10 @@ public class PlayerController : MonoBehaviour
             _comboTimer -= Time.deltaTime;
 
             if (_comboTimer <= 0)
+            {
                 _comboHitCounter = 0;
+                _animator.SetBool("IsPunching", false);
+            }
         }
     }
     public void TakeDamage(int damage)

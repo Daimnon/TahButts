@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!95 &66066924 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5379658856693439269, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
-  m_PrefabInstance: {fileID: 1965235496080462218}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &74386951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,10 +1750,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ars
       objectReference: {fileID: 0}
-    - target: {fileID: 7768639604896337, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7768639604896338, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1807,10 +1798,6 @@ PrefabInstance:
       propertyPath: Target
       value: 
       objectReference: {fileID: 1285575442}
-    - target: {fileID: 7031159552422730692, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
-      propertyPath: AnimController
-      value: 
-      objectReference: {fileID: 66066924}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
 --- !u!1001 &3481705928119168998
