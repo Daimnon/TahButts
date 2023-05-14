@@ -687,9 +687,9 @@ RectTransform:
   m_Father: {fileID: 74386952}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 207.5, y: -62.5}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603922685
@@ -874,9 +874,9 @@ RectTransform:
   m_Father: {fileID: 74386952}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 62.5, y: -62.5}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &634737489
@@ -1198,7 +1198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1251872130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1474,11 +1474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 7.75
       objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1864,6 +1864,14 @@ PrefabInstance:
       propertyPath: _enemyData
       value: 
       objectReference: {fileID: 965971402}
+    - target: {fileID: 7031159552422730692, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
+      propertyPath: _stopDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031159552422730692, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
+      propertyPath: _chaseDistance
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
 --- !u!1001 &7013702480414418367
@@ -1944,6 +1952,10 @@ PrefabInstance:
     - target: {fileID: 7710776787170212791, guid: b9a7291d43c89dc4989e8f7f11cc568b, type: 3}
       propertyPath: m_Name
       value: Grendma
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710776787170212791, guid: b9a7291d43c89dc4989e8f7f11cc568b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7710776787170212791, guid: b9a7291d43c89dc4989e8f7f11cc568b, type: 3}
       propertyPath: m_TagString

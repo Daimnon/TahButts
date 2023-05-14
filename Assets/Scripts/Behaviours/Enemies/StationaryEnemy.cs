@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemy : Enemy
+public class StationaryEnemy : Enemy
 {
-    [SerializeField] private float _chaseSpeed, _chaseDistance, _stopDistance, _yOffset;
+    [SerializeField] private float _chaseDistance, _stopDistance, _yOffset;
 
     private void Update()
     {
@@ -24,8 +24,6 @@ public class BasicEnemy : Enemy
         else
             _spriteRenderer.flipX = false;
 
-        Vector3 offset = new(0.0f, _yOffset, 0.0f);
-        transform.position = Vector2.MoveTowards(transform.position, _target.transform.position + offset, _chaseSpeed * Time.deltaTime);
     }
     public override void LogicWhilePlayerNotInsight() //patrol
     {
