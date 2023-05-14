@@ -2364,6 +2364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ars
       objectReference: {fileID: 0}
+    - target: {fileID: 7768639604896337, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7768639604896338, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2468,6 +2472,10 @@ PrefabInstance:
     - target: {fileID: 3028010813621043471, guid: b9a7291d43c89dc4989e8f7f11cc568b, type: 3}
       propertyPath: m_Name
       value: Grendma
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028010813621043471, guid: b9a7291d43c89dc4989e8f7f11cc568b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5444161593034500198, guid: b9a7291d43c89dc4989e8f7f11cc568b, type: 3}
       propertyPath: Target
