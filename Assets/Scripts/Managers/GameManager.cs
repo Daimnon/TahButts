@@ -33,4 +33,8 @@ public class GameManager : MonoBehaviour
         newXBounds.y = _player.Controller.XBounds.y + factor;
         _player.Controller.XBounds = newXBounds;
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
