@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ad81a5c1fd3d474cbb3b2fd727f227e
+guid: 699f3363894980242b4ea2688acc86fc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,169 +116,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_Player_Jump_01_0
+      name: SS_Player_Death_01_0
       rect:
         serializedVersion: 2
-        x: 180
-        y: 1187
-        width: 225
-        height: 670
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee2454f638b207f42b77586655d5d55b
-      internalID: 519385490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Jump_01_1
-      rect:
-        serializedVersion: 2
-        x: 706
+        x: 22
         y: 1184
-        width: 225
-        height: 670
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 338
+        height: 655
+      alignment: 9
+      pivot: {x: 0.625, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b7b0132863e8a74a90b95ee0f3b378d
-      internalID: 1633792165
+      spriteID: aaf56240cad26e04884020c4c14a236e
+      internalID: 742789178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Jump_01_2
+      name: SS_Player_Death_01_1
       rect:
         serializedVersion: 2
-        x: 1147
-        y: 1187
-        width: 245
-        height: 658
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 380092eddb172f248a0bc36e0a8f370b
-      internalID: -1513048686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Jump_01_3
-      rect:
-        serializedVersion: 2
-        x: 1621
-        y: 1186
-        width: 279
+        x: 592
+        y: 1182
+        width: 356
         height: 636
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.375, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92db904910d05ea42b37b60ddb1cdffc
-      internalID: 2095060227
+      spriteID: 4100349ed77a09f44adc5895f20442e9
+      internalID: 1689257890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Jump_01_4
+      name: SS_Player_Death_01_3
       rect:
         serializedVersion: 2
-        x: 102
-        y: 280
-        width: 276
-        height: 675
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1075
+        y: 1184
+        width: 419
+        height: 610
+      alignment: 9
+      pivot: {x: 0.35, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb24eafba76a42a40986aa00e1832866
-      internalID: -558632705
+      spriteID: fab9126ea9775844f9020b1fef01daa0
+      internalID: -1303983220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Jump_01_5
+      name: SS_Player_Death_01_4
       rect:
         serializedVersion: 2
-        x: 642
-        y: 271
-        width: 275
-        height: 679
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 1542
+        y: 1183
+        width: 476
+        height: 567
+      alignment: 9
+      pivot: {x: 0.315, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3dd95f530fab0948bfca88e4559f890
-      internalID: -125452496
+      spriteID: 423b8fde4674a374c911bc42c2acaa9e
+      internalID: 35643728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Jump_01_6
+      name: SS_Player_Death_01_7
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 273
-        width: 275
-        height: 681
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 17
+        y: 277
+        width: 480
+        height: 579
+      alignment: 9
+      pivot: {x: 0.375, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b885455703ec6846913769fd376b436
-      internalID: -1727368892
+      spriteID: f61b196d02ab55f49b5dd0b7838627a7
+      internalID: -57742146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Jump_01_7
+      name: SS_Player_Death_01_8
       rect:
         serializedVersion: 2
-        x: 1619
-        y: 281
-        width: 275
-        height: 660
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 550
+        y: 276
+        width: 340
+        height: 656
+      alignment: 9
+      pivot: {x: 0.6, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00c0d7f8977d80b48a0e20fe3ed6032d
-      internalID: 853580746
+      spriteID: f183b9f1858ded946904ad34b4cfbe54
+      internalID: -1125369650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Player_Death_01_9
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 278
+        width: 335
+        height: 664
+      alignment: 9
+      pivot: {x: 0.675, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b82ed673cf660f4383d94521e031039
+      internalID: 1808790221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Player_Death_01_10
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 276
+        width: 339
+        height: 668
+      alignment: 9
+      pivot: {x: 0.675, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e64a1c8599e5124aa36e7823f386e6c
+      internalID: -445383800
       vertices: []
       indices: 
       edges: []
@@ -294,14 +294,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_Player_Jump_01_0: 519385490
-      SS_Player_Jump_01_1: 1633792165
-      SS_Player_Jump_01_4: -558632705
-      SS_Player_Jump_01_6: -1727368892
-      SS_Player_Jump_01_7: 853580746
-      SS_Player_Jump_01_3: 2095060227
-      SS_Player_Jump_01_5: -125452496
-      SS_Player_Jump_01_2: -1513048686
+      SS_Player_Death_01_12: 90344853
+      SS_Player_Death_01_6: -1620414591
+      SS_Player_Death_01_10: -445383800
+      SS_Player_Death_01_5: -1645513107
+      SS_Player_Death_01_13: 1126995745
+      SS_Player_Death_01_4: 35643728
+      SS_Player_Death_01_2: -988030784
+      SS_Player_Death_01_7: -57742146
+      SS_Player_Death_01_8: -1125369650
+      SS_Player_Death_01_0: 742789178
+      SS_Player_Death_01_11: 1255824318
+      SS_Player_Death_01_1: 1689257890
+      SS_Player_Death_01_9: 1808790221
+      SS_Player_Death_01_3: -1303983220
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

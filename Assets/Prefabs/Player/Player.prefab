@@ -418,11 +418,11 @@ MonoBehaviour:
   _player: {fileID: 8889638828426675569}
   _animator: {fileID: 1285575451}
   _rb: {fileID: 717522144259439809}
+  _xBounds: {x: 0, y: 0}
+  _yBounds: {x: -7.1, y: 0.5}
   _items:
   - {fileID: 854993272246643551}
   - {fileID: 4089452974454256964}
-  _xBounds: {x: 0, y: 0}
-  _yBounds: {x: -7.1, y: 0.5}
   _gravityScale: 1.5
   _jumpForce: 300
   _speed: 10

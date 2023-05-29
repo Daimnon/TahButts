@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ad81a5c1fd3d474cbb3b2fd727f227e
+guid: 721adda4c28ef9641ac30decca307017
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_Player_Jump_01_0
+      name: SS_Player_Idle_03_0
       rect:
         serializedVersion: 2
-        x: 180
+        x: 98
         y: 1187
-        width: 225
-        height: 670
+        width: 310
+        height: 674
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee2454f638b207f42b77586655d5d55b
-      internalID: 519385490
+      spriteID: a50ec4a0a532d1d47847efdb5ae72ea1
+      internalID: -1193324602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Jump_01_1
+      name: SS_Player_Idle_03_1
       rect:
         serializedVersion: 2
-        x: 706
+        x: 624
         y: 1184
-        width: 225
-        height: 670
+        width: 310
+        height: 674
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b7b0132863e8a74a90b95ee0f3b378d
-      internalID: 1633792165
+      spriteID: 5a6d295c1596b814599eccc5bed6a09b
+      internalID: 372914250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Jump_01_2
+      name: SS_Player_Idle_03_2
       rect:
         serializedVersion: 2
-        x: 1147
+        x: 1112
+        y: 1184
+        width: 310
+        height: 674
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6828acb5e98a68e4595bf534db00fbe2
+      internalID: -801891588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SS_Player_Idle_03_3
+      rect:
+        serializedVersion: 2
+        x: 1599
         y: 1187
-        width: 245
-        height: 658
+        width: 310
+        height: 674
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 380092eddb172f248a0bc36e0a8f370b
-      internalID: -1513048686
+      spriteID: 44bc2659c25ef9d4aa65729c4de1c28d
+      internalID: -2109280642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Jump_01_3
+      name: SS_Player_Idle_03_4
       rect:
         serializedVersion: 2
-        x: 1621
-        y: 1186
-        width: 279
-        height: 636
+        x: 100
+        y: 274
+        width: 310
+        height: 674
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,92 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92db904910d05ea42b37b60ddb1cdffc
-      internalID: 2095060227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Jump_01_4
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 280
-        width: 276
-        height: 675
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb24eafba76a42a40986aa00e1832866
-      internalID: -558632705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Jump_01_5
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 271
-        width: 275
-        height: 679
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3dd95f530fab0948bfca88e4559f890
-      internalID: -125452496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Jump_01_6
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 273
-        width: 275
-        height: 681
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b885455703ec6846913769fd376b436
-      internalID: -1727368892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Jump_01_7
-      rect:
-        serializedVersion: 2
-        x: 1619
-        y: 281
-        width: 275
-        height: 660
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00c0d7f8977d80b48a0e20fe3ed6032d
-      internalID: 853580746
+      spriteID: 93b8a72f549ad3142a4e3e7b3b0ae42d
+      internalID: 1515899561
       vertices: []
       indices: 
       edges: []
@@ -294,14 +231,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_Player_Jump_01_0: 519385490
-      SS_Player_Jump_01_1: 1633792165
-      SS_Player_Jump_01_4: -558632705
-      SS_Player_Jump_01_6: -1727368892
-      SS_Player_Jump_01_7: 853580746
-      SS_Player_Jump_01_3: 2095060227
-      SS_Player_Jump_01_5: -125452496
-      SS_Player_Jump_01_2: -1513048686
+      SS_Player_Idle_03_4: 1515899561
+      SS_Player_Idle_03_1: 372914250
+      SS_Player_Idle_03_0: -1193324602
+      SS_Player_Idle_03_3: -2109280642
+      SS_Player_Idle_03_2: -801891588
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

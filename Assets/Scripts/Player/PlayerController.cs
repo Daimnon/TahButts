@@ -47,8 +47,8 @@ public class PlayerController : MonoBehaviour
             _isJumping = true;
             _rb.gravityScale = _gravityScale;
             _rb.WakeUp();
-            _animator.SetBool("IsJumping", true);
             Jump();
+            _animator.SetBool("IsJumping", true);
             // animation isJumping = isJumping
             Debug.Log("Player Jumped.");
         }
