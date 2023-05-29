@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
             // other logic
             Debug.Log("Player Unused Headphones.");
         }
-        else Debug.LogError("Jump action failed: Player don't have headphones.");
+        else Debug.LogError("InteractOne action failed: Player don't have headphones.");
     }
     public void OnInteractTwo(InputAction.CallbackContext context)
     {
@@ -110,7 +110,23 @@ public class PlayerController : MonoBehaviour
             // other logic
             Debug.Log("Player Unused Shield.");
         }
-        else Debug.LogError("Jump action failed: Player don't have shield.");
+        else Debug.LogError("InteractTwo action failed: Player don't have shield.");
+    }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.started && !UIManager.Instance.PauseMenu.activeInHierarchy)
+        {
+            Time.timeScale = 0;
+            UIManager.Instance.PauseMenu.SetActive(true);
+            Debug.Log("Game Paused.");
+        }
+        else if (context.started && UIManager.Instance.PauseMenu.activeInHierarchy)
+        {
+            Time.timeScale = 1;
+            UIManager.Instance.PauseMenu.SetActive(false);
+            Debug.Log("Game Unpaused.");
+        }
+        else Debug.LogError("Pause action failed.");
     }
 
     public float horizontalBounds = 5.0f;

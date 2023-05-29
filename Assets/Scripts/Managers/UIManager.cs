@@ -7,6 +7,9 @@ public class UIManager : MonoBehaviour
     private static UIManager _instance;
     public static UIManager Instance => _instance;
 
+    [SerializeField] private GameObject _pauseMenu;
+    public GameObject PauseMenu => _pauseMenu;
+
 
     [SerializeField] private GameObject _healthIcon;
     [SerializeField] private Transform _healthLayout;
