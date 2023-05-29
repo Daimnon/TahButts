@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -16,6 +15,15 @@ public abstract class Enemy : MonoBehaviour
     protected delegate void State();
     protected State EnemyState;
 
+    private void Start()
+    {
+        SpawnManager.Instance.SpawnedEnemyList.Add(this);
+    }
+    private void OnDestroy()
+    {
+        SpawnManager.Instance.SpawnedEnemyList.Remove(this);
+    }
+
     protected abstract void PlayerInsight();
     protected abstract void PlayerNotInsight();
     protected abstract void Interacting();
@@ -24,4 +32,5 @@ public abstract class Enemy : MonoBehaviour
     {
         Data.Health -= damage;
     }
+
 }

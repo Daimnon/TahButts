@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6291811cb611fed4783b748a4e17456e
+guid: 614cf2647f243634db9b8e6054f5be7a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,127 +116,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Heart
+      name: SS_Player_Jump_02_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 961
-        width: 56
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 116
+        y: 1186
+        width: 275
+        height: 645
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e379a9b7538502498b28baf051b178d
-      internalID: 927872367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Mask
-      rect:
-        serializedVersion: 2
-        x: 407
-        y: 957
-        width: 99
-        height: 53
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9a71054cbd22ff449d8f516376912eb
-      internalID: -839451912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Earphones
-      rect:
-        serializedVersion: 2
-        x: 558
-        y: 934
-        width: 83
-        height: 78
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a626babb29a9ba4f9f1346267f7a905
-      internalID: 337572075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_UI_Bar
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 862
-        width: 627
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70bafb4ecc3500444883aeb77959a994
-      internalID: -131206028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_UI_Fill
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 844
-        width: 587
-        height: 9
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4589eb5f0d0138f41a936366eee0e8e1
-      internalID: -1812246129
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_UI_MiniBus
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 972
-        width: 88
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae5e801299bb220498e71b9d17284fdb
-      internalID: -923213361
+      spriteID: 66648045a4316984fb4d876bb8ac6afb
+      internalID: -716566108
       vertices: []
       indices: 
       edges: []
@@ -252,13 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_UI_Fill: -1812246129
-      SS_UI_MiniBus: -923213361
-      UI_Mask: -839451912
-      "UI \u05E8\u05D0\u05E9\u05D5\u05E0\u05D9_3": 1018207301
-      SS_UI_Bar: -131206028
-      UI_Earphones: 337572075
-      UI_Heart: 927872367
+      SS_Player_Jump_02_0: -716566108
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

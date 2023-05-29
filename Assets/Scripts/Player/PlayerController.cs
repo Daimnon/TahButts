@@ -10,9 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
 
+    [SerializeField] private Vector2 _xBounds = Vector2.zero, _yBounds = new (-7.1f, 0.5f);
+    public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
+
     [SerializeField] private Transform[] _items;
-    [SerializeField] private Vector2 _xBounds = Vector2.zero, _yBounds = Vector2.zero;
     [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f, _maxWalkHeight = 0.5f;
+
 
     private GameObject _currentHeadphones, _currentShield;
     private Collider2D _currentHitCollider;
@@ -44,8 +47,8 @@ public class PlayerController : MonoBehaviour
             _isJumping = true;
             _rb.gravityScale = _gravityScale;
             _rb.WakeUp();
-            _animator.SetBool("IsJumping", true);
             Jump();
+            _animator.SetBool("IsJumping", true);
             // animation isJumping = isJumping
             Debug.Log("Player Jumped.");
         }
@@ -89,7 +92,7 @@ public class PlayerController : MonoBehaviour
             // other logic
             Debug.Log("Player Unused Headphones.");
         }
-        else Debug.LogError("Jump action failed: Player don't have headphones.");
+        else Debug.LogError("InteractOne action failed: Player don't have headphones.");
     }
     public void OnInteractTwo(InputAction.CallbackContext context)
     {
@@ -107,7 +110,23 @@ public class PlayerController : MonoBehaviour
             // other logic
             Debug.Log("Player Unused Shield.");
         }
-        else Debug.LogError("Jump action failed: Player don't have shield.");
+        else Debug.LogError("InteractTwo action failed: Player don't have shield.");
+    }
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (context.started && !UIManager.Instance.PauseMenu.activeInHierarchy)
+        {
+            Time.timeScale = 0;
+            UIManager.Instance.PauseMenu.SetActive(true);
+            Debug.Log("Game Paused.");
+        }
+        else if (context.started && UIManager.Instance.PauseMenu.activeInHierarchy)
+        {
+            Time.timeScale = 1;
+            UIManager.Instance.PauseMenu.SetActive(false);
+            Debug.Log("Game Unpaused.");
+        }
+        else Debug.LogError("Pause action failed.");
     }
 
     public float horizontalBounds = 5.0f;
@@ -119,6 +138,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        if (!_isAlive)
+            return;
+
         if (_player.Data.Health <= 0)
             Die();
 
@@ -171,7 +193,7 @@ public class PlayerController : MonoBehaviour
     private void FlipSprite()
     {
         Vector3 tempScale = transform.localScale;
-        
+
         if (_moveInput.x < 0 && !_isFacingLeft || _moveInput.x > 0 && _isFacingLeft)
         {
             _isFacingLeft = !_isFacingLeft;
@@ -187,14 +209,9 @@ public class PlayerController : MonoBehaviour
         _rb.Sleep();
         _heightBeforeJumping = transform.position.y;
         _animator.SetBool("IsJumping", false);
-        // animation isJumping = _isJumping
     }
     private void Walk()
     {
-        //CameraManager.Instance.MainCam.
-        //Vector3 s = CameraManager.Instance.MainCam.ViewportToWorldPoint(transform.position);
-        //if ()
-
         transform.position += _speed * Time.fixedDeltaTime * _moveDirection;
     }
     private void Jump()
@@ -229,17 +246,18 @@ public class PlayerController : MonoBehaviour
 
         Destroy(_currentHitCollider.gameObject);
     }
-   
+
     private void Die()
     {
         _isAlive = false;
+        _animator.SetTrigger("HasDied");
 
-        if (_player.Data.Lives <= 0)
-            Respawn();
+        //if (_player.Data.Lives <= 0)
+        //    Respawn();
     }
     private void Respawn()
     {
-        transform.position = GameManager.Instance.Spawn.position;
+        transform.position = SpawnManager.Instance.PlayerSpawn.position;
 
         _isAlive = true;
     }

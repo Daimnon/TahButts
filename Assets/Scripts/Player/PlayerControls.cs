@@ -73,6 +73,15 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""1693425e-5235-40b7-ae56-532cce1924b3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -249,6 +258,17 @@ namespace UnityEngine.InputSystem
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""InteractTwo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb4fb762-0c91-4e6b-9929-298184a99fdb"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -841,6 +861,7 @@ namespace UnityEngine.InputSystem
             m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
             m_Player_InteractOne = m_Player.FindAction("InteractOne", throwIfNotFound: true);
             m_Player_InteractTwo = m_Player.FindAction("InteractTwo", throwIfNotFound: true);
+            m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -917,6 +938,7 @@ namespace UnityEngine.InputSystem
         private readonly InputAction m_Player_Attack;
         private readonly InputAction m_Player_InteractOne;
         private readonly InputAction m_Player_InteractTwo;
+        private readonly InputAction m_Player_Pause;
         public struct PlayerActions
         {
             private @PlayerControls m_Wrapper;
@@ -926,6 +948,7 @@ namespace UnityEngine.InputSystem
             public InputAction @Attack => m_Wrapper.m_Player_Attack;
             public InputAction @InteractOne => m_Wrapper.m_Player_InteractOne;
             public InputAction @InteractTwo => m_Wrapper.m_Player_InteractTwo;
+            public InputAction @Pause => m_Wrapper.m_Player_Pause;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -950,6 +973,9 @@ namespace UnityEngine.InputSystem
                     @InteractTwo.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractTwo;
                     @InteractTwo.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractTwo;
                     @InteractTwo.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractTwo;
+                    @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                    @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                    @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -969,6 +995,9 @@ namespace UnityEngine.InputSystem
                     @InteractTwo.started += instance.OnInteractTwo;
                     @InteractTwo.performed += instance.OnInteractTwo;
                     @InteractTwo.canceled += instance.OnInteractTwo;
+                    @Pause.started += instance.OnPause;
+                    @Pause.performed += instance.OnPause;
+                    @Pause.canceled += instance.OnPause;
                 }
             }
         }
@@ -1130,6 +1159,7 @@ namespace UnityEngine.InputSystem
             void OnAttack(InputAction.CallbackContext context);
             void OnInteractOne(InputAction.CallbackContext context);
             void OnInteractTwo(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

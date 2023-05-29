@@ -51,6 +51,11 @@ public class PlayerInputHandler : MonoBehaviour
         {
             _controller.OnInteractTwo(obj);
         }
+
+        if (obj.action.name == _controls.Player.Pause.name)
+        {
+            _controller.OnPause(obj);
+        }
     }
 
     private void OnDestroy()
