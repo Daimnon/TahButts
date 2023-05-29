@@ -231,6 +231,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         _isAlive = false;
+        //_animator.SetBool("IsAlive", false);
 
         if (_player.Data.Lives <= 0)
             Respawn();
