@@ -7,6 +7,8 @@ using UnityEngine;
 public class Ars : Enemy
 {
     [SerializeField] private float _chaseSpeed, _chaseDistance, _stopDistance, _yOffset, _attackSpeed;
+    
+    private PlayerController _playerController;
     private IEnumerator _attackRoutine;
 
     private void Awake()
@@ -41,6 +43,8 @@ public class Ars : Enemy
         else
             Renderer.flipX = false;
 
+        _playerController = Target.GetComponent<PlayerController>();
+
         Vector3 offset = new(0.0f, _yOffset, 0.0f);
         transform.position = Vector2.MoveTowards(transform.position, Target.transform.position + offset, _chaseSpeed * Time.deltaTime);
     }
@@ -69,14 +73,18 @@ public class Ars : Enemy
         _attackRoutine = HitPlayer(_attackSpeed);
         yield return new WaitForSeconds(attackSpeed);
 
-        if (DistanceFromTarget <= _stopDistance)
+        if (_playerController.IsAlive && DistanceFromTarget <= _stopDistance)
             StartCoroutine(_attackRoutine);
     }
     private IEnumerator HandleHitCollider()
     {
         CurrentHitCollider = Instantiate(Data.HitColliderGO, Data.HitColliderTr).GetComponent<Collider2D>();
-        PlayerDamagerKnockback playerDamager = CurrentHitCollider.GetComponent<PlayerDamagerKnockback>();
-        playerDamager.Damage = Data.Power;
+
+        PlayerDamagerKnockback playerDamager;
+
+        if (CurrentHitCollider.TryGetComponent(out playerDamager))
+            playerDamager.Damage = Data.Power;
+        
         yield return new WaitForSeconds(0.2f);
 
         Destroy(CurrentHitCollider.gameObject);

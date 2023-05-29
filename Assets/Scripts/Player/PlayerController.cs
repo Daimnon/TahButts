@@ -122,6 +122,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        if (!_isAlive)
+            return;
+
         if (_player.Data.Health <= 0)
             Die();
 
@@ -231,10 +234,10 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         _isAlive = false;
-        //_animator.SetBool("IsAlive", false);
+        _animator.SetTrigger("HasDied");
 
-        if (_player.Data.Lives <= 0)
-            Respawn();
+        //if (_player.Data.Lives <= 0)
+        //    Respawn();
     }
     private void Respawn()
     {
