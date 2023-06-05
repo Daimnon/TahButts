@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerInputHandler _player;
     public PlayerInputHandler Player => _player;
 
-
-
     private void Awake()
     {
         _instance = this;

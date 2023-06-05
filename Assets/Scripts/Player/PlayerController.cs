@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
 
     [SerializeField] private Transform[] _items;
-    [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f, _maxWalkHeight = 0.5f;
-
+    [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f/*, _maxWalkHeight = 0.5f*/;
+    [SerializeField] private float _xMoveOffset = -7.8f, _yMoveOffset = 3.5f;
 
     private GameObject _currentHeadphones, _currentShield;
     private Collider2D _currentHitCollider;
@@ -129,8 +129,8 @@ public class PlayerController : MonoBehaviour
         else Debug.LogError("Pause action failed.");
     }
 
-    public float horizontalBounds = 5.0f;
-    public float verticalBounds = 3.0f;
+    //public float horizontalBounds = 5.0f;
+    //public float verticalBounds = 3.0f;
 
     private void Start()
     {
@@ -165,8 +165,8 @@ public class PlayerController : MonoBehaviour
     }
     private void ClampPlayerToView()
     {
-        _xBounds.x = CameraManager.Instance.XRange.x - 7.8f;
-        _xBounds.y = CameraManager.Instance.XRange.y + 3.5f;
+        _xBounds.x = CameraManager.Instance.XRange.x + _xMoveOffset;
+        _xBounds.y = CameraManager.Instance.XRange.y + _yMoveOffset;
 
         if (transform.position.x < _xBounds.x)
             transform.position = new(_xBounds.x, transform.position.y, transform.position.z);
