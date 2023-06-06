@@ -10,11 +10,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
 
-    [SerializeField] private Vector2 _xBounds = Vector2.zero, _yBounds = new (-7.1f, 0.5f);
+    [SerializeField] private Vector2 _xBounds = new(4.0f, 31.0f), _yBounds = new (-6.45f, -1.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
 
     [SerializeField] private Transform[] _items;
-    [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f/*, _maxWalkHeight = 0.5f*/;
+    [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f;
     [SerializeField] private float _xMoveOffset = -7.8f, _yMoveOffset = 3.5f;
 
     private GameObject _currentHeadphones, _currentShield;
@@ -165,8 +165,8 @@ public class PlayerController : MonoBehaviour
     }
     private void ClampPlayerToView()
     {
-        _xBounds.x = CameraManager.Instance.XRange.x + _xMoveOffset;
-        _xBounds.y = CameraManager.Instance.XRange.y + _yMoveOffset;
+        //_xBounds.x = CameraManager.Instance.XRange.x + _xMoveOffset;
+        //_xBounds.y = CameraManager.Instance.XRange.y + _yMoveOffset;
 
         if (transform.position.x < _xBounds.x)
             transform.position = new(_xBounds.x, transform.position.y, transform.position.z);

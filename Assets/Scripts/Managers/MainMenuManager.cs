@@ -8,8 +8,8 @@ public class MainMenuManager : MonoBehaviour
     private static MainMenuManager _instance;
     public static MainMenuManager Instance => _instance;
 
-    [SerializeField] private float _busFirstTargetX = 1930.0f, _busSecondTargetX = -2060.0f;
     [SerializeField] private Image _busImage;
+    [SerializeField] private float _busFirstTargetX = 1930.0f, _busSecondTargetX = -2060.0f;
     [SerializeField] private int _newGameBuildIndex = 1;
     [SerializeField] private float _timeToGetOnBus = 1.0f, _timeToQuit = 1.0f;
     [SerializeField] private float _busSpeed;
