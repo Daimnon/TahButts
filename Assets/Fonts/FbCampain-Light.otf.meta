@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f5e0723fb7df81845bb36babf1a4c8e8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Fb Campain
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a10a84328e1e5284283c2cbea81589c8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

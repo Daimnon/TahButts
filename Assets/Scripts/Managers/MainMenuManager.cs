@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
     public static MainMenuManager Instance => _instance;
 
     [SerializeField] private Image _busImage;
+    [SerializeField] private Transform _btnsMenu;
     [SerializeField] private float _busFirstTargetX = 1930.0f, _busSecondTargetX = -2060.0f;
     [SerializeField] private int _newGameBuildIndex = 1;
     [SerializeField] private float _timeToGetOnBus = 1.0f, _timeToQuit = 1.0f;
@@ -47,10 +48,14 @@ public class MainMenuManager : MonoBehaviour
         // while _busImage is not at _busSecondTargetX move _busImage at _busSpeed on x axis
         while (_busImage.rectTransform.position.x > _busSecondTargetX)
         {
-            Vector2 newPos = _busImage.rectTransform.position;
-            newPos.x = _busImage.rectTransform.position.x -  _busSpeed * Time.deltaTime;
+            Vector2 newBusPos = _busImage.rectTransform.position;
+            newBusPos.x = _busImage.rectTransform.position.x -  _busSpeed * Time.deltaTime;
 
-            _busImage.rectTransform.position = newPos;
+            Vector2 newBtnMenuPos = _btnsMenu.position;
+            newBtnMenuPos.x = _btnsMenu.position.x - _busSpeed * Time.deltaTime;
+
+            _busImage.rectTransform.position = newBusPos;
+            _btnsMenu.position = newBtnMenuPos;
             yield return null;
         }
 
