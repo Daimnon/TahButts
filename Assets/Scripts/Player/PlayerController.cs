@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
 
-    [SerializeField] private Vector2 _xBounds = new(4.0f, 31.0f), _yBounds = new (-6.45f, -1.5f);
+    [SerializeField] private Vector2 _xBounds = new(129.95f, 166.0f), _yBounds = new (-6.45f, -1.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
 
     [SerializeField] private Transform[] _items;
@@ -165,20 +165,17 @@ public class PlayerController : MonoBehaviour
     }
     private void ClampPlayerToView()
     {
-        //_xBounds.x = CameraManager.Instance.XRange.x + _xMoveOffset;
-        //_xBounds.y = CameraManager.Instance.XRange.y + _yMoveOffset;
-
         if (transform.position.x < _xBounds.x)
-            transform.position = new(_xBounds.x, transform.position.y, transform.position.z);
+            transform.position = new Vector3(_xBounds.x, transform.position.y, transform.position.z);
 
         if (transform.position.x > _xBounds.y)
-            transform.position = new(_xBounds.y, transform.position.y, transform.position.z);
+            transform.position = new Vector3(_xBounds.y, transform.position.y, transform.position.z);
 
         if (transform.position.y < _yBounds.x)
-            transform.position = new(transform.position.x, _yBounds.x, transform.position.z);
+            transform.position = new Vector3(transform.position.x, _yBounds.x, transform.position.z);
 
         if (transform.position.y > _yBounds.y)
-            transform.position = new(transform.position.x, _yBounds.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, _yBounds.y, transform.position.z);
     }
     private void GetMoveDirection()
     {

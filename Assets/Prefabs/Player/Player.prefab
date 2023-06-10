@@ -418,7 +418,7 @@ MonoBehaviour:
   _player: {fileID: 8889638828426675569}
   _animator: {fileID: 1285575451}
   _rb: {fileID: 717522144259439809}
-  _xBounds: {x: 4, y: 31}
+  _xBounds: {x: 129.95, y: 166}
   _yBounds: {x: -6.45, y: -1.5}
   _items:
   - {fileID: 854993272246643551}

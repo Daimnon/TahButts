@@ -1145,7 +1145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.56, y: 0, z: -10}
+  m_LocalPosition: {x: 155.7, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2713,10 +2713,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainCam: {fileID: 519420031}
   _playerTr: {fileID: 1285575451}
-  _xRange: {x: 11.5, y: 27.4}
+  _xRange: {x: 119.65, y: 155.7}
   _yRange: {x: 0, y: 5}
   _offsets: {x: 0, y: 2.3}
   _distanceToFullArea: 36.05
+  _distanceToLastArea: 18.025
   _followSpeed: 2
   _xMargin: 8
   _yMargin: 1
@@ -3027,7 +3028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_LocalPosition.y
