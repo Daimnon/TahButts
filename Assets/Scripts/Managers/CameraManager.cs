@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class CameraManager : MonoBehaviour
 {
@@ -69,5 +70,35 @@ public class CameraManager : MonoBehaviour
     {
         _xRange.x -= _distanceToLastArea;
         _xRange.y -= _distanceToLastArea;
+    }
+    public IEnumerator UpdatePositionFactorWithSmoothing(float timeBetweenStages)
+    {
+        float endValue1 = _xRange.x - _distanceToFullArea;
+        float endValue2 = _xRange.y - _distanceToFullArea;
+
+        Vector2 xTempRange;
+
+        float time = 0;
+        float valueToChange1 = _xRange.x;
+        float valueToChange2 = _xRange.y;
+
+        float startValue1 = valueToChange1;
+        float startValue2 = valueToChange2;
+
+        while (time < timeBetweenStages)
+        {
+            valueToChange1 = Mathf.Lerp(startValue1, endValue1, time / timeBetweenStages);
+            valueToChange2 = Mathf.Lerp(startValue2, endValue2, time / timeBetweenStages);
+
+            xTempRange.x = valueToChange1;
+            xTempRange.y = valueToChange2;
+            _xRange = xTempRange;
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+        xTempRange.x = endValue1;
+        xTempRange.y = endValue2;
+        _xRange = xTempRange;
     }
 }

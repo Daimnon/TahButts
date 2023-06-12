@@ -7,27 +7,43 @@ public class SpawnManager : MonoBehaviour
     private static SpawnManager _instance;
     public static SpawnManager Instance => _instance;
 
+    // area one:
+    //      grendmas - (0-5)
+    //
+    // area two:
+    //      grendmas - (0-3)
+    //      ars (4)
+    //
+    // area four:
+    //      grendmas - (0-1)
+    //      ars (2)
+
     [SerializeField] private GameObject[] _enemyPrefabs;
     [SerializeField] private Transform[] _areaOne, _areaTwo, _areaThree, _areaFour;
+    [SerializeField] private int _areaCount = 4;
 
     [SerializeField] private List<Enemy> _spawnedEnemyList;
     public List<Enemy> SpawnedEnemyList => _spawnedEnemyList;
-
-    [SerializeField] private int _areaCount = 4;
-
+    
     [SerializeField] private Transform _spawn;
     public Transform PlayerSpawn => _spawn;
 
-    private Transform[][] _allAreas; 
+    [SerializeField] private int[] _enemiesToDefeatByArea;
+    public int[] EnemiesToDefeatByArea => _enemiesToDefeatByArea;
+
+    private Transform[][] _allAreasEnemies; 
+    public Transform[][] AllAreasEnemies => _allAreasEnemies; 
 
     private void Awake()
     {
         _instance = this;
-        _allAreas = new Transform[][] { _areaOne, _areaTwo, _areaThree, _areaFour };
     }
     private void Start()
     {
-        // should do the spawn logic in method down below
+        _allAreasEnemies = new Transform[][] { _areaOne, _areaTwo, _areaThree, _areaFour };
+
+        if (_enemiesToDefeatByArea == null)
+            _enemiesToDefeatByArea = new int[] { 0, 1, 0, 1 };
     }
 
     public GameObject InstantiateEnemy(int typeNum, Vector3 pos)

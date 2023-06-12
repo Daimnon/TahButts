@@ -55,7 +55,7 @@ public class Ars : Enemy
         if (standUpStateInfo.normalizedTime >= standUpStateInfo.length)
             _isAwake = true;
     }
-    protected override void PlayerNotInsight() //patrol
+    protected override void PlayerNotInsight()
     {
         if (DistanceFromTarget <= _inSightDistance)
         {
@@ -101,7 +101,7 @@ public class Ars : Enemy
             return;
         }
 
-        if (transform.position.x < Target.transform.position.x)
+        if (transform.position.x > Target.transform.position.x)
             Renderer.flipX = true;
         else
             Renderer.flipX = false;
@@ -177,19 +177,14 @@ public class Ars : Enemy
 
     private void Die()
     {
+        SpawnManager.Instance.EnemiesToDefeatByArea[AreaIndex]--;
+
+        if (SpawnManager.Instance.EnemiesToDefeatByArea[AreaIndex] == 0)
+            GameManager.Instance.UnlockNextArea();
+        
         Destroy(gameObject);
     }
 
-    /*private IEnumerator HitPlayer(float attackSpeed)
-    {
-        StartCoroutine(Attack());
-        _attackRoutine = null;
-        _attackRoutine = HitPlayer(_attackSpeed);
-        yield return new WaitForSeconds(attackSpeed);
-
-        if (_playerController.IsAlive && DistanceFromTarget <= _stopDistance)
-            StartCoroutine(_attackRoutine);
-    }*/
     private void Attack2()
     {
         _animator.SetBool("HasPunched", true);
@@ -213,33 +208,6 @@ public class Ars : Enemy
         //if (CurrentHitCollider.TryGetComponent(out playerDamager))
         //    playerDamager.Damage = Data.Power;
     }
-    /*private IEnumerator Attack()
-    {
-        _isPunching = true;
-
-        Vector3 newScale = Data.HitColliderTr.localScale;
-
-        if (Renderer.flipX)
-            newScale.x = 1;
-        else
-            newScale.x = -1;
-
-        Data.HitColliderTr.localScale = newScale;
-        CurrentHitCollider = Instantiate(Data.HitColliderGO, Data.HitColliderTr).GetComponent<Collider2D>();
-
-        //PlayerDamagerKnockback playerDamager;
-
-        //if (CurrentHitCollider.TryGetComponent(out playerDamager))
-        //    playerDamager.Damage = Data.Power;
-        
-        yield return new WaitForSeconds(0.5f);
-
-        Destroy(CurrentHitCollider.gameObject);
-
-        _isPunching = false;
-        _attackRoutine = null;
-        _attackRoutine = Attack();
-    }*/
     private IEnumerator ResetWait(float time)
     {
         yield return new WaitForSeconds(time);

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,25 +11,61 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerInputHandler _player;
     public PlayerInputHandler Player => _player;
 
-    private int _currentArea = 0;
+    private float _timeBetweenStages = 4.0f;
+    private int _currentStage = 0;
 
     private void Awake()
     {
         _instance = this;
     }
 
-    public void UnlockNextArea()
+    public IEnumerator UnlockNextArea()
     {
-        if (_currentArea < 3)
+        float _timeBetweenBlinks = 1.0f;
+        StartCoroutine(UIManager.Instance.NextStageBlink(_timeBetweenBlinks));
+        yield return new WaitForSeconds(_timeBetweenBlinks * 3 + _timeBetweenBlinks / 2 * 2);
+
+        StartCoroutine(CameraManager.Instance.UpdatePositionFactorWithSmoothing(_timeBetweenStages));
+
+        if (_currentStage < 3)
         {
-            CameraManager.Instance.UpdatePositionFactor();
+            float endValue1 = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToFullArea;
+            float endValue2 = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToFullArea;
+
             Vector2 newXBounds;
-            newXBounds.x = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToFullArea;
-            newXBounds.y = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToFullArea;
+
+            float time = 0;
+            float valueToChange1 = _player.Controller.XBounds.x;
+            float valueToChange2 = _player.Controller.XBounds.y;
+
+            float startValue1 = valueToChange1;
+            float startValue2 = valueToChange2;
+
+            while (time < _timeBetweenStages)
+            {
+                valueToChange1 = Mathf.Lerp(startValue1, endValue1, time / _timeBetweenStages);
+                valueToChange2 = Mathf.Lerp(startValue2, endValue2, time / _timeBetweenStages);
+
+                newXBounds.x = valueToChange1;
+                newXBounds.y = valueToChange2;
+                _player.Controller.XBounds = newXBounds;
+
+                time += Time.deltaTime;
+                yield return null;
+            }
+            valueToChange1 = endValue1;
+            valueToChange2 = endValue2;
+
+            newXBounds.x = valueToChange1;
+            newXBounds.y = valueToChange2;
             _player.Controller.XBounds = newXBounds;
-            _currentArea++;
+
+            //newXBounds.x = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToFullArea;
+            //newXBounds.y = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToFullArea;
+            _currentStage++;
+            //CameraManager.Instance.UpdatePositionFactor();
         }
-        else if (_currentArea == 3)
+        else if (_currentStage == 3)
         {
             CameraManager.Instance.UpdatePositionFactor(true);
             Vector2 newXBounds;
@@ -37,14 +74,32 @@ public class GameManager : MonoBehaviour
             _player.Controller.XBounds = newXBounds;
         }
     }
-    /*public void UnlockNextArea(float factor)
+    /*public IEnumerator UnlockNextArea()
     {
-        CameraManager.Instance.UpdatePositionFactor(factor);
-        Vector2 newXBounds;
-        newXBounds.x = _player.Controller.XBounds.x + factor;
-        newXBounds.y = _player.Controller.XBounds.y + factor;
-        _player.Controller.XBounds = newXBounds;
+        StartCoroutine(UIManager.Instance.NextStageBlink(1, 3));
+        yield return new WaitForSeconds(1*2 + 1.5f*2);
+        if (_currentStage < 3)
+        {
+            CameraManager.Instance.UpdatePositionFactor();
+            Vector2 newXBounds;
+            newXBounds.x = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToFullArea;
+            newXBounds.y = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToFullArea;
+            _player.Controller.XBounds = newXBounds;
+            _currentStage++;
+        }
+        else if (_currentStage == 3)
+        {
+            CameraManager.Instance.UpdatePositionFactor(true);
+            Vector2 newXBounds;
+            newXBounds.x = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToLastArea;
+            newXBounds.y = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToLastArea;
+            _player.Controller.XBounds = newXBounds;
+        }
     }*/
+    public void UnlockNextAreaUI()
+    {
+        StartCoroutine(UnlockNextArea());
+    }
     public void Quit()
     {
         Application.Quit();

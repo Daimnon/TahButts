@@ -308,9 +308,9 @@ TextureImporter:
       name: Atlas_UI_01_heart
       rect:
         serializedVersion: 2
-        x: 3616
+        x: 3617
         y: 2339
-        width: 418
+        width: 417
         height: 398
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

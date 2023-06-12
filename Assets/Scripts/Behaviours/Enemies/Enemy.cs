@@ -8,6 +8,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected Animator AnimController;
     [SerializeField] protected SpriteRenderer Renderer;
     [SerializeField] protected EnemyData Data;
+    [SerializeField] protected int AreaIndex;
     protected Collider2D CurrentHitCollider;
     protected float DistanceFromTarget;
     protected bool IsInteracting = false;
@@ -17,10 +18,10 @@ public abstract class Enemy : MonoBehaviour
 
     private void Start()
     {
-        SpawnManager.Instance.SpawnedEnemyList.Add(this);
-
         if (!Target)
             Target = GameManager.Instance.Player.gameObject;
+        
+        SpawnManager.Instance.SpawnedEnemyList.Add(this);
     }
     private void OnDestroy()
     {
