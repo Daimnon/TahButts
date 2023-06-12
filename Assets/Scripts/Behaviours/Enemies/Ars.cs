@@ -7,13 +7,15 @@ using UnityEngine;
 
 public class Ars : Enemy
 {
-    [SerializeField] private float _chaseSpeed = 2.0f, _inSightDistance = 3.0f, _interactionDistance = 1.0f, _yOffset = 0.0f, _attackSpeed = 1.0f;
+    [SerializeField] private float _chaseSpeed = 2.0f, _chaseDistance = 3.0f, _inSightDistance = 4.0f, _interactionDistance = 1.0f;
+    [SerializeField] private float _yOffset = 0.0f,  _attackTime = 1.0f;
     [SerializeField] private Animator _animator;
-    
+
+    private GameObject _currentPlayerDamager;
     private PlayerController _playerController;
     private IEnumerator _attackRoutine;
-    private int _attackCounter = 0;
-    private bool _isAwake = false, _isStandingUp = false, _isChasingPlayer = false, _isPunching = false;
+    private int _attackCounter = 0, _attackResetCounter = 0;
+    private bool _isAwake = false, _isWaiting = false;
 
     private void Awake()
     {
@@ -27,31 +29,24 @@ public class Ars : Enemy
 
         DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
         EnemyState.Invoke();
+
+        Debug.Log(EnemyState.Method.Name);
     }
 
     private void Sleep()
     {
         if (DistanceFromTarget <= _inSightDistance * 2)
+        {
+            _animator.SetTrigger("HasAwoken");
             EnemyState = StandUp;
+        }
     }
     private void StandUp()
     {
-        if (_isAwake && DistanceFromTarget > _inSightDistance)
+        if (_isAwake)
         {
+            _animator.SetTrigger("HasStoodUp");
             EnemyState = PlayerNotInsight;
-            return;
-        }
-
-        if (!_isAwake && !_isStandingUp)
-        {
-            _animator.SetTrigger("HasAwoken");
-            _isStandingUp = true;
-            return;
-        }
-        else if (_isAwake)
-        {
-            _animator.SetBool("IsChasingPlayer", true);
-            EnemyState = PlayerInsight;
             return;
         }
 
@@ -60,19 +55,49 @@ public class Ars : Enemy
         if (standUpStateInfo.normalizedTime >= standUpStateInfo.length)
             _isAwake = true;
     }
-    protected override void PlayerInsight() //chase after player
+    protected override void PlayerNotInsight() //patrol
+    {
+        if (DistanceFromTarget <= _inSightDistance)
+        {
+            EnemyState = PlayerInsight;
+            return;
+        }
+    }
+    protected override void PlayerInsight()
     {
         if (DistanceFromTarget <= _interactionDistance)
         {
-            _animator.SetTrigger("HasPunched");
-            //_hasPuncehdRecently = true;
+            _animator.SetBool("IsChasingPlayer", false);
+            //_animator.SetTrigger("HasPunched");
             EnemyState = Interacting;
+            return;
+        }
+        else if (DistanceFromTarget <= _chaseDistance)
+        {
+            _animator.SetBool("IsChasingPlayer", true);
+            EnemyState = ChasingPlayer;
             return;
         }
         else if (DistanceFromTarget > _inSightDistance)
         {
             _animator.SetBool("IsChasingPlayer", false);
             EnemyState = PlayerNotInsight;
+            return;
+        }
+    }
+    private void ChasingPlayer()
+    {
+        if (DistanceFromTarget <= _interactionDistance)
+        {
+            _animator.SetBool("IsChasingPlayer", false);
+            //_animator.SetBool("HasPunched", true);
+            EnemyState = Interacting;
+            return;
+        }
+        else if (DistanceFromTarget > _chaseDistance)
+        {
+            _animator.SetBool("IsChasingPlayer", false);
+            EnemyState = PlayerInsight;
             return;
         }
 
@@ -88,38 +113,68 @@ public class Ars : Enemy
         Vector2 lastMovePos = new(transform.position.x, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, Target.transform.position + offset, _chaseSpeed * Time.deltaTime);
     }
-    private void ChasingPlayer()
-    {
-
-    }
     protected override void Interacting()
     {
-        AnimatorStateInfo punchingStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        _attackResetCounter = 0;
+
+        if (_currentPlayerDamager)
+            Destroy(_currentPlayerDamager);
 
         if (_attackCounter == 0)
         {
-            //StartCoroutine(_attackRoutine);
             Attack2();
-            _animator.SetBool("IsPunching", true);
             _attackCounter++;
         }
+        else if (_attackCounter > 0)
+        {
+            if (_currentPlayerDamager)
+                Destroy(_currentPlayerDamager);
+        }
 
-        if (punchingStateInfo.normalizedTime >= punchingStateInfo.length)
+        AnimatorStateInfo punchingStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        if (punchingStateInfo.normalizedTime >= _attackTime)
         {
-            _animator.SetBool("IsPunching", false);
+            //_animator.SetBool("IsPunching", false);
             _attackCounter = 0;
-            EnemyState = PlayerInsight;
+            //_animator.SetBool("IsPunching", false);
+            _isWaiting = true;
+            EnemyState = PostInteracting;
             return;
         }
     }
-    protected override void PlayerNotInsight() //patrol
+    private void PostInteracting()
     {
-        if (DistanceFromTarget < _inSightDistance)
+        if (_isWaiting && _attackResetCounter == 0)
+        {
+            StartCoroutine(ResetWait(_attackTime));
+            _attackResetCounter++;
+            return;
+        }
+
+        if (DistanceFromTarget <= _interactionDistance)
+        {
+            _animator.SetBool("IsPunching", true);
+            EnemyState = Interacting;
+            return;
+        }
+        else if (DistanceFromTarget <= _chaseDistance)
+        {
+            _animator.SetBool("IsChasingPlayer", true);
+            EnemyState = ChasingPlayer;
+            return;
+        }
+        else if (DistanceFromTarget <= _inSightDistance)
         {
             EnemyState = PlayerInsight;
             return;
         }
+        else
+        {
+            EnemyState = PlayerNotInsight;
+            return;
+        }
     }
+
     private void Die()
     {
         Destroy(gameObject);
@@ -137,7 +192,7 @@ public class Ars : Enemy
     }*/
     private void Attack2()
     {
-        _isPunching = true;
+        _animator.SetBool("HasPunched", true);
         Vector3 newScale = Data.HitColliderTr.localScale;
 
         if (Renderer.flipX)
@@ -147,8 +202,11 @@ public class Ars : Enemy
 
         Data.HitColliderTr.localScale = newScale;
 
-        GameObject playerDamager = Instantiate(Data.HitColliderGO, Data.HitColliderTr);
-        CurrentHitCollider = playerDamager.GetComponent<Collider2D>();
+        if (!_currentPlayerDamager)
+        {
+            _currentPlayerDamager = Instantiate(Data.HitColliderGO, Data.HitColliderTr);
+            CurrentHitCollider = _currentPlayerDamager.GetComponent<Collider2D>();
+        }
 
         //PlayerDamagerKnockback playerDamager;
 
@@ -182,9 +240,9 @@ public class Ars : Enemy
         _attackRoutine = null;
         _attackRoutine = Attack();
     }*/
-    /*private IEnumerator ResetPunch(float time)
+    private IEnumerator ResetWait(float time)
     {
         yield return new WaitForSeconds(time);
-        _hasPuncehdRecently = false;
-    }*/
+        _isWaiting = false;
+    }
 }

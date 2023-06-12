@@ -2369,6 +2369,14 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 1699928884}
+    - target: {fileID: 7031159552422730692, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
+      propertyPath: _attackTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031159552422730692, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
+      propertyPath: _inSightDistance
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
 --- !u!1 &1020075557

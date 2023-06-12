@@ -17,10 +17,6 @@ public class StationaryEnemy : Enemy
             PlayerNotInsight();
     }
 
-    protected override void Idle()
-    {
-
-    }
     protected override void PlayerInsight() //chase after player
     {
         if (transform.position.x < Target.transform.position.x)
