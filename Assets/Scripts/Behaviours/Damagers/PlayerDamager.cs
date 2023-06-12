@@ -5,15 +5,6 @@ using UnityEngine;
 public class PlayerDamager : Damager
 {
     protected const string PlayerTag = "Player";
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.collider.CompareTag(_enemyTag))
-    //    {
-    //        Debug.Log($"Hit {collision.collider.name}");
-    //        Enemy enemy = collision.collider.GetComponent<Enemy>();
-    //        enemy.TakeDamage(_damage);
-    //    }
-    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {

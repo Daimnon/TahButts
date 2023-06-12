@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Collider2D _currentHitCollider;
     private Vector2 _moveInput = Vector2.zero;
     private Vector3 _moveDirection = Vector3.zero;
+    private Vector3 _lastPositionBeforeDeath = Vector3.zero;
     private int _comboHitCounter = 0, _maxHitCombo = 3;
     private float _comboTime = 1.0f, _comboTimer = 1.0f;
     private float _heightBeforeJumping;
@@ -139,7 +140,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (!_isAlive)
+        {
+            transform.position = _lastPositionBeforeDeath;
             return;
+        }
+
+        _lastPositionBeforeDeath = transform.position;
 
         if (_player.Data.Health <= 0)
             Die();
