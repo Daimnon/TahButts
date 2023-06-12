@@ -18,6 +18,9 @@ public abstract class Enemy : MonoBehaviour
     private void Start()
     {
         SpawnManager.Instance.SpawnedEnemyList.Add(this);
+
+        if (!Target)
+            Target = GameManager.Instance.Player.gameObject;
     }
     private void OnDestroy()
     {

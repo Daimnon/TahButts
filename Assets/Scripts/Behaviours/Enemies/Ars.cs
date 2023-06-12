@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class Ars : Enemy
 {
-    [SerializeField] private float _chaseSpeed = 2.0f, _chaseDistance = 3.0f, _inSightDistance = 4.0f, _interactionDistance = 1.0f;
-    [SerializeField] private float _yOffset = 0.0f,  _attackTime = 1.0f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private float _wakingUpDistance = 9f, _inSightDistance = 7.0f, _chaseDistance = 6.0f, _interactionDistance = 1.0f;
+    [SerializeField] private float _attackTime = 1.0f, _chaseSpeed = 2.0f, _yOffset = 0.0f;
 
     private GameObject _currentPlayerDamager;
     private PlayerController _playerController;
@@ -22,7 +22,7 @@ public class Ars : Enemy
         EnemyState = Sleep;
         //_attackRoutine = Attack();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (Data.Health <= 0)
             Die();
@@ -35,7 +35,7 @@ public class Ars : Enemy
 
     private void Sleep()
     {
-        if (DistanceFromTarget <= _inSightDistance * 2)
+        if (DistanceFromTarget <= _inSightDistance * _wakingUpDistance)
         {
             _animator.SetTrigger("HasAwoken");
             EnemyState = StandUp;
