@@ -32,10 +32,6 @@ public class Grandma : Enemy
         EnemyState.Invoke();
     }
 
-    protected override void Idle()
-    {
-        throw new NotImplementedException();
-    }
     protected override void PlayerInsight() //chase after player
     {
         if (IsInteracting)
