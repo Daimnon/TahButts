@@ -221,14 +221,14 @@ MonoBehaviour:
   AnimController: {fileID: 5379658856693439269}
   Renderer: {fileID: 7768639604896339}
   Data: {fileID: 965971402}
-  _chaseSpeed: 2
-  _chaseDistance: 6
-  _inSightDistance: 7
-  _interactionDistance: 1
-  _yOffset: 0
-  _wakingUpDistance: 9
-  _attackTime: 10
   _animator: {fileID: 5379658856693439269}
+  _wakingUpDistance: 9
+  _inSightDistance: 4
+  _chaseDistance: 6
+  _interactionDistance: 1
+  _attackTime: 10
+  _chaseSpeed: 2
+  _yOffset: 0
 --- !u!1 &5152809400314713301
 GameObject:
   m_ObjectHideFlags: 0

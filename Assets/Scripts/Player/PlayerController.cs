@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform[] _items;
     [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f;
     [SerializeField] private float _xMoveOffset = -7.8f, _yMoveOffset = 3.5f;
+    [Range(0.2f, 2.0f)][SerializeField] private float _comboTime = 1.0f;
 
     private GameObject _currentHeadphones, _currentShield;
     private Collider2D _currentHitCollider;
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 _moveDirection = Vector3.zero;
     private Vector3 _lastPositionBeforeDeath = Vector3.zero;
     private int _comboHitCounter = 0, _maxHitCombo = 3;
-    private float _comboTime = 1.0f, _comboTimer = 1.0f;
+    private float _comboTimer = 1.0f;
     private float _heightBeforeJumping;
 
     private bool _isFacingLeft = true, _isJumping = false;
@@ -65,11 +66,11 @@ public class PlayerController : MonoBehaviour
                 _comboTimer = _comboTime;
                 _comboHitCounter++;
 
-                if (!(_animator.GetCurrentAnimatorStateInfo(0).IsName("Anim_Player_Punch") && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f))
+                /*if (!(_animator.GetCurrentAnimatorStateInfo(0).IsName("Anim_Player_Punch") && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f))
                 {
                     _animator.SetBool("IsPunching", false);
                     _animator.SetBool("IsPunching", true);
-                }
+                }*/
                 _animator.SetBool("IsPunching", true);
             }
 
