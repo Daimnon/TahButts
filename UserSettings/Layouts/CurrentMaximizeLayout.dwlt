@@ -45,9 +45,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1430
+    x: 470
     y: 73
-    width: 785
+    width: 1745
     height: 1028
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -95,10 +95,10 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 785
+      width: 1745
       height: 1007
-    m_Scale: {x: 0.40885416, y: 0.40885416}
-    m_Translation: {x: 392.5, y: 503.5}
+    m_Scale: {x: 0.9088542, y: 0.9088542}
+    m_Translation: {x: 872.5, y: 503.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -106,12 +106,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -960
-      y: -1231.4905
+      y: -553.99426
       width: 1920
-      height: 2462.981
+      height: 1107.9885
     m_MinimalGUI: 1
-  m_defaultScale: 0.40885416
-  m_LastWindowPixelSize: {x: 785, y: 1028}
+  m_defaultScale: 0.9088542
+  m_LastWindowPixelSize: {x: 1745, y: 1028}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 306d0000
-      m_LastClickedID: 27952
-      m_ExpandedIDs: a0d9feff24fbffff306d0000726d0000966d0000a66d0000ea6d0000fc6d0000126e0000
+      m_SelectedIDs: 40730000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 82f7ffff24fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -268,7 +268,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 194
     y: 0
-    width: 1236
+    width: 276
     height: 1049
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -823,7 +823,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 194
     y: 73
-    width: 1234
+    width: 274
     height: 1028
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 1630.4651, y: 965.1163, z: 0}
     speed: 2
-    m_Value: {x: 220.35669, y: 968.9624, z: -0.01751709}
+    m_Value: {x: 1630.4651, y: 965.1163, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 286.6257
     speed: 2
-    m_Value: 192.92313
+    m_Value: 286.6257
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1241,9 +1241,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1430
+    x: 470
     y: 0
-    width: 787
+    width: 1747
     height: 1049
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 148
+  controlID: 79
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1359,7 +1359,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 72}
     m_SelectedIDs: 26700000
     m_LastClickedID: 28710
-    m_ExpandedIDs: 0000000026710000
+    m_ExpandedIDs: 0000000062710000647100006671000068710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1387,7 +1387,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 217}
     m_SelectedIDs: 386d0000
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000267100000e730000127300005e7300006273000064730000687300006a730000
+    m_ExpandedIDs: 0000000062710000647100006671000068710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1484,22 +1484,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Managers
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 53
   m_LastFolders:
-  - Assets/Scripts/Managers
+  - Assets/Scenes
   m_LastFoldersGridSize: 53
   m_LastProjectPath: D:\Users\Daimnon\Documents\GitHub\TahButts
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6a730000
-    m_LastClickedID: 29546
-    m_ExpandedIDs: 00000000267100001273000000ca9a3b
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: 7e710000
+    m_LastClickedID: 29054
+    m_ExpandedIDs: 000000006271000064710000667100006871000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1527,7 +1527,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000026710000
+    m_ExpandedIDs: 0000000062710000647100006671000068710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1552,8 +1552,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 306d0000
-    m_LastClickedInstanceID: 27952
+    m_SelectedInstanceIDs: 40730000
+    m_LastClickedInstanceID: 29504
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 086f0000f070000004750000
     m_RenameOverlay:
@@ -1668,7 +1668,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 28120
+  m_LastSelectedObjectID: 27952
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
