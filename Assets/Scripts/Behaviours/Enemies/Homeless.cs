@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Ars : Enemy
+public class Homeless : Enemy
 {
     [SerializeField] private float _wakingUpDistance = 9f, _inSightDistance = 7.0f, _chaseDistance = 6.0f, _interactionDistance = 1.0f;
     [SerializeField] private float _attackTime = 1.0f, _chaseSpeed = 2.0f, _yOffset = 0.0f;
@@ -176,7 +176,7 @@ public class Ars : Enemy
 
         if (SpawnManager.Instance.EnemiesToDefeatByArea[AreaIndex] == 0)
             GameManager.Instance.UnlockNextArea();
-        
+
         Destroy(gameObject);
     }
 
