@@ -9,6 +9,10 @@ public static class CustomSceneManager
     {
         SceneManager.LoadScene(num);
     }
+    public static void BackToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public static void QuitGame()
     {
         Application.Quit();

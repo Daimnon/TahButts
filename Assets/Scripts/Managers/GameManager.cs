@@ -11,6 +11,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerInputHandler _player;
     public PlayerInputHandler Player => _player;
 
+    [SerializeField] private Transform _loadingScreenTr;
+    public Transform LoadingScreenTr => _loadingScreenTr;
+
+    [SerializeField] private Vector3 _loadingAddedCoords;
+    [SerializeField] private float _enterLevelTime, _exitLevelTime, _loadingTransitionDuration;
+
     private float _timeBetweenStages = 4.0f;
     private int _currentStage = 0;
 
@@ -18,7 +24,53 @@ public class GameManager : MonoBehaviour
     {
         _instance = this;
     }
+    private void Start()
+    {
+        StartCoroutine(PlayerLoadingScreen(false));
+    }
+    public void CallLoadingScreen(bool isLeavingLevel)
+    {
+        StartCoroutine(PlayerLoadingScreen(isLeavingLevel));
+    }
+    public IEnumerator PlayerLoadingScreen(bool isLeavingLevel)
+    {
+        float time = 0;
+        float speed = 0;
+        
 
+        if (!isLeavingLevel)
+        {
+            Vector3 startPos = _loadingScreenTr.position;
+            Vector3 targetPos = _loadingScreenTr.position - _loadingAddedCoords;
+            yield return new WaitForSeconds(_enterLevelTime);
+
+            while(time < _loadingTransitionDuration)
+            {
+                //float lerpFactor = Mathf.Clamp01(time / (_loadingTransitionDuration / speed));
+                _loadingScreenTr.position = Vector3.Lerp(startPos, targetPos, time / _loadingTransitionDuration);
+                time += Time.deltaTime;
+                speed += Time.deltaTime;
+                yield return null;
+            }
+            _loadingScreenTr.position = targetPos;
+        }
+        else
+        {
+            Vector3 startPos = _loadingScreenTr.position;
+            Vector3 targetPos = _loadingScreenTr.position + _loadingAddedCoords;
+
+            while (time < _loadingTransitionDuration)
+            {
+                _loadingScreenTr.position = Vector3.Lerp(startPos, targetPos, time / _loadingTransitionDuration);
+                time += Time.deltaTime;
+                yield return null;
+            }
+            _loadingScreenTr.position = targetPos;
+
+            yield return new WaitForSeconds(_enterLevelTime);
+            //CustomSceneManager.BackToMainMenu();
+        }
+    }
     public IEnumerator UnlockNextArea()
     {
         float _timeBetweenBlinks = 1.0f;
