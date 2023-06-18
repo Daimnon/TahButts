@@ -226,7 +226,7 @@ MonoBehaviour:
   _inSightDistance: 7
   _chaseDistance: 6
   _interactionDistance: 1
-  _attackTime: 10
+  _attackTime: 1.5
   _chaseSpeed: 2
   _yOffset: 0
 --- !u!1 &5152809400314713301
