@@ -30,7 +30,7 @@ public class Ars : Enemy
 
     private void Sleep()
     {
-        if (DistanceFromTarget <= _inSightDistance * _wakingUpDistance)
+        if (DistanceFromTarget <= _wakingUpDistance)
         {
             AnimController.SetTrigger("HasAwoken");
             EnemyState = StandUp;
