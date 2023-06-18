@@ -172,11 +172,7 @@ public class Homeless : Enemy
 
     private void Die()
     {
-        SpawnManager.Instance.EnemiesToDefeatByArea[AreaIndex]--;
-
-        if (SpawnManager.Instance.EnemiesToDefeatByArea[AreaIndex] == 0)
-            GameManager.Instance.UnlockNextArea();
-
+        GameManager.Instance.InvokeEnemyDeath(this);
         Destroy(gameObject);
     }
 

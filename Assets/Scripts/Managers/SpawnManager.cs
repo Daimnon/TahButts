@@ -31,19 +31,9 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private int[] _enemiesToDefeatByArea;
     public int[] EnemiesToDefeatByArea => _enemiesToDefeatByArea;
 
-    private Transform[][] _allAreasEnemies; 
-    public Transform[][] AllAreasEnemies => _allAreasEnemies; 
-
     private void Awake()
     {
         _instance = this;
-    }
-    private void Start()
-    {
-        _allAreasEnemies = new Transform[][] { _areaOne, _areaTwo, _areaThree, _areaFour };
-
-        if (_enemiesToDefeatByArea == null)
-            _enemiesToDefeatByArea = new int[] { 0, 1, 0, 1 };
     }
 
     public GameObject InstantiateEnemy(int typeNum, Vector3 pos)
