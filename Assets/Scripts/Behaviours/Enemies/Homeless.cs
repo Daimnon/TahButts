@@ -6,6 +6,9 @@ public class Homeless : Enemy
     [SerializeField] private float _wakingUpDistance = 9f, _inSightDistance = 7.0f, _chaseDistance = 6.0f, _interactionDistance = 1.0f;
     [SerializeField] private float _attackTime = 1.0f, _chaseSpeed = 2.0f, _yOffset = 0.0f;
 
+    private bool _shouldWakeUp;
+    public bool ShouldWakeUp { get => _shouldWakeUp; set => _shouldWakeUp = value; }
+
     private GameObject _currentPlayerDamager;
     private PlayerController _playerController;
     private IEnumerator _attackRoutine;
@@ -30,7 +33,13 @@ public class Homeless : Enemy
 
     private void Sleep()
     {
-        if (DistanceFromTarget <= _inSightDistance * _wakingUpDistance)
+        /*if (DistanceFromTarget <= _wakingUpDistance)
+        {
+            AnimController.SetTrigger("HasAwoken");
+            EnemyState = StandUp;
+        }*/
+
+        if (_shouldWakeUp)
         {
             AnimController.SetTrigger("HasAwoken");
             EnemyState = StandUp;
