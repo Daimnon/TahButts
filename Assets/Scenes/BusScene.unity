@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef768fb37908de449ee202162b15af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotateAmount: 10
+  _rotateAmount: 300
   _isInverted: 0
 --- !u!114 &64780704
 MonoBehaviour:
@@ -991,9 +991,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1285575454}
   _loadingScreenTr: {fileID: 1127366905}
-  _loadingAddedCoords: {x: 0, y: 1080, z: 0}
-  _enterLevelTime: 2
-  _exitLevelTime: 1
+  _loadingAddedCoords: {x: 0, y: 1085, z: 0}
+  _enterLevelTime: 3
+  _exitLevelTime: 1.75
   _loadingTransitionDuration: 0.25
   _enemiesToDefeatByStage: 02000000010000000000000001000000
   _stageOne:
@@ -1017,9 +1017,10 @@ MonoBehaviour:
   - {fileID: 1937900670}
   - {fileID: 153672632}
   _stageMaxX:
-  - 132.5
-  - 168.55
-  - 204.6
+  - 131.5
+  - 167.55
+  - 203.6
+  _timeBetweenBlinks: 0.5
   _stageCount: 3
 --- !u!1 &426741280
 GameObject:
@@ -3796,7 +3797,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 1925, y: 1085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1127366906
 MonoBehaviour:
@@ -3811,7 +3812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

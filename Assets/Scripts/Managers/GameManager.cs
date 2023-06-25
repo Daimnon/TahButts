@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<Enemy> _stageOne, _stageTwo, _stageThree, _stageFour;
     [SerializeField] private float[] _stageMaxX;
+    [Range (0, 1)][SerializeField] private float _timeBetweenBlinks = 0.5f;
     [Range(0, 3)][SerializeField] private int _stageCount = 3;
 
     private List<List<Enemy>> _allStagesEnemies;
@@ -198,9 +199,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator UnlockNextArea()
     {
-        float _timeBetweenBlinks = 1.0f;
         StartCoroutine(UIManager.Instance.NextStageBlink(_timeBetweenBlinks));
-        yield return new WaitForSeconds(_timeBetweenBlinks * 3 + _timeBetweenBlinks / 2 * 2);
+        yield return new WaitForSeconds(_timeBetweenBlinks * 2);
 
         StartCoroutine(CameraManager.Instance.UpdatePositionFactorWithSmoothing(_timeBetweenStages));
 
