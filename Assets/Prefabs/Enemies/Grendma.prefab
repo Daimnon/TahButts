@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36513acdff2eb94b9f7921da9b01a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 3
+  _health: 5
   _power: 1
   _hitColliderTr: {fileID: 3034931660422021383}
   _hitColliderGo: {fileID: 4655246484454779869, guid: 18c047bfb89bd004db517920a3d9460f, type: 3}
@@ -190,11 +190,13 @@ MonoBehaviour:
   AnimController: {fileID: 3451481281446577566}
   Renderer: {fileID: 3028010813621043469}
   Data: {fileID: 3034931660076793492}
+  AreaIndex: 0
   _lookDistance: 4
   _interactionDistance: 2
   _yOffset: 0
   _stunDuration: 2
   _stunCooldown: 5
+  _playerPassDistance: 2
 --- !u!1 &3034931660422021382
 GameObject:
   m_ObjectHideFlags: 0

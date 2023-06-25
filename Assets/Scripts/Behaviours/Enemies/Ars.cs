@@ -10,7 +10,7 @@ public class Ars : Enemy
     private PlayerController _playerController;
     private IEnumerator _attackRoutine;
     private int _attackCounter = 0, _attackResetCounter = 0;
-    private bool _isAwake = false, _isWaiting = false;
+    private bool _isAlive = true, _isAwake = false, _isWaiting = false;
 
     private void Awake()
     {
@@ -19,8 +19,14 @@ public class Ars : Enemy
     }
     private void FixedUpdate()
     {
+        if (!_isAlive)
+            return;
+
         if (Data.Health <= 0)
+        {
             Die();
+            return;
+        }
 
         DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
         EnemyState.Invoke();
@@ -172,8 +178,10 @@ public class Ars : Enemy
 
     private void Die()
     {
+        //AnimController.Play("Anim_Ars_Death");
+        AnimController.SetTrigger("HasDied"); 
+        _isAlive = false;
         GameManager.Instance.InvokeEnemyDeath(this);
-        Destroy(gameObject);
     }
 
     private void Attack2()

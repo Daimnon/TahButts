@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] protected GameObject Target;
     [SerializeField] protected Animator AnimController;
+    [SerializeField] protected GameObject Target;
     [SerializeField] protected SpriteRenderer Renderer;
     [SerializeField] protected EnemyData Data;
     [SerializeField] protected int AreaIndex;
+    [SerializeField] protected float WabbleTime;
     protected Collider2D CurrentHitCollider;
     protected float DistanceFromTarget;
     protected bool IsInteracting = false;
-    
+    protected bool IsHurt;
+
     protected delegate void State();
     protected State EnemyState;
 
@@ -34,7 +37,33 @@ public abstract class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (Data.Health > 0)
+        {
+            StartCoroutine(Wabble(transform.position, WabbleTime));
+            AnimController.SetTrigger("GotPunched");
+            IsHurt = true;
+        }
+
         Data.Health -= damage;
     }
 
+    private IEnumerator Wabble(Vector3 startPos, float duration)
+    {
+        float time = 0;
+        Vector3 newPos = transform.position;
+        
+        while (time < duration)
+        {
+            if (Renderer.flipX)
+                newPos.x = startPos.x - 1;
+            else
+                newPos.x = startPos.x + 1;
+
+            transform.position = newPos;
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+        transform.position = startPos;
+    }
 }

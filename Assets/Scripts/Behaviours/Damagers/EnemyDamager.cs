@@ -21,6 +21,7 @@ public class EnemyDamager : Damager
         {
             Debug.Log($"Hit {other.name}");
             Enemy enemy = other.GetComponent<Enemy>();
+            //enemy.AnimController.StopPlayback();
             enemy.TakeDamage(_damage);
         }
     }
