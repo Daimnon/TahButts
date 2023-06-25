@@ -932,6 +932,10 @@ PrefabInstance:
       propertyPath: AreaIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7031159552422730692, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
+      propertyPath: _attackTime
+      value: 0.617
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
 --- !u!114 &390846016 stripped
