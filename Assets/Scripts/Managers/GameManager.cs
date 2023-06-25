@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<Enemy> _stageOne, _stageTwo, _stageThree, _stageFour;
     [SerializeField] private float[] _stageMaxX;
-    [Range(0, 3)][SerializeField] private int _stageCount = 0;
+    [Range(0, 3)][SerializeField] private int _stageCount = 3;
 
     private List<List<Enemy>> _allStagesEnemies;
     public List<List<Enemy>> AllStagesEnemies => _allStagesEnemies;
@@ -33,9 +33,13 @@ public class GameManager : MonoBehaviour
     private int _currentStage = 0;
     public int CurrentStage => _currentStage;
 
+    private bool _isLevelPlaying = false;
+    public bool IsLevelPlaying => _isLevelPlaying;
+
     private float _timeBetweenStages = 4.0f;
 
     public Action<Enemy> OnEnemyDeath;
+    public Action<Enemy> OnEnemyPass;
 
     private delegate void State();
     private State _stageState;
@@ -58,12 +62,12 @@ public class GameManager : MonoBehaviour
                 if (_allStagesEnemies[i][j] is Ars || _allStagesEnemies[i][j] is Homeless)
                 {
                     _enemiesToDefeatByStage[i]++;
-                    Debug.Log($"Stage: {i}, Enemy: {_allStagesEnemies[i][j]}, Enemies to defeat in this stage: {_enemiesToDefeatByStage[i]}");
                 }
             }
         }
 
         OnEnemyDeath += DelistEnemy;
+        OnEnemyPass += DelistEnemy;
         StartCoroutine(PlayerLoadingScreen(false));
     }
     private void Update()
@@ -73,29 +77,33 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         OnEnemyDeath -= DelistEnemy;
+        OnEnemyPass -= DelistEnemy;
     }
     #endregion
 
     #region Stage States
     private void FirstStage()
     {
-        if (_enemiesToDefeatByStage[0] <= 0 && _player.transform.position.x < _stageMaxX[0])
+        if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[0])
         {
             _stageState = SecondStage;
             _currentStage++;
+            StartCoroutine(UnlockNextArea());
+            Debug.Log("Stage: 01");
         }
     }
     private void SecondStage()
     {
-        if (_enemiesToDefeatByStage[1] <= 0 && _player.transform.position.x < _stageMaxX[1])
+        if (_stageTwo.Count <= 0 && _player.transform.position.x < _stageMaxX[1])
         {
             _stageState = ThirdStage;
             _currentStage++;
+            Debug.Log("Stage: 02");
         }
     }
     private void ThirdStage()
     {
-        if (_enemiesToDefeatByStage[2] <= 0 && _player.transform.position.x < _stageMaxX[2])
+        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
         {
             _stageState = FourthStage;
             _currentStage++;
@@ -113,6 +121,13 @@ public class GameManager : MonoBehaviour
         if (enemy != null)
         {
             OnEnemyDeath?.Invoke(enemy);
+        }
+    }
+    public void InvokeEnemyPass(Enemy enemy)
+    {
+        if (enemy != null)
+        {
+            OnEnemyPass?.Invoke(enemy);
         }
     }
     #endregion
@@ -157,6 +172,7 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
             _loadingScreenTr.position = targetPos;
+            _isLevelPlaying = true;
         }
         else
         {
