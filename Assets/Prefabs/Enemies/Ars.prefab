@@ -217,12 +217,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e55c7c6312acaf489200de061acd658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimController: {fileID: 5379658856693439269}
   Target: {fileID: 0}
   Renderer: {fileID: 7768639604896339}
   Data: {fileID: 965971402}
   AreaIndex: 0
   WabbleTime: 5
+  _animController: {fileID: 5379658856693439269}
   _wakingUpDistance: 9
   _inSightDistance: 7
   _chaseDistance: 6

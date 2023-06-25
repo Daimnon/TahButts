@@ -5,7 +5,6 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] protected Animator AnimController;
     [SerializeField] protected GameObject Target;
     [SerializeField] protected SpriteRenderer Renderer;
     [SerializeField] protected EnemyData Data;
@@ -15,6 +14,9 @@ public abstract class Enemy : MonoBehaviour
     protected float DistanceFromTarget;
     protected bool IsInteracting = false;
     protected bool IsHurt;
+
+    [SerializeField] private Animator _animController;
+    public Animator AnimController => _animController;
 
     protected delegate void State();
     protected State EnemyState;
@@ -40,7 +42,7 @@ public abstract class Enemy : MonoBehaviour
         if (Data.Health > 0)
         {
             StartCoroutine(Wabble(transform.position, WabbleTime));
-            AnimController.SetTrigger("GotPunched");
+            _animController.SetTrigger("GotPunched");
             IsHurt = true;
         }
 

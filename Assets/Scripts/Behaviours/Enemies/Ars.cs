@@ -9,8 +9,11 @@ public class Ars : Enemy
     private GameObject _currentPlayerDamager;
     private PlayerController _playerController;
     private IEnumerator _attackRoutine;
+    private string _punchAnimName;
     private int _attackCounter = 0, _attackResetCounter = 0;
     private bool _isAlive = true, _isAwake = false, _isWaiting = false;
+
+    private AnimatorStateInfo _punchingStateInfo;
 
     private void Awake()
     {
@@ -125,19 +128,12 @@ public class Ars : Enemy
         {
             Attack2();
             _attackCounter++;
+            return;
         }
-        else if (_attackCounter > 0)
+        else if (_attackCounter > 0 && _punchAnimName == "Anim_Ars_Punch" && _punchingStateInfo.normalizedTime >= _attackTime)
         {
-            if (_currentPlayerDamager)
-                Destroy(_currentPlayerDamager);
-        }
-
-        AnimatorStateInfo punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
-        if (punchingStateInfo.normalizedTime >= _attackTime)
-        {
-            //AnimController.SetBool("IsPunching", false);
+            AnimController.ResetTrigger("HasPunched");
             _attackCounter = 0;
-            //AnimController.SetBool("IsPunching", false);
             _isWaiting = true;
             EnemyState = PostInteracting;
             return;
@@ -154,7 +150,6 @@ public class Ars : Enemy
 
         if (DistanceFromTarget <= _interactionDistance)
         {
-            AnimController.SetBool("IsPunching", true);
             EnemyState = Interacting;
             return;
         }
@@ -178,15 +173,17 @@ public class Ars : Enemy
 
     private void Die()
     {
-        //AnimController.Play("Anim_Ars_Death");
         AnimController.SetTrigger("HasDied"); 
+        AnimController.SetBool("IsAlive", false); 
         _isAlive = false;
         GameManager.Instance.InvokeEnemyDeath(this);
     }
 
     private void Attack2()
     {
-        AnimController.SetBool("HasPunched", true);
+        AnimController.SetTrigger("HasPunched");
+        StartCoroutine(GetPunchingAnimation());
+
         Vector3 newScale = Data.HitColliderTr.localScale;
 
         if (Renderer.flipX)
@@ -211,5 +208,12 @@ public class Ars : Enemy
     {
         yield return new WaitForSeconds(time);
         _isWaiting = false;
+    }
+    private IEnumerator GetPunchingAnimation()
+    {
+        yield return null;
+        _punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
+        /*AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
+        string animationName = clipInfo[0].clip.name;*/
     }
 }
