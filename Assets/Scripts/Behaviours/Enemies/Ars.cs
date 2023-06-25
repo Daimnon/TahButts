@@ -18,6 +18,7 @@ public class Ars : Enemy
     private void Awake()
     {
         EnemyState = Sleep;
+        //_punchingStateInfo = AnimController.Get
         //_attackRoutine = Attack();
     }
     private void FixedUpdate()
@@ -188,6 +189,7 @@ public class Ars : Enemy
         _punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
         AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
         _punchAnimName = clipInfo[0].clip.name;
+        //clipInfo.no
         Debug.Log(_punchAnimName);
 
         Vector3 newScale = Data.HitColliderTr.localScale;
