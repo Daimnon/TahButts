@@ -21,6 +21,10 @@ public class Ars : Enemy
         //_punchingStateInfo = AnimController.Get
         //_attackRoutine = Attack();
     }
+    private void Update()
+    {
+        Debug.Log(EnemyState.Method.Name);
+    }
     private void FixedUpdate()
     {
         if (!_isAlive)
@@ -33,10 +37,9 @@ public class Ars : Enemy
         }
 
         DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
-        EnemyState.Invoke();
+        EnemyState.Invoke();   
 
-        Debug.Log(EnemyState.Method.Name);
-        Debug.Log(_punchingStateInfo.normalizedTime);
+        //Debug.Log(EnemyState.Method.Name);
     }
 
     private void Sleep()
@@ -122,6 +125,12 @@ public class Ars : Enemy
     protected override void Interacting()
     {
         _attackResetCounter = 0;
+        AnimatorStateInfo stateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.IsTag("Punch"))
+        {
+            Debug.Log(stateInfo.normalizedTime);
+        }
 
         if (_currentPlayerDamager)
             Destroy(_currentPlayerDamager);
@@ -132,7 +141,7 @@ public class Ars : Enemy
             _attackCounter++;
             return;
         }
-        else if (_attackCounter > 0 && _punchingStateInfo.normalizedTime >= _attackTime)
+        else if (_attackCounter > 0 && stateInfo.IsTag("Punch") && stateInfo.normalizedTime >= _attackTime)
         {
             AnimController.ResetTrigger("HasPunched");
             _attackCounter = 0;
@@ -146,22 +155,29 @@ public class Ars : Enemy
         if (_isWaiting && _attackResetCounter == 0)
         {
             StartCoroutine(ResetWait(_attackTime));
+            AnimController.SetBool("IsStanding", true);
             _attackResetCounter++;
             return;
         }
 
-        if (!_isWaiting && DistanceFromTarget <= _interactionDistance)
+        if (_isWaiting)
         {
+            return;
+        }
+        if (DistanceFromTarget <= _interactionDistance)
+        {
+            AnimController.SetBool("IsStanding", false);
             EnemyState = Interacting;
             return;
         }
-        else if (!_isWaiting && DistanceFromTarget <= _chaseDistance)
+        else if (DistanceFromTarget <= _chaseDistance)
         {
+            AnimController.SetBool("IsStanding", false);
             AnimController.SetBool("IsChasingPlayer", true);
             EnemyState = ChasingPlayer;
             return;
         }
-        else if (!_isWaiting && DistanceFromTarget <= _inSightDistance)
+        else if (DistanceFromTarget <= _inSightDistance)
         {
             EnemyState = PlayerInsight;
             return;
@@ -223,7 +239,7 @@ public class Ars : Enemy
 
         while (_punchingStateInfo.normalizedTime < 1)
         {
-            _punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
+            //_punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
             AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
             _punchAnimName = clipInfo[0].clip.name;
             Debug.Log(_punchAnimName);
