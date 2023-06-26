@@ -127,11 +127,6 @@ public class Ars : Enemy
         _attackResetCounter = 0;
         AnimatorStateInfo stateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
 
-        if (stateInfo.IsTag("Punch"))
-        {
-            Debug.Log(stateInfo.normalizedTime);
-        }
-
         if (_currentPlayerDamager)
             Destroy(_currentPlayerDamager);
 
