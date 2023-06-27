@@ -9,17 +9,21 @@ public class Ars : Enemy
     private GameObject _currentPlayerDamager;
     private PlayerController _playerController;
     private IEnumerator _attackRoutine;
-    private string _punchAnimName;
     private int _attackCounter = 0, _attackResetCounter = 0;
     private bool _isAlive = true, _isAwake = false, _isWaiting = false;
-
-    private AnimatorStateInfo _punchingStateInfo;
 
     private void Awake()
     {
         EnemyState = Sleep;
         //_punchingStateInfo = AnimController.Get
         //_attackRoutine = Attack();
+    }
+    private void Update()
+    {
+        if (AnimController.GetCurrentAnimatorStateInfo(0).IsName("Anim_Ars_SitDown"))
+        {
+            //debug
+        }
     }
     private void FixedUpdate()
     {
@@ -195,11 +199,11 @@ public class Ars : Enemy
         AnimController.SetTrigger("HasPunched");
         //StartCoroutine(GetPunchingAnimation());
 
-        _punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
+/*        _punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
         AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
-        _punchAnimName = clipInfo[0].clip.name;
+        _punchAnimName = clipInfo[0].clip.name;*/
         //clipInfo.no
-        Debug.Log(_punchAnimName);
+        //Debug.Log(_punchAnimName);
 
         Vector3 newScale = Data.HitColliderTr.localScale;
 
@@ -230,13 +234,13 @@ public class Ars : Enemy
     {
         yield return null;
 
-        while (_punchingStateInfo.normalizedTime < 1)
+        /*while (_punchingStateInfo.normalizedTime < 1)
         {
             //_punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
             AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
             _punchAnimName = clipInfo[0].clip.name;
             Debug.Log(_punchAnimName);
             yield return null;
-        }
+        }*/
     }
 }
