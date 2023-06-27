@@ -24,6 +24,10 @@ public class Ars : Enemy
     private void Update()
     {
         Debug.Log(EnemyState.Method.Name);
+        if (AnimController.GetCurrentAnimatorStateInfo(0).IsName("Anim_Ars_SitDown"))
+        {
+            // Debug
+        }
     }
     private void FixedUpdate()
     {
@@ -98,7 +102,7 @@ public class Ars : Enemy
     {
         if (DistanceFromTarget <= _interactionDistance)
         {
-            AnimController.SetBool("IsChasingPlayer", false);
+            //AnimController.SetBool("IsChasingPlayer", false);
             //AnimController.SetBool("HasPunched", true);
             EnemyState = Interacting;
             return;
