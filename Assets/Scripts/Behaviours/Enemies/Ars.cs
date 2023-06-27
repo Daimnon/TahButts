@@ -21,14 +21,6 @@ public class Ars : Enemy
         //_punchingStateInfo = AnimController.Get
         //_attackRoutine = Attack();
     }
-    private void Update()
-    {
-        Debug.Log(EnemyState.Method.Name);
-        if (AnimController.GetCurrentAnimatorStateInfo(0).IsName("Anim_Ars_SitDown"))
-        {
-            // Debug
-        }
-    }
     private void FixedUpdate()
     {
         if (!_isAlive)
@@ -43,7 +35,7 @@ public class Ars : Enemy
         DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
         EnemyState.Invoke();   
 
-        //Debug.Log(EnemyState.Method.Name);
+        Debug.Log(EnemyState.Method.Name);
     }
 
     private void Sleep()
@@ -130,6 +122,7 @@ public class Ars : Enemy
     {
         _attackResetCounter = 0;
         AnimatorStateInfo stateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
+        //AnimController.ResetTrigger("GotPunched");
 
         if (_currentPlayerDamager)
             Destroy(_currentPlayerDamager);
@@ -148,13 +141,14 @@ public class Ars : Enemy
             EnemyState = PostInteracting;
             return;
         }
+        else
+            AnimController.SetBool("IsStanding", true);
     }
     private void PostInteracting()
     {
         if (_isWaiting && _attackResetCounter == 0)
         {
             StartCoroutine(ResetWait(_attackTime));
-            AnimController.SetBool("IsStanding", true);
             _attackResetCounter++;
             return;
         }
