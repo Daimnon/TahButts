@@ -20,11 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _enterLevelTime, _exitLevelTime, _loadingTransitionDuration;
 
     [Header("Stages")]
-    [SerializeField] private int[] _enemiesToDefeatByStage;
-    public int[] EnemiesToDefeatByStage => _enemiesToDefeatByStage;
-
+    [SerializeField] private float[] _stageMaxX = new float[] { 131.5f, 167.55f, 203.6f};
     [SerializeField] private List<Enemy> _stageOne, _stageTwo, _stageThree, _stageFour;
-    [SerializeField] private float[] _stageMaxX;
     [Range (0, 1)][SerializeField] private float _timeBetweenBlinks = 0.5f;
     [Range(0, 3)][SerializeField] private int _stageCount = 3;
 
@@ -49,23 +46,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        _enemiesToDefeatByStage = new int[] { 0, 0, 0, 0 };
+        _allStagesEnemies = new List<List<Enemy>>();
         _stageState = FirstStage;
     }
     private void Start()
     {
         _allStagesEnemies = new List<List<Enemy>> { _stageOne, _stageTwo, _stageThree, _stageFour };
-
-        for (int i = 0; i < _allStagesEnemies.Count; i++)
-        {
-            for (int j = 0; j < _allStagesEnemies[i].Count; j++)
-            {
-                if (_allStagesEnemies[i][j] is Ars || _allStagesEnemies[i][j] is Homeless)
-                {
-                    _enemiesToDefeatByStage[i]++;
-                }
-            }
-        }
 
         OnEnemyDeath += DelistEnemy;
         OnEnemyPass += DelistEnemy;
@@ -90,7 +76,7 @@ public class GameManager : MonoBehaviour
             _stageState = SecondStage;
             _currentStage++;
             StartCoroutine(UnlockNextArea());
-            Debug.Log("Stage: 01");
+            Debug.Log("Stage: 01 completed");
         }
     }
     private void SecondStage()
@@ -99,7 +85,8 @@ public class GameManager : MonoBehaviour
         {
             _stageState = ThirdStage;
             _currentStage++;
-            Debug.Log("Stage: 02");
+            StartCoroutine(UnlockNextArea());
+            Debug.Log("Stage: 02 completed");
         }
     }
     private void ThirdStage()
@@ -108,11 +95,17 @@ public class GameManager : MonoBehaviour
         {
             _stageState = FourthStage;
             _currentStage++;
+            StartCoroutine(UnlockNextArea());
+            Debug.Log("Stage: 03 completed");
         }
     }
     private void FourthStage()
     {
-
+        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
+        {
+            // win level logic
+            Debug.Log("Stage: 03 completed");
+        }
     }
     #endregion
 

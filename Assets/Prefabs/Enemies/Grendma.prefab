@@ -187,10 +187,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  AnimController: {fileID: 3451481281446577566}
   Renderer: {fileID: 3028010813621043469}
   Data: {fileID: 3034931660076793492}
   AreaIndex: 0
+  WabbleTime: 0
+  _animController: {fileID: 3451481281446577566}
   _lookDistance: 4
   _interactionDistance: 2
   _yOffset: 0

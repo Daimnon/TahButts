@@ -218,10 +218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  AnimController: {fileID: 5379658856693439269}
   Renderer: {fileID: 7768639604896339}
   Data: {fileID: 965971402}
   AreaIndex: 1
+  WabbleTime: 0
+  _animController: {fileID: 5379658856693439269}
   _wakingUpDistance: 9
   _inSightDistance: 7
   _chaseDistance: 6

@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Initialize()
-    {
+    {   
         _rb.Sleep();
         _heightBeforeJumping = transform.position.y;
         UIManager.Instance.InitializePlayerHealth(_player);
