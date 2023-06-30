@@ -5,7 +5,6 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] protected GameObject Target;
     [SerializeField] protected SpriteRenderer Renderer;
     [SerializeField] protected EnemyData Data;
     [SerializeField] protected int AreaIndex;
@@ -18,6 +17,8 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private Animator _animController;
     public Animator AnimController => _animController;
 
+    protected GameObject Target;
+    
     protected delegate void State();
     protected State EnemyState;
 
