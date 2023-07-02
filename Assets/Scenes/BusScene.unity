@@ -4634,6 +4634,7 @@ MonoBehaviour:
   _healthLayout: {fileID: 75081295}
   _nextStageBg: {fileID: 727233384}
   _nextStageImg: {fileID: 729927032}
+  _removeHeartDuration: 0.3
   _pauseMenu: {fileID: 483610224}
 --- !u!4 &1587008374
 Transform:
@@ -6054,7 +6055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5761019411065091557, guid: 60aebb03d1be4b14285b0164cb8b0a41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.642758
+      value: -4.142758
       objectReference: {fileID: 0}
     - target: {fileID: 5761019411065091557, guid: 60aebb03d1be4b14285b0164cb8b0a41, type: 3}
       propertyPath: m_LocalPosition.z

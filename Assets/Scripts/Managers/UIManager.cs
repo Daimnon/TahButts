@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _healthIcon;
     [SerializeField] private Transform _healthLayout;
     [SerializeField] private Image _nextStageBg, _nextStageImg;
+    [SerializeField] private float _removeHeartDuration = 0.3f;
 
     [SerializeField] private GameObject _pauseMenu;
     public GameObject PauseMenu => _pauseMenu;
@@ -37,7 +38,22 @@ public class UIManager : MonoBehaviour
     {
         GameObject heartToRemove = _currentHearts[_currentHearts.Count - 1];
         _currentHearts.RemoveAt(_currentHearts.Count - 1);
-        Destroy(heartToRemove);
+        StartCoroutine(HeartTransition(heartToRemove.transform));
+    }
+    private IEnumerator HeartTransition(Transform heartTr)
+    {
+        float time = 0;
+        Vector3 startScale = heartTr.localScale;
+        Vector3 targetScale = Vector3.zero;
+        while (time < _removeHeartDuration)
+        {
+            heartTr.localScale = Vector3.Lerp(startScale, targetScale, time / _removeHeartDuration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        heartTr.localScale = targetScale;
+
+        Destroy(heartTr.gameObject);
     }
     public void AddHeart()
     {

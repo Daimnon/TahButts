@@ -6,9 +6,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInputHandler _player;
-    [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
+
+    [SerializeField] private Animator _animator;
+    public Animator Animator => _animator;
 
     [SerializeField] private Vector2 _xBounds = new(129.95f, 166.0f), _yBounds = new (-6.45f, -1.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
@@ -32,9 +34,10 @@ public class PlayerController : MonoBehaviour
 
     private bool _isUsingHeadphones = false, _isUsingShield = false;
 
-    private bool _isAlive = true, _isStunned = false;
+    private bool _isAlive = true, _isStunned = false, _isHurt;
     public bool IsAlive => _isAlive;
     public bool IsStunned { get => _isStunned; set => _isStunned = value; }
+    public bool IsHurt { get => _isHurt; set => _isHurt = value; }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -255,8 +258,13 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        StartCoroutine(Hurt());
         UIManager.Instance.RemoveHeart();
         _player.Data.Health -= damage;
+    }
+    public void HoldConversation()
+    {
+        StartCoroutine(Converse());
     }
 
     private IEnumerator HandleHitCollider()
@@ -269,6 +277,33 @@ public class PlayerController : MonoBehaviour
 
         Destroy(enemyDamager.gameObject);
     }
+    private IEnumerator Hurt()
+    {
+        _isHurt = true;
+        _animator.SetTrigger("WasHurt");
+
+        AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        while (!stateInfo.IsTag("Hurt"))
+        {
+            stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            yield return null;
+        }
+        while (stateInfo.IsTag("Hurt") && stateInfo.normalizedTime < 1)
+        {
+            stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            yield return null;
+        }
+        _animator.ResetTrigger("WasHurt");
+        _isHurt = false;
+    }
+    private IEnumerator Converse()
+    {
+        _animator.SetBool("IsConversing", true);
+
+        yield return new WaitUntil(() => !_isStunned);
+        _animator.SetBool("IsConversing", false);
+    }
+
 
     private void Die()
     {

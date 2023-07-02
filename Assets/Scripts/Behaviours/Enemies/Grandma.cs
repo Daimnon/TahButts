@@ -90,12 +90,14 @@ public class Grandma : Enemy
         PlayerInputHandler player = Target.GetComponent<PlayerInputHandler>();
         player.Controller.Rb.velocity = Vector2.zero;
         player.Input.enabled = false;
+        player.Controller.Animator.SetTrigger("WasStunned");
         //player.Controller.IsStunned = true;
         yield return new WaitForSeconds(_stunDuration);
 
         Debug.Log("Free");
         //player.Controller.IsStunned = false;
         player.Input.enabled = true;
+        player.Controller.Animator.ResetTrigger("WasStunned");
         _isPlayerStunned = false;
     }
 }
