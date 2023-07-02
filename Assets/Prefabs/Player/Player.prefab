@@ -187,9 +187,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8417699134873629893}
   - component: {fileID: 6909570772618257389}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: WalkCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -395,7 +395,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 2
+  m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7529188736840930646
