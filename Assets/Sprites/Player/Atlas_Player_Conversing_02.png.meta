@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97841eedf0fd717449a69132d1ed201e
+guid: 2ac3a5765b26ff04b8165c0e6924f8e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,169 +116,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_Player_Idle_01_0
+      name: Atlas_Player_Conversing_02_0
       rect:
         serializedVersion: 2
-        x: 177
-        y: 1185
-        width: 225
-        height: 671
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 190
+        y: 1372
+        width: 219
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a9aeb57e2551624cb5cab759f737d50
-      internalID: -1936556491
+      spriteID: 1c7896b99fe78054db1ef8bdd914e9b3
+      internalID: -302603560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Idle_01_1
+      name: Atlas_Player_Conversing_02_1
       rect:
         serializedVersion: 2
-        x: 705
-        y: 1186
-        width: 222
+        x: 761
+        y: 1369
+        width: 219
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f057101726acefb4dbcc841a7ec64e46
+      internalID: -365707081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_02_2
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 1366
+        width: 221
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac384d5ef5468e4882aea9696b27072
+      internalID: -1619152609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_02_3
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 1372
+        width: 221
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f13b69ce3efd34a901f43c4de60961
+      internalID: 2123827837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_02_4
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 683
+        width: 221
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f48206937366c49843493dbf7412f7
+      internalID: -530478729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_02_5
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 684
+        width: 219
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f9f132556f8f6448be7d045226f2f9
+      internalID: 741369461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_02_6
+      rect:
+        serializedVersion: 2
+        x: 1241
+        y: 667
+        width: 219
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bbed9fc3df21504687678b8e4ad1d26
+      internalID: -953843197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_02_7
+      rect:
+        serializedVersion: 2
+        x: 1740
+        y: 684
+        width: 219
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd19a0e0af20c654fb7cf49984a638fb
+      internalID: -1749080784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_02_8
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 5
+        width: 216
         height: 670
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9928d4839a90854fa01129548044e32
-      internalID: -280384531
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Idle_01_2
-      rect:
-        serializedVersion: 2
-        x: 1180
-        y: 1185
-        width: 224
-        height: 669
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aed6959a23edc704eb57d4b0a78d83db
-      internalID: 1648882988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Idle_01_3
-      rect:
-        serializedVersion: 2
-        x: 1685
-        y: 1189
-        width: 224
-        height: 666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19d3bfd55eab03b47a561e1d54ea9650
-      internalID: -2078731594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Idle_01_4
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 277
-        width: 228
-        height: 666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d9d54a710b9cf14f9d84e32dab419db
-      internalID: 1792772084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Idle_01_5
-      rect:
-        serializedVersion: 2
-        x: 697
-        y: 276
-        width: 224
-        height: 666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d78d8287abfaa6b46b4f14b7af413077
-      internalID: 1981359623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Idle_01_6
-      rect:
-        serializedVersion: 2
-        x: 1179
-        y: 276
-        width: 224
-        height: 669
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 994bf32e1df4f3b42a8d50df573889c2
-      internalID: -586083685
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Idle_01_7
-      rect:
-        serializedVersion: 2
-        x: 1683
-        y: 277
-        width: 222
-        height: 670
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32ab7dd5c81649a44856d248c17f37a9
-      internalID: 1064796499
+      spriteID: 6666e345a852d21449b94a99bc982fdf
+      internalID: -387655669
       vertices: []
       indices: 
       edges: []
@@ -294,14 +315,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_Player_Idle_01_5: 1981359623
-      SS_Player_Idle_01_4: 1792772084
-      SS_Player_Idle_01_1: -280384531
-      SS_Player_Idle_01_6: -586083685
-      SS_Player_Idle_01_7: 1064796499
-      SS_Player_Idle_01_3: -2078731594
-      SS_Player_Idle_01_2: 1648882988
-      SS_Player_Idle_01_0: -1936556491
+      Atlas_Player_Conversing_02_8: -387655669
+      Atlas_Player_Conversing_02_3: 2123827837
+      Atlas_Player_Conversing_02_4: -530478729
+      Atlas_Player_Conversing_02_5: 741369461
+      Atlas_Player_Conversing_02_2: -1619152609
+      Atlas_Player_Conversing_02_0: -302603560
+      Atlas_Player_Conversing_02_1: -365707081
+      Atlas_Player_Conversing_02_6: -953843197
+      Atlas_Player_Conversing_02_7: -1749080784
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

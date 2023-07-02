@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 721adda4c28ef9641ac30decca307017
+guid: 628ea2192ae9f9e45a4d455a45b46eff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,106 +116,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_Player_Idle_03_0
+      name: Atlas_Player_Idle_01_0
       rect:
         serializedVersion: 2
-        x: 98
-        y: 1187
-        width: 310
-        height: 674
+        x: 183
+        y: 1370
+        width: 225
+        height: 671
       alignment: 9
-      pivot: {x: 0.61, y: 0}
+      pivot: {x: 0.485, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a50ec4a0a532d1d47847efdb5ae72ea1
-      internalID: -1193324602
+      spriteID: ec6a4d96b2971d1459bd1ac0f770e507
+      internalID: 871484099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Idle_03_1
+      name: Atlas_Player_Idle_01_1
       rect:
         serializedVersion: 2
-        x: 624
-        y: 1184
-        width: 310
-        height: 674
+        x: 711
+        y: 1369
+        width: 222
+        height: 670
       alignment: 9
-      pivot: {x: 0.61, y: 0}
+      pivot: {x: 0.477, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a6d295c1596b814599eccc5bed6a09b
-      internalID: 372914250
+      spriteID: c1b44aa7d9ec50e46b44c62a3aab0105
+      internalID: -716214100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Idle_03_2
+      name: Atlas_Player_Idle_01_2
       rect:
         serializedVersion: 2
-        x: 1112
-        y: 1184
-        width: 310
-        height: 674
+        x: 1235
+        y: 1367
+        width: 224
+        height: 669
       alignment: 9
-      pivot: {x: 0.61, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6828acb5e98a68e4595bf534db00fbe2
-      internalID: -801891588
+      spriteID: 95e0a127d0924534c962ae11823d4ce6
+      internalID: 1466877516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Idle_03_3
+      name: Atlas_Player_Idle_01_3
       rect:
         serializedVersion: 2
-        x: 1599
-        y: 1187
-        width: 310
-        height: 674
+        x: 1735
+        y: 1370
+        width: 224
+        height: 666
       alignment: 9
-      pivot: {x: 0.61, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44bc2659c25ef9d4aa65729c4de1c28d
-      internalID: -2109280642
+      spriteID: a47460202a041a3479ba76d5ef6aae9e
+      internalID: -575262603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Idle_03_4
+      name: Atlas_Player_Idle_01_4
       rect:
         serializedVersion: 2
-        x: 100
-        y: 274
-        width: 310
-        height: 674
+        x: 238
+        y: 654
+        width: 229
+        height: 666
       alignment: 9
-      pivot: {x: 0.61, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93b8a72f549ad3142a4e3e7b3b0ae42d
-      internalID: 1515899561
+      spriteID: 8319950a1ac8984439549217fc6dd6e5
+      internalID: -43101071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Idle_01_5
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 654
+        width: 225
+        height: 666
+      alignment: 9
+      pivot: {x: 0.478, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10769fd16bd332948b12346ac61eddfa
+      internalID: -512784137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Idle_01_6
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 653
+        width: 224
+        height: 669
+      alignment: 9
+      pivot: {x: 0.478, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d6e4ae7accc7247abab6143c48cb8d
+      internalID: 202788178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Idle_01_7
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 653
+        width: 223
+        height: 670
+      alignment: 9
+      pivot: {x: 0.47, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f82246942e25d047a8c8d012175f7c4
+      internalID: -862548632
       vertices: []
       indices: 
       edges: []
@@ -231,11 +294,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_Player_Idle_03_4: 1515899561
-      SS_Player_Idle_03_1: 372914250
-      SS_Player_Idle_03_0: -1193324602
-      SS_Player_Idle_03_3: -2109280642
-      SS_Player_Idle_03_2: -801891588
+      Atlas_Player_Idle_01_4: -43101071
+      Atlas_Player_Idle_01_1: -716214100
+      Atlas_Player_Idle_01_0: 871484099
+      Atlas_Player_Idle_01_5: -512784137
+      Atlas_Player_Idle_01_2: 1466877516
+      Atlas_Player_Idle_01_6: 202788178
+      Atlas_Player_Idle_01_7: -862548632
+      Atlas_Player_Idle_01_3: -575262603
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

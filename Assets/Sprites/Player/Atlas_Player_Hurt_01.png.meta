@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 281a6ad95d38eec448837350d8691913
+guid: b2879e7f4bd30ce4285c1ab23d7073d6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,97 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Atlas_Player_Punch_0
+      name: Atlas_Player_Hurt_01_0
       rect:
         serializedVersion: 2
-        x: 98
-        y: 1184
-        width: 247
-        height: 659
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf016ff18cf3c5b488746e22ed974947
-      internalID: 979452153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atlas_Player_Punch_1
-      rect:
-        serializedVersion: 2
-        x: 647
-        y: 1184
-        width: 288
-        height: 659
-      alignment: 9
-      pivot: {x: 0.4, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b2e6e2a65a23f04990953be469aec89
-      internalID: 1263771040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atlas_Player_Punch_2
-      rect:
-        serializedVersion: 2
-        x: 1132
-        y: 1183
-        width: 353
-        height: 645
-      alignment: 9
-      pivot: {x: 0.4, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52cbc3f576740a44dac3d7c7d5cf378e
-      internalID: -439939238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atlas_Player_Punch_3
-      rect:
-        serializedVersion: 2
-        x: 1618
-        y: 1187
-        width: 292
-        height: 619
-      alignment: 9
-      pivot: {x: 0.43, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e114cf901b817c43af5b23620536471
-      internalID: -2012168392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atlas_Player_Punch_4
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 275
-        width: 274
-        height: 614
+        x: 86
+        y: 1369
+        width: 338
+        height: 655
       alignment: 9
       pivot: {x: 0.63, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,50 +130,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69aed8dc7ef3bf045aee93bb0fbc9f57
-      internalID: -2068999696
+      spriteID: ddc828a773747014bab2a11ea526b2ac
+      internalID: -117406941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_Player_Punch_5
+      name: Atlas_Player_Hurt_01_1
       rect:
         serializedVersion: 2
-        x: 624
-        y: 276
-        width: 252
-        height: 609
+        x: 678
+        y: 1371
+        width: 357
+        height: 636
       alignment: 9
-      pivot: {x: 0.63, y: 0}
+      pivot: {x: 0.425, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc88adfcf0359f74495b865b68a2681a
-      internalID: -1064112524
+      spriteID: 44667b85e84a77a49a26a77b2ac0df2b
+      internalID: -1044263555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_Player_Punch_6
+      name: Atlas_Player_Hurt_01_2
       rect:
         serializedVersion: 2
-        x: 1133
-        y: 277
-        width: 230
-        height: 640
+        x: 1204
+        y: 1370
+        width: 389
+        height: 610
       alignment: 9
-      pivot: {x: 0.57, y: 0}
+      pivot: {x: 0.375, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8ee10cbb2397f44ab6900c1d3f9d56b
-      internalID: 42881783
+      spriteID: ff174218cf671fe41a327c0d99a80b47
+      internalID: 1375419747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Hurt_01_3
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 681
+        width: 444
+        height: 567
+      alignment: 9
+      pivot: {x: 0.352, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beea2b56cc89db44d9b34647f2210019
+      internalID: 1455009469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Hurt_01_4
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 679
+        width: 468
+        height: 579
+      alignment: 9
+      pivot: {x: 0.415, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f31fd200238104f8ba6d9ffa4efa9e
+      internalID: 179873084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Hurt_01_5
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 679
+        width: 333
+        height: 656
+      alignment: 9
+      pivot: {x: 0.64, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2f498227254a549897af98e8e552e0
+      internalID: -2135020728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Hurt_01_6
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 7
+        width: 304
+        height: 665
+      alignment: 9
+      pivot: {x: 0.7, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e717b8fd28ac8459e165c60baeebf6
+      internalID: 1633397079
       vertices: []
       indices: 
       edges: []
@@ -273,13 +273,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Atlas_Player_Punch_2: -439939238
-      Atlas_Player_Punch_0: 979452153
-      Atlas_Player_Punch_3: -2012168392
-      Atlas_Player_Punch_4: -2068999696
-      Atlas_Player_Punch_5: -1064112524
-      Atlas_Player_Punch_6: 42881783
-      Atlas_Player_Punch_1: 1263771040
+      Atlas_Player_Hurt_01_2: 1375419747
+      Atlas_Player_Hurt_01_0: -117406941
+      Atlas_Player_Hurt_01_1: -1044263555
+      Atlas_Player_Hurt_01_6: 1633397079
+      Atlas_Player_Hurt_01_4: 179873084
+      Atlas_Player_Hurt_01_3: 1455009469
+      Atlas_Player_Hurt_01_5: -2135020728
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

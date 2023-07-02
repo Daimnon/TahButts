@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3ac2bbbf36af19c4fa0a6edb91708321
+guid: 8e8414e18573ea74ab2d53a6ef8ea18b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,299 +100,269 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_Player_Punch_01_0
+      name: Atlas_Player_Conversing_01_0
       rect:
         serializedVersion: 2
-        x: 162
-        y: 1537
-        width: 191
-        height: 508
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7b10aa363f2d514cbac9f7df2e65a9d
-      internalID: -972752615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Punch_01_1
-      rect:
-        serializedVersion: 2
-        x: 674
-        y: 1537
-        width: 191
-        height: 508
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed153935956e77c40b87194f53ffc39b
-      internalID: 1844719858
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Punch_01_2
-      rect:
-        serializedVersion: 2
-        x: 1166
-        y: 1537
-        width: 223
-        height: 508
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e97c7274abc307946a830f4ea16ffb56
-      internalID: -2040886728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Punch_01_3
-      rect:
-        serializedVersion: 2
-        x: 1677
-        y: 1537
-        width: 223
-        height: 508
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d3ecf2630aa33f4ba1f57ad6306dce8
-      internalID: -2012955982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Punch_01_4
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 1022
-        width: 272
-        height: 497
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e149dcbbb7fee84bb166b90d71ffacb
-      internalID: 12559273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Punch_01_5
-      rect:
-        serializedVersion: 2
-        x: 632
-        y: 1022
-        width: 272
-        height: 497
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67388e739ba57b04d85b6e475cee303d
-      internalID: -190064037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Punch_01_6
-      rect:
-        serializedVersion: 2
-        x: 1167
-        y: 1022
-        width: 225
-        height: 478
+        x: 210
+        y: 1373
+        width: 210
+        height: 674
       alignment: 9
-      pivot: {x: 0.32, y: 0}
-      border: {x: 0, y: 2, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3423b1b179f711643869c2b70c44196c
-      internalID: 153846999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Punch_01_7
-      rect:
-        serializedVersion: 2
-        x: 1684
-        y: 1025
-        width: 225
-        height: 478
-      alignment: 9
-      pivot: {x: 0.32, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4768e24cba75e9949b284e35111577b8
-      internalID: 468007651
+      spriteID: bc777e97668b2cb4bb860a3c8418d65d
+      internalID: -925804130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Punch_01_8
+      name: Atlas_Player_Conversing_01_1
       rect:
         serializedVersion: 2
-        x: 122
-        y: 510
-        width: 212
-        height: 473
+        x: 716
+        y: 1368
+        width: 221
+        height: 674
       alignment: 9
-      pivot: {x: 0.425, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9d38d4c5a62b0f47ab47fedeaef1e09
-      internalID: -835819186
+      spriteID: 74dc23284096fc74ea0756f6264fea33
+      internalID: 749528955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Punch_01_9
+      name: Atlas_Player_Conversing_01_2
       rect:
         serializedVersion: 2
-        x: 636
-        y: 510
-        width: 212
-        height: 473
+        x: 1228
+        y: 1371
+        width: 221
+        height: 674
       alignment: 9
-      pivot: {x: 0.425, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca16212ea11d9bb4a8c1c74ac53e2e3f
-      internalID: -708617272
+      spriteID: 3f78736f85b3d9a4bb245f61c3df4960
+      internalID: -875886556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Punch_01_10
+      name: Atlas_Player_Conversing_01_3
       rect:
         serializedVersion: 2
-        x: 1156
-        y: 512
-        width: 194
-        height: 470
+        x: 1688
+        y: 1368
+        width: 219
+        height: 671
       alignment: 9
-      pivot: {x: 0.425, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce74da35272e1204a8e16dfd4176f3b1
-      internalID: 922854552
+      spriteID: b45135187759d7d4089fef1a6f697255
+      internalID: -1734455922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Punch_01_11
+      name: Atlas_Player_Conversing_01_4
       rect:
         serializedVersion: 2
-        x: 1665
-        y: 510
-        width: 194
-        height: 470
+        x: 189
+        y: 682
+        width: 219
+        height: 670
       alignment: 9
-      pivot: {x: 0.425, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9654b5ab1f5518b4d9efbe2bbce8b0f9
-      internalID: -886812930
+      spriteID: 9a9e73fba7bd1f44cb7109eba3ed0624
+      internalID: -789861463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Punch_01_12
+      name: Atlas_Player_Conversing_01_5
       rect:
         serializedVersion: 2
-        x: 153
-        y: 4
-        width: 177
-        height: 493
+        x: 703
+        y: 685
+        width: 221
+        height: 665
       alignment: 9
-      pivot: {x: 0.45, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bee7de21f72bfc4788ceedb04509b88
-      internalID: -1976256214
+      spriteID: 26ca6661f2fda414fb21592e10d56a44
+      internalID: 1018103831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Punch_01_13
+      name: Atlas_Player_Conversing_01_6
       rect:
         serializedVersion: 2
-        x: 662
-        y: 2
-        width: 177
-        height: 493
+        x: 1201
+        y: 685
+        width: 221
+        height: 665
       alignment: 9
-      pivot: {x: 0.45, y: 0}
+      pivot: {x: 0.475, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1676ac5b2acaa0c449c3f716182337b1
-      internalID: -1658099030
+      spriteID: 24ad11e06aea5dc4bbbd51c031ddfda8
+      internalID: -1370147176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_01_7
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 682
+        width: 219
+        height: 665
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca68d2def3bd7d45b9ed79897fd48f2
+      internalID: -939382222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_01_8
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 6
+        width: 219
+        height: 665
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9975d1be918d52f4485248993dec712f
+      internalID: -222452773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_01_9
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 6
+        width: 221
+        height: 670
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1fcea1835ed4047a13e4dbc80e9024
+      internalID: -198926529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_01_10
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 3
+        width: 221
+        height: 671
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfde564d46563046aff705d3170d3c3
+      internalID: -1675794802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Player_Conversing_01_11
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 3
+        width: 221
+        height: 674
+      alignment: 9
+      pivot: {x: 0.475, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a11ebad210aba4aaca535d9f9ee189
+      internalID: 700283519
       vertices: []
       indices: 
       edges: []
@@ -408,20 +378,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_Player_Punch_01_1: 1844719858
-      SS_Player_Punch_01_9: -708617272
-      SS_Player_Punch_01_4: 12559273
-      SS_Player_Punch_01_5: -190064037
-      SS_Player_Punch_01_2: -2040886728
-      SS_Player_Punch_01_11: -886812930
-      SS_Player_Punch_01_0: -972752615
-      SS_Player_Punch_01_13: -1658099030
-      SS_Player_Punch_01_6: 153846999
-      SS_Player_Punch_01_3: -2012955982
-      SS_Player_Punch_01_10: 922854552
-      SS_Player_Punch_01_12: -1976256214
-      SS_Player_Punch_01_8: -835819186
-      SS_Player_Punch_01_7: 468007651
+      Atlas_Player_Conversing_01_11: 700283519
+      Atlas_Player_Conversing_01_9: -198926529
+      Atlas_Player_Conversing_01_7: -939382222
+      Atlas_Player_Conversing_01_10: -1675794802
+      Atlas_Player_Conversing_01_1: 749528955
+      Atlas_Player_Conversing_01_0: -925804130
+      Atlas_Player_Conversing_01_6: -1370147176
+      Atlas_Player_Conversing_01_8: -222452773
+      Atlas_Player_Conversing_01_2: -875886556
+      Atlas_Player_Conversing_01_4: -789861463
+      Atlas_Player_Conversing_01_5: 1018103831
+      Atlas_Player_Conversing_01_3: -1734455922
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b7a19006884262d4f9438d8f4756ec1d
+guid: fe6cbf2285b93da41b11d3c645a74730
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,64 +116,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_Player_Death_03_0
+      name: Atlas_Player_Idle_02_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 1183
-        width: 557
-        height: 303
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 168
+        y: 1371
+        width: 216
+        height: 670
+      alignment: 9
+      pivot: {x: 0.455, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0e93b427bba63c4a924b804db121316
-      internalID: 1084840594
+      spriteID: 463825c61d691474191244f67d109ad1
+      internalID: -1591714553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Player_Death_03_1
+      name: Atlas_Player_Idle_02_1
       rect:
         serializedVersion: 2
-        x: 673
-        y: 1186
-        width: 554
-        height: 295
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 636
+        y: 1371
+        width: 312
+        height: 674
+      alignment: 9
+      pivot: {x: 0.65, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c223bfeeb4936643ae1c80a19d957d8
-      internalID: -655786123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SS_Player_Death_03_3
-      rect:
-        serializedVersion: 2
-        x: 1453
-        y: 1186
-        width: 563
-        height: 268
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f80195b9aa39d194db1cf55c0fb979b0
-      internalID: -485421640
+      spriteID: fb46de8b1dd1ffd4f837f64aef54ea21
+      internalID: -1632020977
       vertices: []
       indices: 
       edges: []
@@ -189,11 +168,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_Player_Death_03_3: -485421640
-      SS_Player_Death_03_1: -655786123
-      SS_Player_Death_03_2: 1298503396
-      SS_Player_Death_03_4: -418551957
-      SS_Player_Death_03_0: 1084840594
+      Atlas_Player_Idle_02_1: -1632020977
+      Atlas_Player_Idle_02_0: -1591714553
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
