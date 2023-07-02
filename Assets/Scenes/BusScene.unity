@@ -5774,18 +5774,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 717522144259439809, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
-      propertyPath: m_SleepingMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7243090979384473551, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7243090979384473551, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -5829,14 +5817,6 @@ PrefabInstance:
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7529188736840930645, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7529188736840930646, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930647, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_Name
