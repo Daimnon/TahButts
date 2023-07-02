@@ -13,7 +13,7 @@ public class Homeless : Enemy
     private PlayerController _playerController;
     private IEnumerator _attackRoutine;
     private int _attackCounter = 0, _attackResetCounter = 0;
-    private bool _isAwake = false, _isWaiting = false;
+    private bool _isAlive = true, _isAwake = false, _isWaiting = false;
 
     private void Awake()
     {
@@ -22,8 +22,14 @@ public class Homeless : Enemy
     }
     private void FixedUpdate()
     {
+        if (!_isAlive)
+            return;
+
         if (Data.Health <= 0)
+        {
             Die();
+            return;
+        }
 
         DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
         EnemyState.Invoke();
@@ -93,7 +99,7 @@ public class Homeless : Enemy
     {
         if (DistanceFromTarget <= _interactionDistance)
         {
-            AnimController.SetBool("IsChasingPlayer", false);
+            //AnimController.SetBool("IsChasingPlayer", false);
             //AnimController.SetBool("HasPunched", true);
             EnemyState = Interacting;
             return;
@@ -120,6 +126,7 @@ public class Homeless : Enemy
     protected override void Interacting()
     {
         _attackResetCounter = 0;
+        AnimatorStateInfo stateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
 
         if (_currentPlayerDamager)
             Destroy(_currentPlayerDamager);
@@ -128,19 +135,12 @@ public class Homeless : Enemy
         {
             Attack2();
             _attackCounter++;
+            return;
         }
-        else if (_attackCounter > 0)
+        else if (_attackCounter > 0 && stateInfo.IsTag("Punch") && stateInfo.normalizedTime >= _attackTime)
         {
-            if (_currentPlayerDamager)
-                Destroy(_currentPlayerDamager);
-        }
-
-        AnimatorStateInfo punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
-        if (punchingStateInfo.normalizedTime >= _attackTime)
-        {
-            //AnimController.SetBool("IsPunching", false);
+            AnimController.ResetTrigger("HasPunched");
             _attackCounter = 0;
-            //AnimController.SetBool("IsPunching", false);
             _isWaiting = true;
             EnemyState = PostInteracting;
             return;
@@ -155,9 +155,12 @@ public class Homeless : Enemy
             return;
         }
 
+        if (_isWaiting)
+            return;
+
         if (DistanceFromTarget <= _interactionDistance)
         {
-            AnimController.SetBool("IsPunching", true);
+            //AnimController.SetBool("IsPunching", true);
             EnemyState = Interacting;
             return;
         }
@@ -172,7 +175,7 @@ public class Homeless : Enemy
             EnemyState = PlayerInsight;
             return;
         }
-        else
+        else if (!_isWaiting)
         {
             EnemyState = PlayerNotInsight;
             return;
@@ -181,13 +184,15 @@ public class Homeless : Enemy
 
     private void Die()
     {
+        AnimController.SetTrigger("HasDied");
+        AnimController.SetBool("IsAlive", false);
+        _isAlive = false;
         GameManager.Instance.InvokeEnemyDeath(this);
-        Destroy(gameObject);
     }
 
     private void Attack2()
     {
-        AnimController.SetBool("HasPunched", true);
+        AnimController.SetTrigger("HasPunched");
         Vector3 newScale = Data.HitColliderTr.localScale;
 
         if (Renderer.flipX)

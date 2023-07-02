@@ -261,12 +261,13 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator HandleHitCollider()
     {
+        yield return new WaitForSeconds(0.4f);
         _currentHitCollider = Instantiate(_player.Data.HitColliderGO, _player.Data.HitColliderTr).GetComponent<Collider2D>();
         EnemyDamager enemyDamager = _currentHitCollider.GetComponent<EnemyDamager>();
         enemyDamager.Damage = _player.Data.Power;
         yield return new WaitForSeconds(0.2f);
 
-        Destroy(_currentHitCollider.gameObject);
+        Destroy(enemyDamager.gameObject);
     }
 
     private void Die()

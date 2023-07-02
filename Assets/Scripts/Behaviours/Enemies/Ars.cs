@@ -158,9 +158,8 @@ public class Ars : Enemy
         }
 
         if (_isWaiting)
-        {
             return;
-        }
+
         if (DistanceFromTarget <= _interactionDistance)
         {
             AnimController.SetBool("IsStanding", false);
@@ -197,14 +196,6 @@ public class Ars : Enemy
     private void Attack2()
     {
         AnimController.SetTrigger("HasPunched");
-        //StartCoroutine(GetPunchingAnimation());
-
-/*        _punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
-        AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
-        _punchAnimName = clipInfo[0].clip.name;*/
-        //clipInfo.no
-        //Debug.Log(_punchAnimName);
-
         Vector3 newScale = Data.HitColliderTr.localScale;
 
         if (Renderer.flipX)
@@ -229,18 +220,5 @@ public class Ars : Enemy
     {
         yield return new WaitForSeconds(time);
         _isWaiting = false;
-    }
-    private IEnumerator GetPunchingAnimation()
-    {
-        yield return null;
-
-        /*while (_punchingStateInfo.normalizedTime < 1)
-        {
-            //_punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
-            AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
-            _punchAnimName = clipInfo[0].clip.name;
-            Debug.Log(_punchAnimName);
-            yield return null;
-        }*/
     }
 }

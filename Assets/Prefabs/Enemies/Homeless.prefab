@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449d456a29358444991ec319f737e662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Target: {fileID: 0}
   Renderer: {fileID: 7768639604896339}
   Data: {fileID: 965971402}
   AreaIndex: 1
