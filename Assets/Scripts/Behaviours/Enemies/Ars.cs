@@ -18,13 +18,13 @@ public class Ars : Enemy
         //_punchingStateInfo = AnimController.Get
         //_attackRoutine = Attack();
     }
-    private void Update()
+    /*private void Update()
     {
         if (AnimController.GetCurrentAnimatorStateInfo(0).IsName("Anim_Ars_SitDown"))
         {
             //debug
         }
-    }
+    }*/
     private void FixedUpdate()
     {
         if (!_isAlive)
