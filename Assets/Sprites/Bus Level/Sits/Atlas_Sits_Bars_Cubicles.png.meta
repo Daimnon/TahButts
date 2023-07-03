@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 5308d3b2a6f71504eb1935e0e93ab9a3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1149
+        width: 479
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa45af1d0d937d448224ca39a44029c
+      internalID: 1870626225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_1
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1134
+        width: 475
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87a0fe336b0f9547bbe6e9412e63122
+      internalID: 1696749363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_2
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 1143
+        width: 292
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cb2050c7dc28643b20893ecc511e42
+      internalID: 1752042356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_3
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 1147
+        width: 292
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e990c396a6cc2f4496c6522f7869258
+      internalID: 2001702426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_5
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 739
+        width: 665
+        height: 382
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e654b9c647010b408e18873a1eddc6e
+      internalID: 1687047820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_6
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 728
+        width: 389
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8e6e8df91f5944394239dcf3cbff77
+      internalID: 1730626154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_7
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 735
+        width: 351
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d53f8496364734187a8fa3deb5acf2
+      internalID: 1659040806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_8
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 19
+        width: 476
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0726b5bb098bb74fb248b4c9df62f4a
+      internalID: -857223054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_9
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 318
+        width: 294
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51eb18b5f512a6548bdf066b95d68bf2
+      internalID: 584513327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_10
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 264
+        width: 207
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0dec36772df6e4409570d6edc8d3bc8
+      internalID: -172892299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_11
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 321
+        width: 212
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e01d5547ac2744eab9db9e5f81023c
+      internalID: 807966903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_12
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 326
+        width: 212
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62b614666adf3a4a87f59daca15eb2f
+      internalID: 1045495636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_13
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 17
+        width: 81
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805b82f89ee2b2046b8015a5fbdd9398
+      internalID: 1886335296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_17
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 117
+        width: 617
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817bd99bac9c77249880fcec53d9466f
+      internalID: -1144492206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_22
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 57
+        width: 104
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194108a4da930b445951dec14602b5ce
+      internalID: 742830085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Sits_Bars_Cubicles_23
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 58
+        width: 104
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a348f3c2be1d04e4399ddfc8666887ec
+      internalID: 2111345208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Atlas_Sits_Bars_Cubicles_20: 897846887
+      Atlas_Sits_Bars_Cubicles_3: 2001702426
+      Atlas_Sits_Bars_Cubicles_21: -541372996
+      Atlas_Sits_Bars_Cubicles_9: 584513327
+      Atlas_Sits_Bars_Cubicles_12: 1045495636
+      Atlas_Sits_Bars_Cubicles_0: 1870626225
+      Atlas_Sits_Bars_Cubicles_15: 1651777071
+      Atlas_Sits_Bars_Cubicles_23: 2111345208
+      Atlas_Sits_Bars_Cubicles_18: 772093748
+      Atlas_Sits_Bars_Cubicles_7: 1659040806
+      Atlas_Sits_Bars_Cubicles_4: -1938003909
+      Atlas_Sits_Bars_Cubicles_11: 807966903
+      Atlas_Sits_Bars_Cubicles_14: 471740242
+      Atlas_Sits_Bars_Cubicles_5: 1687047820
+      Atlas_Sits_Bars_Cubicles_6: 1730626154
+      Atlas_Sits_Bars_Cubicles_13: 1886335296
+      Atlas_Sits_Bars_Cubicles_16: -769746743
+      Atlas_Sits_Bars_Cubicles_19: -899798623
+      Atlas_Sits_Bars_Cubicles_1: 1696749363
+      Atlas_Sits_Bars_Cubicles_22: 742830085
+      Atlas_Sits_Bars_Cubicles_2: 1752042356
+      Atlas_Sits_Bars_Cubicles_10: -172892299
+      Atlas_Sits_Bars_Cubicles_17: -1144492206
+      Atlas_Sits_Bars_Cubicles_8: -857223054
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
