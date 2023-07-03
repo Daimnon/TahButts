@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13b5bfb99abe6e94195202141460c45e
+guid: 88814679c8fa73a42a636fc22a953f49
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_0
+      name: Atlas_Grandma_Conversing_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 1538
-        width: 174
-        height: 383
+        x: 39
+        y: 1569
+        width: 208
+        height: 459
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d2670c05253d814680477f841456a52
-      internalID: 36004986
+      spriteID: f204f9f56c9d2bb49a13b3dedc56bc78
+      internalID: 1466045669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_1
+      name: Atlas_Grandma_Conversing_1
       rect:
         serializedVersion: 2
-        x: 677
-        y: 1538
-        width: 173
-        height: 383
+        x: 326
+        y: 1568
+        width: 207
+        height: 460
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0327198745a1d84ca5b766ddd7027a4
-      internalID: 1320966420
+      spriteID: a9350c657275a734aa7beb8ad7be3baf
+      internalID: 1649785954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_2
+      name: Atlas_Grandma_Conversing_2
       rect:
         serializedVersion: 2
-        x: 1189
-        y: 1538
-        width: 175
-        height: 383
+        x: 643
+        y: 1564
+        width: 207
+        height: 461
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d918039ab2fc30247ae9058103301b6f
-      internalID: 872564121
+      spriteID: d5b2aeaf121b06b48bfdca4c8c253aa1
+      internalID: -1012324280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_3
+      name: Atlas_Grandma_Conversing_3
       rect:
         serializedVersion: 2
-        x: 1708
-        y: 1537
-        width: 174
-        height: 384
+        x: 948
+        y: 1563
+        width: 208
+        height: 462
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4755a53d32557da4cae91310f527485d
-      internalID: -880006636
+      spriteID: 3d1cbc073ac8f7e46a422fdf1b22e6fa
+      internalID: -519128309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_4
+      name: Atlas_Grandma_Conversing_4
       rect:
         serializedVersion: 2
-        x: 166
-        y: 1020
-        width: 174
-        height: 384
+        x: 1231
+        y: 1561
+        width: 208
+        height: 462
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35b4e09c3ac5eb14da8aeadd9c6488b2
-      internalID: 1321069276
+      spriteID: b52e4c634b262e24797ac1015582a305
+      internalID: -1252430323
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_5
+      name: Atlas_Grandma_Conversing_5
       rect:
         serializedVersion: 2
-        x: 678
-        y: 1020
-        width: 173
-        height: 384
+        x: 1535
+        y: 1561
+        width: 207
+        height: 463
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efb9771ad1817b04aa521c6548aa140e
-      internalID: -77554283
+      spriteID: 2bf1657ed9639f74485d6f39034737d8
+      internalID: 234163539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_6
+      name: Atlas_Grandma_Conversing_6
       rect:
         serializedVersion: 2
-        x: 1191
-        y: 1022
-        width: 174
-        height: 383
+        x: 1809
+        y: 1562
+        width: 207
+        height: 463
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc27b294b5dc30c44aac698318e6a73d
-      internalID: 1823092513
+      spriteID: 7bb64207006750e428f799df18410cef
+      internalID: -706180888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_7
+      name: Atlas_Grandma_Conversing_7
       rect:
         serializedVersion: 2
-        x: 1706
-        y: 1022
-        width: 173
-        height: 383
+        x: 44
+        y: 984
+        width: 208
+        height: 463
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 235e58e354fc7504e8ea1568642f2472
-      internalID: -1515788049
+      spriteID: c612fb731fb0df446a2f1ebdcc543845
+      internalID: -1870123121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_8
+      name: Atlas_Grandma_Conversing_8
       rect:
         serializedVersion: 2
-        x: 166
-        y: 506
-        width: 174
-        height: 385
+        x: 360
+        y: 987
+        width: 208
+        height: 462
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,20 +286,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9da1bd0b781bc84995dfec3310e61b1
-      internalID: -966523596
+      spriteID: e4e7db72ef303ba4cb244ebd4c0e9e63
+      internalID: 245515008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_9
+      name: Atlas_Grandma_Conversing_9
       rect:
         serializedVersion: 2
-        x: 678
-        y: 506
-        width: 173
-        height: 383
+        x: 675
+        y: 981
+        width: 208
+        height: 461
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,20 +307,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8366bc0dc0ab22498e61f41d2132053
-      internalID: 291113775
+      spriteID: 1ae45cae057f3e04e8df632e9fb14d2d
+      internalID: -657654382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_10
+      name: Atlas_Grandma_Conversing_10
       rect:
         serializedVersion: 2
-        x: 1191
-        y: 507
-        width: 174
-        height: 383
+        x: 950
+        y: 985
+        width: 207
+        height: 461
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,20 +328,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 317012214ab42d046b6eea85d1fb4526
-      internalID: 214441744
+      spriteID: f673b3275aa33a348bd5947d10e387ed
+      internalID: -375657985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Talk_02_11
+      name: Atlas_Grandma_Conversing_11
       rect:
         serializedVersion: 2
-        x: 1706
-        y: 507
-        width: 173
-        height: 383
+        x: 1233
+        y: 986
+        width: 207
+        height: 460
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,8 +349,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33dd0808608a8b47bbe30a97de40410
-      internalID: -325396907
+      spriteID: 4a3e0f7c1f0196644b9756c50c0cc690
+      internalID: -101115887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Grandma_Conversing_12
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 988
+        width: 208
+        height: 459
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d9b7da73ca3d544a1311193c5f4855
+      internalID: 209888728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Grandma_Conversing_13
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 990
+        width: 208
+        height: 459
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161233f1077d4b045bb6f353931374f8
+      internalID: 406365669
       vertices: []
       indices: 
       edges: []
@@ -366,18 +408,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_Grandma_Talk_02_7: -1515788049
-      SS_Grandma_Talk_02_0: 36004986
-      SS_Grandma_Talk_02_6: 1823092513
-      SS_Grandma_Talk_02_8: -966523596
-      SS_Grandma_Talk_02_10: 214441744
-      SS_Grandma_Talk_02_11: -325396907
-      SS_Grandma_Talk_02_3: -880006636
-      SS_Grandma_Talk_02_5: -77554283
-      SS_Grandma_Talk_02_2: 872564121
-      SS_Grandma_Talk_02_4: 1321069276
-      SS_Grandma_Talk_02_9: 291113775
-      SS_Grandma_Talk_02_1: 1320966420
+      Atlas_Grandma_Conversing_11: -101115887
+      Atlas_Grandma_Conversing_3: -519128309
+      Atlas_Grandma_Conversing_10: -375657985
+      Atlas_Grandma_Conversing_8: 245515008
+      Atlas_Grandma_Conversing_13: 406365669
+      Atlas_Grandma_Conversing_4: -1252430323
+      Atlas_Grandma_Conversing_1: 1649785954
+      Atlas_Grandma_Conversing_0: 1466045669
+      Atlas_Grandma_Conversing_2: -1012324280
+      Atlas_Grandma_Conversing_5: 234163539
+      Atlas_Grandma_Conversing_9: -657654382
+      Atlas_Grandma_Conversing_12: 209888728
+      Atlas_Grandma_Conversing_7: -1870123121
+      Atlas_Grandma_Conversing_6: -706180888
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

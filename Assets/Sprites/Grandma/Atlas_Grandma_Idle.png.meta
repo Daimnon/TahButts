@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83fc285551e558e4593d8644accb9961
+guid: 1c76177a354e3eb4288d654494a2a5e5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_0
+      name: Atlas_Grandma_Idle_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 1538
-        width: 174
-        height: 383
+        x: 61
+        y: 1544
+        width: 207
+        height: 459
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e62e5c94fa2449a4ebfeb7a59bfc1869
-      internalID: 1799939878
+      spriteID: 5342f40cc00e3d44fb98b106c92525da
+      internalID: 1930496370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_1
+      name: Atlas_Grandma_Idle_1
       rect:
         serializedVersion: 2
-        x: 677
-        y: 1538
-        width: 174
-        height: 383
+        x: 388
+        y: 1540
+        width: 207
+        height: 460
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f119c36cfeac884b91891adaa03bb92
-      internalID: -202819590
+      spriteID: 0f1d63687cf07d741b2e2e3d88f87a9e
+      internalID: 1455379706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_2
+      name: Atlas_Grandma_Idle_2
       rect:
         serializedVersion: 2
-        x: 1189
-        y: 1538
-        width: 176
-        height: 383
+        x: 757
+        y: 1542
+        width: 207
+        height: 461
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0df4107c5f72574ab72b240c3c65b7d
-      internalID: 413697092
+      spriteID: 883182091778879439d1ce3a0a36c024
+      internalID: 1454035582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_3
+      name: Atlas_Grandma_Idle_3
       rect:
         serializedVersion: 2
-        x: 1708
+        x: 1116
+        y: 1541
+        width: 207
+        height: 462
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4b123a7b3c897438b10320f7ac46b2
+      internalID: -572661711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Grandma_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 1427
         y: 1537
-        width: 174
-        height: 384
+        width: 207
+        height: 462
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82181d150167943468316fdba701637a
-      internalID: -1606451236
+      spriteID: 0e67a1271b3eb534a95ec97f5ee419c0
+      internalID: 1990903486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_4
+      name: Atlas_Grandma_Idle_5
       rect:
         serializedVersion: 2
-        x: 166
-        y: 1020
-        width: 175
-        height: 384
+        x: 1748
+        y: 1535
+        width: 207
+        height: 463
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9154b0c1dba958342a00c8770fd016e0
-      internalID: -1355982206
+      spriteID: 0891f1abcb6fa5c45a4ab2afbc0bec2c
+      internalID: -1332297506
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_5
+      name: Atlas_Grandma_Idle_6
       rect:
         serializedVersion: 2
-        x: 678
-        y: 1020
-        width: 173
-        height: 384
+        x: 98
+        y: 966
+        width: 207
+        height: 463
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f9fa21c13653c64c915d44d08dc612c
-      internalID: 870799672
+      spriteID: 57ff6577e04eb1240be14879a3f34e8e
+      internalID: -584928547
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_6
+      name: Atlas_Grandma_Idle_7
       rect:
         serializedVersion: 2
-        x: 1191
-        y: 1022
-        width: 174
-        height: 383
+        x: 417
+        y: 967
+        width: 207
+        height: 463
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bf6af5f21766a54780b2f3e28386525
-      internalID: -1850749827
+      spriteID: d62e8cfb87179ce428700cadfc6f44eb
+      internalID: -78735108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_7
+      name: Atlas_Grandma_Idle_8
       rect:
         serializedVersion: 2
-        x: 1706
-        y: 1022
-        width: 173
-        height: 383
+        x: 757
+        y: 964
+        width: 207
+        height: 462
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +286,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09c616c101f738a4eb71ab3650617210
-      internalID: 210255843
+      spriteID: 9f17974b8b540cb41b0bc313cc3bf4be
+      internalID: 528053476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_8
+      name: Atlas_Grandma_Idle_9
       rect:
         serializedVersion: 2
-        x: 166
-        y: 506
-        width: 174
-        height: 385
+        x: 1120
+        y: 964
+        width: 207
+        height: 461
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,20 +307,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05f25983bad261949ba13eda3e8292b7
-      internalID: -903544467
+      spriteID: 0942834c6e4243848b3bb7a656c3f699
+      internalID: 2065527211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_9
+      name: Atlas_Grandma_Idle_10
       rect:
         serializedVersion: 2
-        x: 678
-        y: 506
-        width: 174
-        height: 383
+        x: 1440
+        y: 957
+        width: 207
+        height: 461
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,20 +328,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44e7af992d28d954dad8b0e2e7204be5
-      internalID: 1224895257
+      spriteID: d5811c1358f7c614aa057771a5c6a17d
+      internalID: 359500980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_10
+      name: Atlas_Grandma_Idle_11
       rect:
         serializedVersion: 2
-        x: 1191
-        y: 507
-        width: 175
-        height: 383
+        x: 1755
+        y: 968
+        width: 207
+        height: 460
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,20 +349,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8011799c60dfa4447badec3dbe4ad862
-      internalID: 1563964358
+      spriteID: 2d5c7c7775122a74988fbcfdd2c9a32d
+      internalID: 34823613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_11
+      name: Atlas_Grandma_Idle_12
       rect:
         serializedVersion: 2
-        x: 1706
-        y: 507
-        width: 174
-        height: 384
+        x: 103
+        y: 374
+        width: 207
+        height: 459
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,20 +370,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a8312f2894fd7d43a8f32b3ee950144
-      internalID: -597237088
+      spriteID: 8732ddfd7e6ea8b4b85ee0cc67085e6d
+      internalID: 411518958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SS_Grandma_Idle_01_12
+      name: Atlas_Grandma_Idle_13
       rect:
         serializedVersion: 2
-        x: 1706
-        y: 6
-        width: 174
-        height: 383
+        x: 445
+        y: 383
+        width: 207
+        height: 459
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,8 +391,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b0518f5cd859984c981a509df0f2774
-      internalID: -369061376
+      spriteID: e78dbd556f2cb984491ff550e38a7148
+      internalID: -1483274038
       vertices: []
       indices: 
       edges: []
@@ -387,19 +408,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SS_Grandma_Idle_01_2: 413697092
-      SS_Grandma_Idle_01_0: 1799939878
-      SS_Grandma_Idle_01_9: 1224895257
-      SS_Grandma_Idle_01_12: -369061376
-      SS_Grandma_Idle_01_10: 1563964358
-      SS_Grandma_Idle_01_6: -1850749827
-      SS_Grandma_Idle_01_4: -1355982206
-      SS_Grandma_Idle_01_3: -1606451236
-      SS_Grandma_Idle_01_1: -202819590
-      SS_Grandma_Idle_01_5: 870799672
-      SS_Grandma_Idle_01_8: -903544467
-      SS_Grandma_Idle_01_11: -597237088
-      SS_Grandma_Idle_01_7: 210255843
+      Atlas_Grandma_Idle_11: 34823613
+      Atlas_Grandma_Idle_5: -1332297506
+      Atlas_Grandma_Idle_3: -572661711
+      Atlas_Grandma_Idle_7: -78735108
+      Atlas_Grandma_Idle_6: -584928547
+      Atlas_Grandma_Idle_4: 1990903486
+      Atlas_Grandma_Idle_10: 359500980
+      Atlas_Grandma_Idle_1: 1455379706
+      Atlas_Grandma_Idle_8: 528053476
+      Atlas_Grandma_Idle_12: 411518958
+      Atlas_Grandma_Idle_0: 1930496370
+      Atlas_Grandma_Idle_2: 1454035582
+      Atlas_Grandma_Idle_13: -1483274038
+      Atlas_Grandma_Idle_9: 2065527211
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

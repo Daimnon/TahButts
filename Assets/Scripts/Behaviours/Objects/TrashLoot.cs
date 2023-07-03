@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrashLoot : MonoBehaviour
 {
-    [SerializeField] private Homeless _owner;
+    [SerializeField] private Enemy _owner;
     private const string _playerTag = "Player";
 
     /*private delegate void State();
@@ -23,7 +23,10 @@ public class TrashLoot : MonoBehaviour
     {
         if (collision.CompareTag(_playerTag))
         {
-            _owner.ShouldWakeUp = true;
+            if (_owner is Homeless)
+                (_owner as Homeless).ShouldWakeUp = true;
+            else if (_owner is Grandma)
+                (_owner as Grandma).StunPlayer();
             // make sound
             // do effect
         }

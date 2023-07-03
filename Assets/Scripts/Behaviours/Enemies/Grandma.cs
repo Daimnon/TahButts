@@ -14,14 +14,14 @@ public class Grandma : Enemy
     private void Awake()
     {
         EnemyState = PlayerNotInsight;
-        _stunRoutine = StunPlayer(_stunCooldown);
+        _stunRoutine = DoStun(_stunCooldown);
     }
     private void Update()
     {
         /*if (Data.Health <= 0)
             Die();*/
+        /*DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
 
-        DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
 
         if (DistanceFromTarget < _lookDistance && DistanceFromTarget > _interactionDistance)
             EnemyState = PlayerInsight;
@@ -30,17 +30,20 @@ public class Grandma : Enemy
         else
             EnemyState = PlayerNotInsight;
 
-        EnemyState.Invoke();
+        EnemyState.Invoke();*/
+
+        if (Target.transform.position.x < transform.position.x - _playerPassDistance)
+            GameManager.Instance.InvokeEnemyPass(this);
     }
 
     protected override void PlayerInsight() //chase after player
     {
         IsInteracting = false;
 
-        /*if (transform.position.x > Target.transform.position.x)
+        if (transform.position.x > Target.transform.position.x)
             Renderer.flipX = true;
         else
-            Renderer.flipX = false;*/
+            Renderer.flipX = false;
 
         Debug.Log("Grandma sees you");
         // feedback for seeing player
@@ -59,20 +62,26 @@ public class Grandma : Enemy
             IsInteracting = true;
         }
     }
-    private void Die()
+    /*private void Die()
     {
         Destroy(gameObject);
-    }
+    }*/
+    public void StunPlayer()
+    {
+        AnimController.SetBool("IsTalking", true);
+        IsInteracting = true;
 
-    private IEnumerator StunPlayer(float stunCooldown)
+        StartCoroutine(_stunRoutine);
+    }
+    private IEnumerator DoStun(float stunCooldown)
     {
         StartCoroutine(HandleStun());
         _stunRoutine = null;
-        _stunRoutine = StunPlayer(stunCooldown);
+        _stunRoutine = DoStun(stunCooldown);
         yield return new WaitForSeconds(stunCooldown);
         Debug.Log("StunPlayer");
 
-        if (DistanceFromTarget <= _interactionDistance)
+        /*if (DistanceFromTarget <= _interactionDistance)
         {
             StartCoroutine(_stunRoutine);
             Debug.Log("Grandma is talking");
@@ -82,7 +91,7 @@ public class Grandma : Enemy
             AnimController.SetBool("IsTalking", false);
             IsInteracting = false;
             Debug.Log("Grandma is confused");
-        }
+        }*/
     }
     private IEnumerator HandleStun()
     {
@@ -99,5 +108,7 @@ public class Grandma : Enemy
         player.Input.enabled = true;
         player.Controller.Animator.ResetTrigger("WasStunned");
         _isPlayerStunned = false;
+        AnimController.SetBool("IsTalking", false);
+        IsInteracting = false;
     }
 }
