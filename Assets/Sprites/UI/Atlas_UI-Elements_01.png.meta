@@ -1,0 +1,261 @@
+fileFormatVersion: 2
+guid: d302421b293a2354ab5f748b28eb530b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Atlas_UI-Elements_01_57
+      rect:
+        serializedVersion: 2
+        x: 2455
+        y: 3190
+        width: 1741
+        height: 577
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38baaca56927a94b8ce6b8a741c37c7
+      internalID: -264659364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI-Elements_01_59
+      rect:
+        serializedVersion: 2
+        x: 2341
+        y: 1666
+        width: 1415
+        height: 1110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af65ef9a7d06f94c96ae9b158d6445e
+      internalID: -529582797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI-Elements_01_60
+      rect:
+        serializedVersion: 2
+        x: 4262
+        y: 1666
+        width: 1414
+        height: 1110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de88519d1e5003a4e85b8c05fcadbd93
+      internalID: 1168589761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Atlas_UI-Elements_01_55: 275177276
+      Atlas_UI-Elements_01_1: 75232230
+      Atlas_UI-Elements_01_0: -1292181500
+      Atlas_UI-Elements_01_62: 873988388
+      Atlas_UI-Elements_01_15: -290547742
+      Atlas_UI-Elements_01_22: -61843472
+      Atlas_UI-Elements_01_24: -1986343033
+      Atlas_UI-Elements_01_20: -53135344
+      Atlas_UI-Elements_01_21: -1519653230
+      Atlas_UI-Elements_01_57: -264659364
+      Atlas_UI-Elements_01_18: -1482315646
+      Atlas_UI-Elements_01_39: 2067447448
+      Atlas_UI-Elements_01_12: 1760586773
+      Atlas_UI-Elements_01_7: 2142513476
+      Atlas_UI-Elements_01_51: 1882821539
+      Atlas_UI-Elements_01_33: 1524424745
+      Atlas_UI-Elements_01_34: -1152310488
+      Atlas_UI-Elements_01_19: 1954408218
+      Atlas_UI-Elements_01_61: -175218176
+      Atlas_UI-Elements_01_14: -995237701
+      Atlas_UI-Elements_01_59: -529582797
+      Atlas_UI-Elements_01_29: -1495933981
+      Atlas_UI-Elements_01_4: -548992791
+      Atlas_UI-Elements_01_9: -597338126
+      Atlas_UI-Elements_01_58: 416370000
+      Atlas_UI-Elements_01_30: 1605075176
+      Atlas_UI-Elements_01_31: -1584900020
+      Atlas_UI-Elements_01_5: -444382210
+      Atlas_UI-Elements_01_16: 1355380031
+      Atlas_UI-Elements_01_17: 2012338875
+      Atlas_UI-Elements_01_45: 1867822254
+      Atlas_UI-Elements_01_28: -1192525308
+      Atlas_UI-Elements_01_13: -737087616
+      Atlas_UI-Elements_01_8: 816678464
+      Atlas_UI-Elements_01_32: -23937457
+      Atlas_UI-Elements_01_50: 366339356
+      Atlas_UI-Elements_01_38: 1018016103
+      Atlas_UI-Elements_01_56: 1233004739
+      Atlas_UI-Elements_01_42: 1523567607
+      Atlas_UI-Elements_01_46: -14040060
+      Atlas_UI-Elements_01_54: 788519940
+      Atlas_UI-Elements_01_3: -1131648796
+      Atlas_UI-Elements_01_26: -420312810
+      Atlas_UI-Elements_01_52: 1990953369
+      Atlas_UI-Elements_01_63: 577380401
+      Atlas_UI-Elements_01_40: -1161083867
+      Atlas_UI-Elements_01_41: 1323398226
+      Atlas_UI-Elements_01_27: -1174719186
+      Atlas_UI-Elements_01_2: -1179751894
+      Atlas_UI-Elements_01_37: 1644810653
+      Atlas_UI-Elements_01_53: 794648183
+      Atlas_UI-Elements_01_48: -1865374813
+      Atlas_UI-Elements_01_6: -709553350
+      Atlas_UI-Elements_01_35: -417883032
+      Atlas_UI-Elements_01_60: 1168589761
+      Atlas_UI-Elements_01_44: 1546804264
+      Atlas_UI-Elements_01_47: -1720851292
+      Atlas_UI-Elements_01_10: -133472540
+      Atlas_UI-Elements_01_36: 2054642100
+      Atlas_UI-Elements_01_43: 1784971352
+      Atlas_UI-Elements_01_23: -46567430
+      Atlas_UI-Elements_01_11: 235960415
+      Atlas_UI-Elements_01_25: 1979193512
+      Atlas_UI-Elements_01_49: 1791875041
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
