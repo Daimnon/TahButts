@@ -9,11 +9,8 @@ public class Ars : Enemy
     private GameObject _currentPlayerDamager;
     private PlayerController _playerController;
     private IEnumerator _attackRoutine;
-    private string _punchAnimName;
     private int _attackCounter = 0, _attackResetCounter = 0;
     private bool _isAlive = true, _isAwake = false, _isWaiting = false;
-
-    private AnimatorStateInfo _punchingStateInfo;
 
     private void Awake()
     {
@@ -21,6 +18,13 @@ public class Ars : Enemy
         //_punchingStateInfo = AnimController.Get
         //_attackRoutine = Attack();
     }
+    /*private void Update()
+    {
+        if (AnimController.GetCurrentAnimatorStateInfo(0).IsName("Anim_Ars_SitDown"))
+        {
+            //debug
+        }
+    }*/
     private void FixedUpdate()
     {
         if (!_isAlive)
@@ -154,9 +158,8 @@ public class Ars : Enemy
         }
 
         if (_isWaiting)
-        {
             return;
-        }
+
         if (DistanceFromTarget <= _interactionDistance)
         {
             AnimController.SetBool("IsStanding", false);
@@ -193,14 +196,6 @@ public class Ars : Enemy
     private void Attack2()
     {
         AnimController.SetTrigger("HasPunched");
-        //StartCoroutine(GetPunchingAnimation());
-
-        _punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
-        AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
-        _punchAnimName = clipInfo[0].clip.name;
-        //clipInfo.no
-        Debug.Log(_punchAnimName);
-
         Vector3 newScale = Data.HitColliderTr.localScale;
 
         if (Renderer.flipX)
@@ -225,18 +220,5 @@ public class Ars : Enemy
     {
         yield return new WaitForSeconds(time);
         _isWaiting = false;
-    }
-    private IEnumerator GetPunchingAnimation()
-    {
-        yield return null;
-
-        while (_punchingStateInfo.normalizedTime < 1)
-        {
-            //_punchingStateInfo = AnimController.GetCurrentAnimatorStateInfo(0);
-            AnimatorClipInfo[] clipInfo = AnimController.GetCurrentAnimatorClipInfo(0);
-            _punchAnimName = clipInfo[0].clip.name;
-            Debug.Log(_punchAnimName);
-            yield return null;
-        }
     }
 }

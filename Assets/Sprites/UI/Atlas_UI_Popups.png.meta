@@ -1,0 +1,556 @@
+fileFormatVersion: 2
+guid: 7b1b4011af9030b4598811f11ec9c8ce
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 6326
+        width: 4972
+        height: 1574
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b189aab369ed2e14684840b66484d47d
+      internalID: 827030993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_10
+      rect:
+        serializedVersion: 2
+        x: 5916
+        y: 6533
+        width: 1417
+        height: 813
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b27bb4afef448848a4a9bd24764d212
+      internalID: -796221308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_12
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 3256
+        width: 2989
+        height: 2519
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc0ff469156b134784b1c594a81af5d
+      internalID: 1253362630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_13
+      rect:
+        serializedVersion: 2
+        x: 3174
+        y: 5225
+        width: 1672
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc9d45e3dd7a7f49b7f1d16d56f1e86
+      internalID: -649983913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_14
+      rect:
+        serializedVersion: 2
+        x: 4983
+        y: 5029
+        width: 1390
+        height: 1028
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b92646744b120744bfd8c26147d181d
+      internalID: -404872561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_18
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 4870
+        width: 51
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c728f0dbdeaca374396449e2fcbf53bd
+      internalID: -2122360599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_23
+      rect:
+        serializedVersion: 2
+        x: 3532
+        y: 4869
+        width: 962
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a337fd6b85047524cb9505a4161d0c8a
+      internalID: 1525487079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_24
+      rect:
+        serializedVersion: 2
+        x: 5100
+        y: 4682
+        width: 320
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd195b3676395340bc5220001f1400a
+      internalID: -852306890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_25
+      rect:
+        serializedVersion: 2
+        x: 3334
+        y: 4182
+        width: 1340
+        height: 429
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9244555765fbb5349956197f5750b7a0
+      internalID: 1746332051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_26
+      rect:
+        serializedVersion: 2
+        x: 4932
+        y: 4061
+        width: 656
+        height: 527
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31d0af295df7d448b8c76bb361ec63d
+      internalID: -1576104837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_55
+      rect:
+        serializedVersion: 2
+        x: 3318
+        y: 3455
+        width: 1368
+        height: 473
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc17054bd24bbe04a8f1923d38c0e71a
+      internalID: 1102608968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_56
+      rect:
+        serializedVersion: 2
+        x: 4912
+        y: 3486
+        width: 695
+        height: 567
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32281625c7b69da45bf447971f5d3829
+      internalID: 1125982131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_57
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 119
+        width: 2988
+        height: 2520
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3aaf201f0945a74ba90c0c0f17d6c65
+      internalID: 69990080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_58
+      rect:
+        serializedVersion: 2
+        x: 3268
+        y: 2010
+        width: 2414
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e987a67a56919e489c5ce473f175f8a
+      internalID: 1355513529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_60
+      rect:
+        serializedVersion: 2
+        x: 5913
+        y: 1156
+        width: 266
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57ff32a08961db42a971cc80b6be7b2
+      internalID: 682565793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_UI_Popups_62
+      rect:
+        serializedVersion: 2
+        x: 3318
+        y: 252
+        width: 1418
+        height: 976
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675e9625beaada947b9ddf9fc61408e1
+      internalID: 1452579714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Atlas_UI_Popups_67: -127806648
+      Atlas_UI_Popups_7: -1840693215
+      Atlas_UI_Popups_80: -2038518413
+      Atlas_UI_Popups_22: -1539740702
+      Atlas_UI_Popups_41: -1103865262
+      Atlas_UI_Popups_43: 1694499542
+      Atlas_UI_Popups_58: 1355513529
+      Atlas_UI_Popups_81: 971563177
+      Atlas_UI_Popups_83: -270651724
+      Atlas_UI_Popups_70: -233593237
+      Atlas_UI_Popups_53: -815740313
+      Atlas_UI_Popups_82: -1533457069
+      Atlas_UI_Popups_25: 1746332051
+      Atlas_UI_Popups_56: 1125982131
+      Atlas_UI_Popups_66: 571835850
+      Atlas_UI_Popups_47: -727835036
+      Atlas_UI_Popups_42: 1923931267
+      Atlas_UI_Popups_57: 69990080
+      Atlas_UI_Popups_40: -1511191255
+      Atlas_UI_Popups_55: 1102608968
+      Atlas_UI_Popups_24: -852306890
+      Atlas_UI_Popups_62: 1452579714
+      Atlas_UI_Popups_39: -952040719
+      Atlas_UI_Popups_36: 71376165
+      Atlas_UI_Popups_4: -198984644
+      Atlas_UI_Popups_79: 1122462686
+      Atlas_UI_Popups_52: 1008975380
+      Atlas_UI_Popups_9: 587868268
+      Atlas_UI_Popups_1: 185388747
+      Atlas_UI_Popups_6: 756692101
+      Atlas_UI_Popups_61: -1198062198
+      Atlas_UI_Popups_23: 1525487079
+      Atlas_UI_Popups_32: -1440173437
+      Atlas_UI_Popups_15: 2112080840
+      Atlas_UI_Popups_78: -1420937430
+      Atlas_UI_Popups_27: 535941227
+      Atlas_UI_Popups_48: 117683461
+      Atlas_UI_Popups_63: -949891015
+      Atlas_UI_Popups_26: -1576104837
+      Atlas_UI_Popups_16: -1907498462
+      Atlas_UI_Popups_74: 42708004
+      Atlas_UI_Popups_77: 1391797246
+      Atlas_UI_Popups_69: 641615624
+      Atlas_UI_Popups_35: -1386054208
+      Atlas_UI_Popups_65: 1385913511
+      Atlas_UI_Popups_51: -1803189839
+      Atlas_UI_Popups_20: -1059159405
+      Atlas_UI_Popups_49: 687380033
+      Atlas_UI_Popups_60: 682565793
+      Atlas_UI_Popups_12: 1253362630
+      Atlas_UI_Popups_28: 1273978490
+      Atlas_UI_Popups_44: -1870357606
+      Atlas_UI_Popups_3: 2005270284
+      Atlas_UI_Popups_14: -404872561
+      Atlas_UI_Popups_68: -1074598471
+      Atlas_UI_Popups_59: 1404502714
+      Atlas_UI_Popups_73: -1432478950
+      Atlas_UI_Popups_29: -463234216
+      Atlas_UI_Popups_45: -152129685
+      Atlas_UI_Popups_30: -1906470727
+      Atlas_UI_Popups_13: -649983913
+      Atlas_UI_Popups_38: -158127151
+      Atlas_UI_Popups_72: 1929189721
+      Atlas_UI_Popups_11: -1470150385
+      Atlas_UI_Popups_75: 1581442969
+      Atlas_UI_Popups_71: -1025282414
+      Atlas_UI_Popups_8: 740144200
+      Atlas_UI_Popups_2: 43504367
+      Atlas_UI_Popups_46: -903009143
+      Atlas_UI_Popups_5: 523829670
+      Atlas_UI_Popups_33: 2129436850
+      Atlas_UI_Popups_21: -722634452
+      Atlas_UI_Popups_17: 1386045728
+      Atlas_UI_Popups_54: 86464114
+      Atlas_UI_Popups_31: 2140880679
+      Atlas_UI_Popups_76: -612969962
+      Atlas_UI_Popups_19: 1174682569
+      Atlas_UI_Popups_64: -643576640
+      Atlas_UI_Popups_85: 1557081271
+      Atlas_UI_Popups_10: -796221308
+      Atlas_UI_Popups_34: 913333242
+      Atlas_UI_Popups_37: -784526180
+      Atlas_UI_Popups_18: -2122360599
+      Atlas_UI_Popups_50: 744602793
+      Atlas_UI_Popups_84: 274295336
+      Atlas_UI_Popups_0: 827030993
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInputHandler _player;
-    [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rb;
     public Rigidbody2D Rb => _rb;
+
+    [SerializeField] private Animator _animator;
+    public Animator Animator => _animator;
 
     [SerializeField] private Vector2 _xBounds = new(129.95f, 166.0f), _yBounds = new (-6.45f, -1.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
@@ -32,9 +35,10 @@ public class PlayerController : MonoBehaviour
 
     private bool _isUsingHeadphones = false, _isUsingShield = false;
 
-    private bool _isAlive = true, _isStunned = false;
+    private bool _isAlive = true, _isStunned = false, _isHurt;
     public bool IsAlive => _isAlive;
     public bool IsStunned { get => _isStunned; set => _isStunned = value; }
+    public bool IsHurt { get => _isHurt; set => _isHurt = value; }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -161,6 +165,12 @@ public class PlayerController : MonoBehaviour
         if (!_isAlive)
         {
             transform.position = _lastPositionBeforeDeath;
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            if (stateInfo.IsTag("Death") && stateInfo.normalizedTime > 0.9)
+            {
+                UIManager.Instance.EndPopUp.SetActive(true);
+                UIManager.Instance.EndLose.SetActive(true);
+            }
             return;
         }
 
@@ -183,7 +193,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Initialize()
-    {
+    {   
         _rb.Sleep();
         _heightBeforeJumping = transform.position.y;
         UIManager.Instance.InitializePlayerHealth(_player);
@@ -255,22 +265,67 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        if (!_isAlive)
+            return;
+
+        StartCoroutine(Hurt());
         UIManager.Instance.RemoveHeart();
         _player.Data.Health -= damage;
+    }
+    public void HoldConversation()
+    {
+        StartCoroutine(Converse());
     }
 
     private IEnumerator HandleHitCollider()
     {
+        yield return new WaitForSeconds(0.4f);
         _currentHitCollider = Instantiate(_player.Data.HitColliderGO, _player.Data.HitColliderTr).GetComponent<Collider2D>();
         EnemyDamager enemyDamager = _currentHitCollider.GetComponent<EnemyDamager>();
         enemyDamager.Damage = _player.Data.Power;
         yield return new WaitForSeconds(0.2f);
 
-        Destroy(_currentHitCollider.gameObject);
+        Destroy(enemyDamager.gameObject);
     }
+    private IEnumerator Hurt()
+    {
+        if (_player.Data.Health == 1)
+            yield break;
+
+        _isHurt = true;
+        _animator.SetTrigger("WasHurt");
+
+        AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        while (!stateInfo.IsTag("Hurt"))
+        {
+            stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            yield return null;
+        }
+        while (stateInfo.IsTag("Hurt") && stateInfo.normalizedTime < 1)
+        {
+            stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            yield return null;
+        }
+        _animator.ResetTrigger("WasHurt");
+        _isHurt = false;
+
+        //if (!_isAlive)
+        //    _animator.SetTrigger("HasDied");
+    }
+    private IEnumerator Converse()
+    {
+        _animator.SetBool("IsConversing", true);
+
+        yield return new WaitUntil(() => !_isStunned);
+        _animator.SetBool("IsConversing", false);
+    }
+
 
     private void Die()
     {
+        if (!_isAlive)
+            return;
+
         _isAlive = false;
         _animator.SetTrigger("HasDied");
 

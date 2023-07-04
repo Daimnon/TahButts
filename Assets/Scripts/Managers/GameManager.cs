@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance => _instance;
 
-
     [Header("General")]
     [SerializeField] private PlayerInputHandler _player;
     public PlayerInputHandler Player => _player;
@@ -20,13 +19,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float _enterLevelTime, _exitLevelTime, _loadingTransitionDuration;
 
     [Header("Stages")]
-    [SerializeField] private int[] _enemiesToDefeatByStage;
-    public int[] EnemiesToDefeatByStage => _enemiesToDefeatByStage;
-
+    [SerializeField] private float[] _stageMaxX = new float[] { 131.5f, 167.55f, 203.6f};
     [SerializeField] private List<Enemy> _stageOne, _stageTwo, _stageThree, _stageFour;
-    [SerializeField] private float[] _stageMaxX;
     [Range (0, 1)][SerializeField] private float _timeBetweenBlinks = 0.5f;
-    [Range(0, 3)][SerializeField] private int _stageCount = 3;
+    [Range(0, 3)][SerializeField] private int _stageCount = 4;
 
     private List<List<Enemy>> _allStagesEnemies;
     public List<List<Enemy>> AllStagesEnemies => _allStagesEnemies;
@@ -49,23 +45,12 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-        _enemiesToDefeatByStage = new int[] { 0, 0, 0, 0 };
+        _allStagesEnemies = new List<List<Enemy>>();
         _stageState = FirstStage;
     }
     private void Start()
     {
         _allStagesEnemies = new List<List<Enemy>> { _stageOne, _stageTwo, _stageThree, _stageFour };
-
-        for (int i = 0; i < _allStagesEnemies.Count; i++)
-        {
-            for (int j = 0; j < _allStagesEnemies[i].Count; j++)
-            {
-                if (_allStagesEnemies[i][j] is Ars || _allStagesEnemies[i][j] is Homeless)
-                {
-                    _enemiesToDefeatByStage[i]++;
-                }
-            }
-        }
 
         OnEnemyDeath += DelistEnemy;
         OnEnemyPass += DelistEnemy;
@@ -85,34 +70,42 @@ public class GameManager : MonoBehaviour
     #region Stage States
     private void FirstStage()
     {
-        if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[0])
+        if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[3])
         {
             _stageState = SecondStage;
             _currentStage++;
             StartCoroutine(UnlockNextArea());
-            Debug.Log("Stage: 01");
+            Debug.Log("Stage: 01 completed");
         }
     }
     private void SecondStage()
     {
-        if (_stageTwo.Count <= 0 && _player.transform.position.x < _stageMaxX[1])
+        if (_stageTwo.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
         {
             _stageState = ThirdStage;
             _currentStage++;
-            Debug.Log("Stage: 02");
+            StartCoroutine(UnlockNextArea());
+            Debug.Log("Stage: 02 completed");
         }
     }
     private void ThirdStage()
     {
-        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
+        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[1])
         {
             _stageState = FourthStage;
             _currentStage++;
+            StartCoroutine(UnlockNextArea());
+            Debug.Log("Stage: 03 completed");
         }
     }
     private void FourthStage()
     {
-
+        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[0])
+        {
+            UIManager.Instance.EndPopUp.SetActive(true);
+            UIManager.Instance.EndWin.SetActive(true);
+            Debug.Log("Stage: 04 completed");
+        }
     }
     #endregion
 
@@ -173,7 +166,8 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
             _loadingScreenTr.position = targetPos;
-            _isLevelPlaying = true;
+            //_isLevelPlaying = true;
+            UIManager.Instance.TutorialPanel.SetActive(true);
         }
         else
         {
@@ -196,7 +190,10 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(PlayerLoadingScreen(isLeavingLevel));
     }
-
+    public void ContinueToGame()
+    {
+        _isLevelPlaying = true;
+    }
     public IEnumerator UnlockNextArea()
     {
         StartCoroutine(UIManager.Instance.NextStageBlink(_timeBetweenBlinks));
@@ -204,7 +201,7 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(CameraManager.Instance.UpdatePositionFactorWithSmoothing(_timeBetweenStages));
 
-        if (_currentStage < 3)
+        if (_currentStage < _stageCount-1)
         {
             float endValue1 = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToFullArea;
             float endValue2 = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToFullArea;
@@ -239,10 +236,11 @@ public class GameManager : MonoBehaviour
 
             //newXBounds.x = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToFullArea;
             //newXBounds.y = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToFullArea;
-            _currentStage++;
+            //_currentStage++;
+            Debug.Log(_currentStage);
             //CameraManager.Instance.UpdatePositionFactor();
         }
-        else if (_currentStage == 3)
+        else if (_currentStage == _stageCount-1)
         {
             CameraManager.Instance.UpdatePositionFactor(true);
             Vector2 newXBounds;
