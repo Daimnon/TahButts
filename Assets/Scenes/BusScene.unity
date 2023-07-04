@@ -5665,6 +5665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac46f5444dc39b34f9984216db8c2c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _musicTemp: {fileID: 205398900}
   _player: {fileID: 1285575454}
   _loadingScreenTr: {fileID: 1127366905}
   _loadingAddedCoords: {x: 0, y: 1085, z: 0}
@@ -14970,7 +14971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1127366905
 RectTransform:
   m_ObjectHideFlags: 0

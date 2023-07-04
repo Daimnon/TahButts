@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance => _instance;
 
+    [SerializeField] private AudioSource _musicTemp;
+
     [Header("General")]
     [SerializeField] private PlayerInputHandler _player;
     public PlayerInputHandler Player => _player;
@@ -55,6 +57,8 @@ public class GameManager : MonoBehaviour
         OnEnemyDeath += DelistEnemy;
         OnEnemyPass += DelistEnemy;
         StartCoroutine(PlayerLoadingScreen(false));
+
+        _musicTemp.volume = 0.25f;
     }
     private void Update()
     {
