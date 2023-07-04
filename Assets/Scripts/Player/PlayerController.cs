@@ -244,10 +244,17 @@ public class PlayerController : MonoBehaviour
     private void Walk()
     {
         transform.position += _speed * Time.fixedDeltaTime * _moveDirection;
+
+
+
     }
     private void Jump()
     {
         _rb.AddForce(Vector2.up * _jumpForce);
+
+
+
+
     }
     private void ChainCombo()
     {
@@ -327,6 +334,9 @@ public class PlayerController : MonoBehaviour
 
         _isAlive = false;
         _animator.SetTrigger("HasDied");
+
+        
+
 
         //if (_player.Data.Lives <= 0)
         //    Respawn();
