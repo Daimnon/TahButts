@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     public static GameManager Instance => _instance;
 
-
     [Header("General")]
     [SerializeField] private PlayerInputHandler _player;
     public PlayerInputHandler Player => _player;
@@ -232,7 +231,8 @@ public class GameManager : MonoBehaviour
 
             //newXBounds.x = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToFullArea;
             //newXBounds.y = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToFullArea;
-            _currentStage++;
+            //_currentStage++;
+            Debug.Log(_currentStage);
             //CameraManager.Instance.UpdatePositionFactor();
         }
         else if (_currentStage == 3)

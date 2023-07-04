@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class SmellyDude : Enemy
 {
+    [SerializeField] private float _playerPassDistance = 2.0f;
+
+    private void Update()
+    {
+        if (Target.transform.position.x < transform.position.x - _playerPassDistance)
+            GameManager.Instance.InvokeEnemyPass(this);
+    }
     protected override void Interacting()
     {
         throw new System.NotImplementedException();
