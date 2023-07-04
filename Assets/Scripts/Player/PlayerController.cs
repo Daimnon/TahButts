@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerController : MonoBehaviour
 {
@@ -258,6 +259,9 @@ public class PlayerController : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        if (!_isAlive)
+            return;
+
         StartCoroutine(Hurt());
         UIManager.Instance.RemoveHeart();
         _player.Data.Health -= damage;
@@ -279,6 +283,9 @@ public class PlayerController : MonoBehaviour
     }
     private IEnumerator Hurt()
     {
+        if (_player.Data.Health == 1)
+            yield break;
+
         _isHurt = true;
         _animator.SetTrigger("WasHurt");
 
@@ -295,6 +302,9 @@ public class PlayerController : MonoBehaviour
         }
         _animator.ResetTrigger("WasHurt");
         _isHurt = false;
+
+        //if (!_isAlive)
+        //    _animator.SetTrigger("HasDied");
     }
     private IEnumerator Converse()
     {
