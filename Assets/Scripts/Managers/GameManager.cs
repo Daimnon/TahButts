@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
             _loadingScreenTr.position = targetPos;
 
             yield return new WaitForSeconds(_enterLevelTime);
-            //CustomSceneManager.BackToMainMenu();
+            CustomSceneManager.BackToMainMenu();
         }
     }
     public void CallLoadingScreen(bool isLeavingLevel)

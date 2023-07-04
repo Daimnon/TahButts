@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
     private static MainMenuManager _instance;
     public static MainMenuManager Instance => _instance;
 
-    [SerializeField] private Image _busImage;
+    [SerializeField] private Image _busImage, _playerImage;
     [SerializeField] private Transform _btnsMenu;
     [SerializeField] private float _busFirstTargetX = 1930.0f, _busSecondTargetX = -2060.0f;
     [SerializeField] private int _newGameBuildIndex = 1;
@@ -45,6 +45,7 @@ public class MainMenuManager : MonoBehaviour
         // stop for Time and play another audio que
         yield return new WaitForSeconds(_timeToGetOnBus);
 
+        _playerImage.gameObject.SetActive(false);
         // while _busImage is not at _busSecondTargetX move _busImage at _busSpeed on x axis
         while (_busImage.rectTransform.position.x > _busSecondTargetX)
         {
