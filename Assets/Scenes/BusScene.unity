@@ -4605,7 +4605,7 @@ MonoBehaviour:
   - {fileID: 205896436}
   - {fileID: 498635865}
   _timeBetweenBlinks: 0.5
-  _stageCount: 3
+  _stageCount: 4
 --- !u!1 &426741280
 GameObject:
   m_ObjectHideFlags: 0
@@ -13924,8 +13924,8 @@ MonoBehaviour:
   _xRange: {x: 119.65, y: 155.7}
   _yRange: {x: 0, y: 5}
   _offsets: {x: 0, y: 2.3}
-  _distanceToFullArea: 36.05
-  _distanceToLastArea: 18.025
+  _distanceToFullArea: 41.937
+  _distanceToLastArea: 41.937
   _followSpeed: 2
   _xMargin: 8
   _yMargin: 1

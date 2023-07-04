@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float[] _stageMaxX = new float[] { 131.5f, 167.55f, 203.6f};
     [SerializeField] private List<Enemy> _stageOne, _stageTwo, _stageThree, _stageFour;
     [Range (0, 1)][SerializeField] private float _timeBetweenBlinks = 0.5f;
-    [Range(0, 3)][SerializeField] private int _stageCount = 3;
+    [Range(0, 3)][SerializeField] private int _stageCount = 4;
 
     private List<List<Enemy>> _allStagesEnemies;
     public List<List<Enemy>> AllStagesEnemies => _allStagesEnemies;
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     #region Stage States
     private void FirstStage()
     {
-        if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[0])
+        if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
         {
             _stageState = SecondStage;
             _currentStage++;
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     }
     private void ThirdStage()
     {
-        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
+        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[0])
         {
             _stageState = FourthStage;
             _currentStage++;
@@ -100,10 +100,10 @@ public class GameManager : MonoBehaviour
     }
     private void FourthStage()
     {
-        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
+        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[0])
         {
             // win level logic
-            Debug.Log("Stage: 03 completed");
+            Debug.Log("Stage: 04 completed");
         }
     }
     #endregion
@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(CameraManager.Instance.UpdatePositionFactorWithSmoothing(_timeBetweenStages));
 
-        if (_currentStage < 3)
+        if (_currentStage < _stageCount-1)
         {
             float endValue1 = _player.Controller.XBounds.x - CameraManager.Instance.DistanceToFullArea;
             float endValue2 = _player.Controller.XBounds.y - CameraManager.Instance.DistanceToFullArea;
@@ -235,7 +235,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(_currentStage);
             //CameraManager.Instance.UpdatePositionFactor();
         }
-        else if (_currentStage == 3)
+        else if (_currentStage == _stageCount-1)
         {
             CameraManager.Instance.UpdatePositionFactor(true);
             Vector2 newXBounds;
