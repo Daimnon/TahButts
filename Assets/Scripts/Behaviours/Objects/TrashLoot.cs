@@ -27,6 +27,10 @@ public class TrashLoot : MonoBehaviour
                 (_owner as Homeless).ShouldWakeUp = true;
             else if (_owner is Grandma)
                 (_owner as Grandma).StunPlayer();
+            else if (_owner is SmellyDude)
+                return;
+            else if (_owner is PhoneLady)
+                return;
             // make sound
             // do effect
         }

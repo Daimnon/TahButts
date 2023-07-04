@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 1018850079050399931}
   - component: {fileID: 1466567709291585686}
   - component: {fileID: 8487589660471719579}
+  - component: {fileID: 3531287147672863902}
   m_Layer: 7
   m_Name: PhoneLady
   m_TagString: Enemy
@@ -363,3 +364,20 @@ MonoBehaviour:
   _power: 1
   _hitColliderTr: {fileID: 8487589659987003656}
   _hitColliderGo: {fileID: 4655246484454779869, guid: 18c047bfb89bd004db517920a3d9460f, type: 3}
+--- !u!114 &3531287147672863902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8489954190736214272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c27a0bb95587544a6f97b666753407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderer: {fileID: 8489954190736214274}
+  Data: {fileID: 8487589660471719579}
+  AreaIndex: 0
+  WabbleTime: 0
+  _animController: {fileID: 4567101825666080884}
