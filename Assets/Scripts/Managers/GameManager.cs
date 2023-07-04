@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     #region Stage States
     private void FirstStage()
     {
-        if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
+        if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[3])
         {
             _stageState = SecondStage;
             _currentStage++;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     }
     private void SecondStage()
     {
-        if (_stageTwo.Count <= 0 && _player.transform.position.x < _stageMaxX[1])
+        if (_stageTwo.Count <= 0 && _player.transform.position.x < _stageMaxX[2])
         {
             _stageState = ThirdStage;
             _currentStage++;
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     }
     private void ThirdStage()
     {
-        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[0])
+        if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[1])
         {
             _stageState = FourthStage;
             _currentStage++;
@@ -102,7 +102,8 @@ public class GameManager : MonoBehaviour
     {
         if (_stageThree.Count <= 0 && _player.transform.position.x < _stageMaxX[0])
         {
-            // win level logic
+            UIManager.Instance.EndPopUp.SetActive(true);
+            UIManager.Instance.EndWin.SetActive(true);
             Debug.Log("Stage: 04 completed");
         }
     }

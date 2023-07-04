@@ -19,6 +19,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _tutorialPanel;
     public GameObject TutorialPanel => _tutorialPanel;
 
+    [SerializeField] private GameObject _endPopUp, _endWin, _endLose;
+    public GameObject EndPopUp => _endPopUp;
+    public GameObject EndWin => _endWin;
+    public GameObject EndLose => _endLose;
+
     private List<GameObject> _currentHearts;
 
     private void Awake()

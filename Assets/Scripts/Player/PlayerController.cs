@@ -165,6 +165,12 @@ public class PlayerController : MonoBehaviour
         if (!_isAlive)
         {
             transform.position = _lastPositionBeforeDeath;
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            if (stateInfo.IsTag("Death") && stateInfo.normalizedTime > 0.9)
+            {
+                UIManager.Instance.EndPopUp.SetActive(true);
+                UIManager.Instance.EndLose.SetActive(true);
+            }
             return;
         }
 
@@ -317,6 +323,9 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
+        if (!_isAlive)
+            return;
+
         _isAlive = false;
         _animator.SetTrigger("HasDied");
 
