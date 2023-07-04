@@ -165,7 +165,8 @@ public class GameManager : MonoBehaviour
                 yield return null;
             }
             _loadingScreenTr.position = targetPos;
-            _isLevelPlaying = true;
+            //_isLevelPlaying = true;
+            UIManager.Instance.TutorialPanel.SetActive(true);
         }
         else
         {
@@ -188,7 +189,10 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(PlayerLoadingScreen(isLeavingLevel));
     }
-
+    public void ContinueToGame()
+    {
+        _isLevelPlaying = true;
+    }
     public IEnumerator UnlockNextArea()
     {
         StartCoroutine(UIManager.Instance.NextStageBlink(_timeBetweenBlinks));

@@ -1,0 +1,633 @@
+fileFormatVersion: 2
+guid: eeedafcc245e49743af43714eacad7c0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Atlas_Tutorial_0
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 4841
+        width: 3765
+        height: 2334
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38791ef42067870459d7cdb6d41ae512
+      internalID: -1115893975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_1
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 6488
+        width: 2752
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c16776dd90ed54a9b7ba0a7b771326
+      internalID: 1278664101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_2
+      rect:
+        serializedVersion: 2
+        x: 4083
+        y: 5684
+        width: 3021
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbad707f444aab14284c79b1d0dc5af3
+      internalID: -512113166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_3
+      rect:
+        serializedVersion: 2
+        x: 4445
+        y: 4880
+        width: 2298
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63663989e4541c84cb57c1d4f5c30db4
+      internalID: 1859317315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_4
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 4260
+        width: 521
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0757d977e9d29dd4791872b4676a94b4
+      internalID: 58021947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_5
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 4260
+        width: 521
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fe6f4d1e0ba2c46b262a24f9f17112
+      internalID: 250362900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_6
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 4232
+        width: 609
+        height: 520
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c316eec5fd47d040a5a0a79faa8f40f
+      internalID: 894641681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_7
+      rect:
+        serializedVersion: 2
+        x: 4100
+        y: 4072
+        width: 2990
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6a8d0045510f34f9ccd49a002df2bc
+      internalID: -763118948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_8
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 3615
+        width: 875
+        height: 517
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bfb4be517c8ab439916f1ec4eb3ef1
+      internalID: 1646183450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_9
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 3268
+        width: 326
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be94880585144f44ae8779241b2b7ec
+      internalID: -708197826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_11
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 3243
+        width: 239
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceb0dcfdd7d3138449478bbf474a7542
+      internalID: -685277647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_12
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 2620
+        width: 744
+        height: 974
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6d013358d6731144aca88d8addb6b24
+      internalID: 309419780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_15
+      rect:
+        serializedVersion: 2
+        x: 4380
+        y: 2652
+        width: 964
+        height: 906
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665db5a5a6dd0fb4a936522bf8ec0555
+      internalID: -402976871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_16
+      rect:
+        serializedVersion: 2
+        x: 5740
+        y: 2662
+        width: 773
+        height: 896
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e4f469e122ecd48ac8afc0dc83529b
+      internalID: -474280790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_17
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 2896
+        width: 371
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2685dffc08ea23848aebcdf0496a28a5
+      internalID: 1025840198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_18
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 2885
+        width: 372
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd69f8bcbbff2b4686c3027cc04399a
+      internalID: -1296081876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_19
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 2620
+        width: 1041
+        height: 984
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a148ed80638cb554ebbe1d6852b7e192
+      internalID: -1125412729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_21
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 2379
+        width: 372
+        height: 329
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f19c46623e5b441a2af5234463f232
+      internalID: -1997044528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_23
+      rect:
+        serializedVersion: 2
+        x: 2092
+        y: 756
+        width: 776
+        height: 943
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203ad7e8475717e4283a2347e3af80ad
+      internalID: 1957789498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_24
+      rect:
+        serializedVersion: 2
+        x: 3346
+        y: 767
+        width: 683
+        height: 953
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c035f141015014b8b8e2a43f844e07
+      internalID: -848022756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_25
+      rect:
+        serializedVersion: 2
+        x: 4731
+        y: 732
+        width: 818
+        height: 998
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d827094e0ed73f4283e1029d48ea243
+      internalID: -443040639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_Tutorial_26
+      rect:
+        serializedVersion: 2
+        x: 5920
+        y: 717
+        width: 674
+        height: 936
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fa99f6f9716734d97caeb15afd5f7b
+      internalID: -1993316444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Atlas_Tutorial_19: -1125412729
+      Atlas_Tutorial_16: -474280790
+      Atlas_Tutorial_17: 1025840198
+      Atlas_Tutorial_11: -685277647
+      Atlas_Tutorial_0: -1115893975
+      Atlas_Tutorial_35: -1548848088
+      Atlas_Tutorial_7: -763118948
+      Atlas_Tutorial_29: 1383794538
+      Atlas_Tutorial_33: -1770635774
+      Atlas_Tutorial_23: 1957789498
+      Atlas_Tutorial_31: 1006661353
+      Atlas_Tutorial_9: -708197826
+      Atlas_Tutorial_22: -274389479
+      Atlas_Tutorial_18: -1296081876
+      Atlas_Tutorial_36: -564499018
+      Atlas_Tutorial_1: 1278664101
+      Atlas_Tutorial_26: -1993316444
+      Atlas_Tutorial_15: -402976871
+      Atlas_Tutorial_28: 1107600845
+      Atlas_Tutorial_20: -91910605
+      Atlas_Tutorial_2: -512113166
+      Atlas_Tutorial_6: 894641681
+      Atlas_Tutorial_5: 250362900
+      Atlas_Tutorial_4: 58021947
+      Atlas_Tutorial_27: 254350986
+      Atlas_Tutorial_8: 1646183450
+      Atlas_Tutorial_3: 1859317315
+      Atlas_Tutorial_10: -201579777
+      Atlas_Tutorial_12: 309419780
+      Atlas_Tutorial_21: -1997044528
+      Atlas_Tutorial_24: -848022756
+      Atlas_Tutorial_13: 833346731
+      Atlas_Tutorial_14: -1438873490
+      Atlas_Tutorial_32: -1258082249
+      Atlas_Tutorial_25: -443040639
+      Atlas_Tutorial_30: -722296003
+      Atlas_Tutorial_34: 1998970085
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

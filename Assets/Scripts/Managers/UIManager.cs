@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _pauseMenu;
     public GameObject PauseMenu => _pauseMenu;
 
+    [SerializeField] private GameObject _tutorialPanel;
+    public GameObject TutorialPanel => _tutorialPanel;
 
     private List<GameObject> _currentHearts;
 
