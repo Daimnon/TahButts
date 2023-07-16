@@ -28,9 +28,21 @@ public class TrashLoot : MonoBehaviour
             else if (_owner is Grandma)
                 (_owner as Grandma).StunPlayer();
             else if (_owner is SmellyDude)
-                return;
+                (_owner as SmellyDude).HarmPlayer();
             else if (_owner is PhoneLady)
-                return;
+                (_owner as SmellyDude).HarmPlayer();
+            // make sound
+            // do effect
+        }
+    }
+    private void OnTriggerEXit2D(Collider2D collision)
+    {
+        if (collision.CompareTag(_playerTag))
+        {
+            if (_owner is SmellyDude)
+                (_owner as SmellyDude).StopHarmingPlayer();
+            else if (_owner is PhoneLady)
+                (_owner as SmellyDude).StopHarmingPlayer();
             // make sound
             // do effect
         }
