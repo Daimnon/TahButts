@@ -5,6 +5,7 @@ using UnityEngine;
 public class PhoneLady : Enemy
 {
     [SerializeField] private float _playerPassDistance = 2.0f;
+    //[SerializeField] private 
 
     private void Update()
     {
