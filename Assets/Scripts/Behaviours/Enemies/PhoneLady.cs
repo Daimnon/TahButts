@@ -6,6 +6,7 @@ using UnityEngine;
 public class PhoneLady : Enemy
 {
     [SerializeField] private float _playerPassDistance = 2.0f, _harmTime = 1.5f;
+    [SerializeField] private bool _isTimerOn;
     [SerializeField] private IEnumerator _timer;
 
     private void Awake()
@@ -34,7 +35,13 @@ public class PhoneLady : Enemy
 
     private IEnumerator Timer()
     {
+        if (!_isTimerOn || GameManager.Instance.Player.Controller.IsUsingHeadphones)
+            yield break;
+
         yield return new WaitForSeconds(_harmTime);
+
+        if (!_isTimerOn || GameManager.Instance.Player.Controller.IsUsingHeadphones)
+            yield break;
 
         GameManager.Instance.Player.Controller.TakeDamage(1);
         _timer = null;
@@ -43,10 +50,12 @@ public class PhoneLady : Enemy
     }
     public void HarmPlayer()
     {
+        _isTimerOn = true;
         StartCoroutine(_timer);
     }
     public void StopHarmingPlayer()
     {
         StopCoroutine(_timer);
+        _isTimerOn = false;
     }
 }

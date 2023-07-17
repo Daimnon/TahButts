@@ -30,19 +30,19 @@ public class TrashLoot : MonoBehaviour
             else if (_owner is SmellyDude)
                 (_owner as SmellyDude).HarmPlayer();
             else if (_owner is PhoneLady)
-                (_owner as SmellyDude).HarmPlayer();
+                (_owner as PhoneLady).HarmPlayer();
             // make sound
             // do effect
         }
     }
-    private void OnTriggerEXit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag(_playerTag))
         {
             if (_owner is SmellyDude)
                 (_owner as SmellyDude).StopHarmingPlayer();
             else if (_owner is PhoneLady)
-                (_owner as SmellyDude).StopHarmingPlayer();
+                (_owner as PhoneLady).StopHarmingPlayer();
             // make sound
             // do effect
         }

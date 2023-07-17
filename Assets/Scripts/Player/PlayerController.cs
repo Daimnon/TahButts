@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f;
     [SerializeField] private float _xMoveOffset = -7.8f, _yMoveOffset = 3.5f;
     [Range(0.2f, 2.0f)][SerializeField] private float _comboTime = 1.0f;
+    [SerializeField] private bool _isTesting;
 
     private GameObject _currentHeadphones, _currentShield;
     private Collider2D _currentHitCollider;
@@ -32,7 +33,9 @@ public class PlayerController : MonoBehaviour
     private bool _isFacingLeft = true, _isJumping = false;
     public bool IsFacingLeft => _isFacingLeft;
 
-    private bool _isUsingHeadphones = false, _isUsingShield = false;
+    private bool _isUsingHeadphones = false, _isUsingMask = false;
+    public bool IsUsingHeadphones => _isUsingHeadphones;
+    public bool IsUsingMask => _isUsingMask;
 
     private bool _isAlive = true, _isStunned = false, _isHurt;
     public bool IsAlive => _isAlive;
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (!GameManager.Instance.IsLevelPlaying)
+        if (!GameManager.Instance.IsLevelPlaying && !_isTesting)
             return;
 
         _moveInput = context.ReadValue<Vector2>();
@@ -49,7 +52,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (!GameManager.Instance.IsLevelPlaying)
+        if (!GameManager.Instance.IsLevelPlaying && !_isTesting)
             return;
 
         if (context.started && !_isJumping)
@@ -67,7 +70,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (!GameManager.Instance.IsLevelPlaying)
+        if (!GameManager.Instance.IsLevelPlaying && !_isTesting)
             return;
 
         if (context.started)
@@ -92,17 +95,19 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteractOne(InputAction.CallbackContext context)
     {
-        if (!GameManager.Instance.IsLevelPlaying)
+        if (!GameManager.Instance.IsLevelPlaying && !_isTesting)
             return;
 
-        if (context.started && !_isUsingHeadphones)
+        bool isPressed = context.ReadValue<float>() == 0 ? false : true;
+
+        if (context.started && isPressed && !_isUsingHeadphones)
         {
             _currentHeadphones = Instantiate(_player.Data.HeadPhonesPrefab, _items[0]);
             _isUsingHeadphones = true;
             // other logic
             Debug.Log("Player Used Headphones.");
         }
-        else if (context.started && _isUsingHeadphones)
+        else if (context.started && isPressed && _isUsingHeadphones)
         {
             Destroy(_currentHeadphones);
             _isUsingHeadphones = false;
@@ -113,20 +118,20 @@ public class PlayerController : MonoBehaviour
     }
     public void OnInteractTwo(InputAction.CallbackContext context)
     {
-        if (!GameManager.Instance.IsLevelPlaying)
+        if (!GameManager.Instance.IsLevelPlaying && !_isTesting)
             return;
 
-        if (context.started && !_isUsingShield)
+        if (context.started && !_isUsingMask)
         {
             _currentShield = Instantiate(_player.Data.ShieldPrefab, _items[1]);
-            _isUsingShield = true;
+            _isUsingMask = true;
             // other logic
             Debug.Log("Player Used Shield.");
         }
-        else if (context.started && _isUsingShield)
+        else if (context.started && _isUsingMask)
         {
             Destroy(_currentShield);
-            _isUsingShield = false;
+            _isUsingMask = false;
             // other logic
             Debug.Log("Player Unused Shield.");
         }
@@ -158,7 +163,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (!GameManager.Instance.IsLevelPlaying)
+        if (!GameManager.Instance.IsLevelPlaying && !_isTesting)
             return;
 
         if (!_isAlive)

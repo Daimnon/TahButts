@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Vector3 _loadingAddedCoords;
     [SerializeField] private float _enterLevelTime, _exitLevelTime, _loadingTransitionDuration;
+    [SerializeField] private bool _isTesting;
 
     [Header("Stages")]
     [SerializeField] private float[] _stageMaxX = new float[] { 131.5f, 167.55f, 203.6f};
@@ -47,11 +48,18 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+
+        if (_isTesting)
+            return;
+
         _allStagesEnemies = new List<List<Enemy>>();
         _stageState = FirstStage;
     }
     private void Start()
     {
+        if (_isTesting)
+            return;
+
         _allStagesEnemies = new List<List<Enemy>> { _stageOne, _stageTwo, _stageThree, _stageFour };
 
         OnEnemyDeath += DelistEnemy;
@@ -62,10 +70,16 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
+        if (_isTesting)
+            return;
+
         _stageState.Invoke();
     }
     private void OnDisable()
     {
+        if (_isTesting)
+            return;
+
         OnEnemyDeath -= DelistEnemy;
         OnEnemyPass -= DelistEnemy;
     }
@@ -152,6 +166,9 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator PlayerLoadingScreen(bool isLeavingLevel)
     {
+        if (_isTesting)
+            yield break;
+
         float time = 0;
         //float speed = 0;
 
