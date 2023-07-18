@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     public Animator Animator => _animator;
 
-    [SerializeField] private Vector2 _xBounds = new(129.95f, 166.0f), _yBounds = new (-6.45f, -1.5f);
+    [SerializeField] private Vector2 _xBounds = new(4.139f, 166.0f), _yBounds = new (-6.45f, -1.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
 
     [SerializeField] private Transform[] _items;
@@ -339,9 +339,6 @@ public class PlayerController : MonoBehaviour
 
         _isAlive = false;
         _animator.SetTrigger("HasDied");
-
-        
-
 
         //if (_player.Data.Lives <= 0)
         //    Respawn();

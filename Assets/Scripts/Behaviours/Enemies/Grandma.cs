@@ -32,8 +32,8 @@ public class Grandma : Enemy
 
         EnemyState.Invoke();*/
 
-        if (Target.transform.position.x < transform.position.x - _playerPassDistance)
-            GameManager.Instance.InvokeEnemyPass(this);
+        /*if (Target.transform.position.x < transform.position.x - _playerPassDistance)
+            GameManager.Instance.InvokeEnemyPass(this);*/
     }
 
     protected override void PlayerInsight() //chase after player
@@ -50,8 +50,8 @@ public class Grandma : Enemy
     }
     protected override void PlayerNotInsight() //patrol
     {
-        if (Target.transform.position.x < transform.position.x - _playerPassDistance)
-            GameManager.Instance.InvokeEnemyPass(this);
+        /*if (Target.transform.position.x < transform.position.x - _playerPassDistance)
+            GameManager.Instance.InvokeEnemyPass(this);*/
     }
     protected override void Interacting()
     {

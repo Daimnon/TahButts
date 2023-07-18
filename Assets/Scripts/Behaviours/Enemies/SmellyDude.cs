@@ -14,8 +14,8 @@ public class SmellyDude : Enemy
     }
     private void Update()
     {
-        if (Target.transform.position.x < transform.position.x - _playerPassDistance)
-            GameManager.Instance.InvokeEnemyPass(this);
+        /*if (Target.transform.position.x < transform.position.x - _playerPassDistance)
+            GameManager.Instance.InvokeEnemyPass(this);*/
     }
     protected override void Interacting()
     {

@@ -52,18 +52,18 @@ public class GameManager : MonoBehaviour
         if (_isTesting)
             return;
 
-        _allStagesEnemies = new List<List<Enemy>>();
-        _stageState = FirstStage;
+        /*_allStagesEnemies = new List<List<Enemy>>();
+        _stageState = FirstStage;*/
     }
     private void Start()
     {
         if (_isTesting)
             return;
 
-        _allStagesEnemies = new List<List<Enemy>> { _stageOne, _stageTwo, _stageThree, _stageFour };
+        /*_allStagesEnemies = new List<List<Enemy>> { _stageOne, _stageTwo, _stageThree, _stageFour };*/
 
-        OnEnemyDeath += DelistEnemy;
-        OnEnemyPass += DelistEnemy;
+        /*OnEnemyDeath += DelistEnemy;
+        OnEnemyPass += DelistEnemy;*/
         StartCoroutine(PlayerLoadingScreen(false));
 
         _musicTemp.volume = 0.25f;
@@ -73,20 +73,20 @@ public class GameManager : MonoBehaviour
         if (_isTesting)
             return;
 
-        _stageState.Invoke();
+        /*_stageState.Invoke();*/
     }
     private void OnDisable()
     {
         if (_isTesting)
             return;
 
-        OnEnemyDeath -= DelistEnemy;
-        OnEnemyPass -= DelistEnemy;
+        /*OnEnemyDeath -= DelistEnemy;
+        OnEnemyPass -= DelistEnemy;*/
     }
     #endregion
 
     #region Stage States
-    private void FirstStage()
+    /*private void FirstStage()
     {
         if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[3])
         {
@@ -124,11 +124,11 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.EndWin.SetActive(true);
             Debug.Log("Stage: 04 completed");
         }
-    }
+    }*/
     #endregion
 
     #region Events
-    public void InvokeEnemyDeath(Enemy enemy)
+    /*public void InvokeEnemyDeath(Enemy enemy)
     {
         if (enemy != null)
         {
@@ -141,10 +141,10 @@ public class GameManager : MonoBehaviour
         {
             OnEnemyPass?.Invoke(enemy);
         }
-    }
+    }*/
     #endregion
 
-    private void DelistEnemy(Enemy enemy)
+    /*private void DelistEnemy(Enemy enemy)
     {
         if (_allStagesEnemies[_currentStage].Contains(enemy))
         {
@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     public IEnumerator PlayerLoadingScreen(bool isLeavingLevel)
     {
@@ -215,7 +215,7 @@ public class GameManager : MonoBehaviour
     {
         _isLevelPlaying = true;
     }
-    public IEnumerator UnlockNextArea()
+    /*public IEnumerator UnlockNextArea()
     {
         StartCoroutine(UIManager.Instance.NextStageBlink(_timeBetweenBlinks));
         yield return new WaitForSeconds(_timeBetweenBlinks * 2);
@@ -273,7 +273,7 @@ public class GameManager : MonoBehaviour
     public void UnlockNextAreaUI()
     {
         StartCoroutine(UnlockNextArea());
-    }
+    }*/
 
     public void Quit()
     {

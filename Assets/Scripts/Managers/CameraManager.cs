@@ -12,7 +12,7 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField] private Transform _playerTr; // Reference to the player's transform
 
-    [SerializeField] private Vector2 _xRange = new(119.65f, 155.7f), _yRange = new(0f, 2.3f);
+    [SerializeField] private Vector2 _xRange = new(-131.972f, 155.7f), _yRange = new(0f, 2.3f);
     public Vector2 XRange => _xRange;
     public Vector2 YRange => _yRange;
 
@@ -60,7 +60,7 @@ public class CameraManager : MonoBehaviour
         _mainCam.transform.position = currentPosition;
     }
 
-    public void UpdatePositionFactor()
+    /*public void UpdatePositionFactor()
     {
         _xRange.x -= _distanceToFullArea;
         _xRange.y -= _distanceToFullArea;
@@ -99,5 +99,5 @@ public class CameraManager : MonoBehaviour
         xTempRange.x = endValue1;
         xTempRange.y = endValue2;
         _xRange = xTempRange;
-    }
+    }*/
 }
