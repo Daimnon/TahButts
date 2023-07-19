@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Stages")]
     [SerializeField] private float[] _stageMaxX = new float[] { 131.5f, 167.55f, 203.6f};
+    [SerializeField] private List<Enemy> _enemyToDefeat;
     [SerializeField] private List<Enemy> _stageOne, _stageTwo, _stageThree, _stageFour;
     [Range (0, 1)][SerializeField] private float _timeBetweenBlinks = 0.5f;
     [Range(0, 3)][SerializeField] private int _stageCount = 4;
@@ -62,8 +63,8 @@ public class GameManager : MonoBehaviour
 
         /*_allStagesEnemies = new List<List<Enemy>> { _stageOne, _stageTwo, _stageThree, _stageFour };*/
 
-        /*OnEnemyDeath += DelistEnemy;
-        OnEnemyPass += DelistEnemy;*/
+        OnEnemyDeath += DelistEnemy;
+        OnEnemyPass += DelistEnemy;
         StartCoroutine(PlayerLoadingScreen(false));
 
         _musicTemp.volume = 0.25f;
@@ -80,8 +81,8 @@ public class GameManager : MonoBehaviour
         if (_isTesting)
             return;
 
-        /*OnEnemyDeath -= DelistEnemy;
-        OnEnemyPass -= DelistEnemy;*/
+        OnEnemyDeath -= DelistEnemy;
+        OnEnemyPass -= DelistEnemy;
     }
     #endregion
 
@@ -128,7 +129,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Events
-    /*public void InvokeEnemyDeath(Enemy enemy)
+    public void InvokeEnemyDeath(Enemy enemy)
     {
         if (enemy != null)
         {
@@ -141,28 +142,28 @@ public class GameManager : MonoBehaviour
         {
             OnEnemyPass?.Invoke(enemy);
         }
-    }*/
+    }
     #endregion
 
-    /*private void DelistEnemy(Enemy enemy)
+    private void DelistEnemy(Enemy enemy)
     {
-        if (_allStagesEnemies[_currentStage].Contains(enemy))
+        if (_enemyToDefeat.Contains(enemy))
         {
-            for (int i = 0; i < _allStagesEnemies[_currentStage].Count; i++)
+            for (int i = 0; i < _enemyToDefeat.Count; i++)
             {
-                if (_allStagesEnemies[_currentStage][i] == enemy)
+                if (_enemyToDefeat[i] == enemy)
                 {
-                    Debug.Log($"Removing: {_allStagesEnemies[_currentStage][i]}");
-                    _allStagesEnemies[_currentStage].RemoveAt(i);
+                    Debug.Log($"Removing: {_enemyToDefeat[i]}");
+                    _enemyToDefeat.RemoveAt(i);
 
-                    foreach (Enemy remainingEnemy in _allStagesEnemies[_currentStage]) // debug
+                    foreach (Enemy remainingEnemy in _enemyToDefeat) // debug
                         Debug.Log($"{remainingEnemy.name}");
 
                     break;
                 }
             }
         }
-    }*/
+    }
 
     public IEnumerator PlayerLoadingScreen(bool isLeavingLevel)
     {
@@ -214,6 +215,12 @@ public class GameManager : MonoBehaviour
     public void ContinueToGame()
     {
         _isLevelPlaying = true;
+    }
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+        UIManager.Instance.PauseMenu.SetActive(false);
+        Debug.Log("Game Unpaused.");
     }
     /*public IEnumerator UnlockNextArea()
     {

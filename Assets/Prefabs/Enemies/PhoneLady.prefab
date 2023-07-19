@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2340666841052733825}
+  - component: {fileID: 6529738093244448881}
   - component: {fileID: 2340666841052733830}
   - component: {fileID: 5588527965288751432}
   - component: {fileID: 5146463106830057555}
@@ -34,6 +35,26 @@ Transform:
   m_Father: {fileID: 8489954190736214275}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6529738093244448881
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2340666841052733824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c29877376554304ba9600116d2a4de0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &2340666841052733830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -424,3 +445,4 @@ MonoBehaviour:
   _animController: {fileID: 4567101825666080884}
   _playerPassDistance: 2
   _harmTime: 1.5
+  _isTimerOn: 0

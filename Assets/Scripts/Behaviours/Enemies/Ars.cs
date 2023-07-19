@@ -190,7 +190,7 @@ public class Ars : Enemy
         AnimController.SetTrigger("HasDied"); 
         AnimController.SetBool("IsAlive", false); 
         _isAlive = false;
-        /*GameManager.Instance.InvokeEnemyDeath(this);*/
+        GameManager.Instance.InvokeEnemyDeath(this);
     }
 
     private void Attack2()
