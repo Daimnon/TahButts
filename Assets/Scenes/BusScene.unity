@@ -3685,18 +3685,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2032843165}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 411726754}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: CallLoadingScreen
@@ -3708,6 +3696,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2032843165}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &261588569
 MonoBehaviour:
@@ -5753,7 +5753,17 @@ MonoBehaviour:
   - 131.5
   - 167.55
   - 203.6
-  _enemyToDefeat: []
+  _enemiesToDefeat:
+  - {fileID: 1094109579}
+  - {fileID: 1460353720}
+  - {fileID: 1593584128}
+  - {fileID: 1501237745}
+  - {fileID: 205896436}
+  - {fileID: 1939490963}
+  - {fileID: 7768639680644013}
+  - {fileID: 22659823}
+  - {fileID: 2491778129622721023}
+  - {fileID: 1746917643}
   _stageOne:
   - {fileID: 647270902}
   - {fileID: 1185743923}
@@ -19714,6 +19724,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1501237745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7031159552422730692, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
+  m_PrefabInstance: {fileID: 1068999835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e55c7c6312acaf489200de061acd658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1509289130
 GameObject:
   m_ObjectHideFlags: 0
@@ -25275,6 +25296,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1939490963 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7031159552422730692, guid: 78f80e358c1813f4b87be6d1156a3e55, type: 3}
+  m_PrefabInstance: {fileID: 1490245810}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e55c7c6312acaf489200de061acd658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1939731086
 GameObject:
   m_ObjectHideFlags: 0

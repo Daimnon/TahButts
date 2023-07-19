@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Stages")]
     [SerializeField] private float[] _stageMaxX = new float[] { 131.5f, 167.55f, 203.6f};
-    [SerializeField] private List<Enemy> _enemyToDefeat;
+    [SerializeField] private List<Enemy> _enemiesToDefeat;
     [SerializeField] private List<Enemy> _stageOne, _stageTwo, _stageThree, _stageFour;
     [Range (0, 1)][SerializeField] private float _timeBetweenBlinks = 0.5f;
     [Range(0, 3)][SerializeField] private int _stageCount = 4;
@@ -147,21 +147,28 @@ public class GameManager : MonoBehaviour
 
     private void DelistEnemy(Enemy enemy)
     {
-        if (_enemyToDefeat.Contains(enemy))
+        if (_enemiesToDefeat.Contains(enemy))
         {
-            for (int i = 0; i < _enemyToDefeat.Count; i++)
+            for (int i = 0; i < _enemiesToDefeat.Count; i++)
             {
-                if (_enemyToDefeat[i] == enemy)
+                if (_enemiesToDefeat[i] == enemy)
                 {
-                    Debug.Log($"Removing: {_enemyToDefeat[i]}");
-                    _enemyToDefeat.RemoveAt(i);
+                    Debug.Log($"Removing: {_enemiesToDefeat[i]}");
+                    _enemiesToDefeat.RemoveAt(i);
 
-                    foreach (Enemy remainingEnemy in _enemyToDefeat) // debug
+                    foreach (Enemy remainingEnemy in _enemiesToDefeat) // debug
                         Debug.Log($"{remainingEnemy.name}");
 
                     break;
                 }
             }
+        }
+
+        if (_enemiesToDefeat.Count < 1)
+        {
+            GameManager.Instance.Player.gameObject.SetActive(false);
+            UIManager.Instance.EndPopUp.SetActive(true);
+            UIManager.Instance.EndWin.SetActive(true);
         }
     }
 
