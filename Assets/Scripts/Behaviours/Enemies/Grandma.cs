@@ -45,6 +45,7 @@ public class Grandma : Enemy
         else
             Renderer.flipX = false;
 
+
         Debug.Log("Grandma sees you");
         // feedback for seeing player
     }

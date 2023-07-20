@@ -5680,6 +5680,7 @@ MonoBehaviour:
   _enterLevelTime: 2
   _exitLevelTime: 1
   _loadingTransitionDuration: 0.25
+  _isTesting: 0
   _stageMaxX:
   - 5
   - 131.5
@@ -21779,6 +21780,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7573614827545890177, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
+      propertyPath: audioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 82fb396fec56047e39d36ca5a3462d1b, type: 3}
+    - target: {fileID: -7573614827545890177, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
+      propertyPath: audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_RootOrder
       value: 10
