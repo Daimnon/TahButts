@@ -87,6 +87,9 @@ public class PlayerController : MonoBehaviour
                     _animator.SetBool("IsPunching", true);
                 }*/
                 _animator.SetBool("IsPunching", true);
+
+
+
             }
 
             Debug.Log("Player Attacked.");
@@ -225,6 +228,9 @@ public class PlayerController : MonoBehaviour
         }
         else
             _moveDirection = new(_moveInput.x, 0.0f, 0.0f);
+
+
+
     }
     private void FlipSprite()
     {
@@ -306,6 +312,7 @@ public class PlayerController : MonoBehaviour
         _isHurt = true;
         _animator.SetTrigger("WasHurt");
 
+
         AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
         while (!stateInfo.IsTag("Hurt"))
         {
@@ -339,6 +346,7 @@ public class PlayerController : MonoBehaviour
 
         _isAlive = false;
         _animator.SetTrigger("HasDied");
+
 
         
 
