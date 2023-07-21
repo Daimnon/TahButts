@@ -72,6 +72,8 @@ public class UIManager : MonoBehaviour
     {
         _nextStageBg.gameObject.SetActive(true);
 
+        //Omer - I can add here a sound of some sort of "congragulations" kind of vibe for making a progress to the next part within the bus level because of "Continue - keep going" in hebrew image
+
         _nextStageImg.enabled = true;
         yield return new WaitForSeconds(time);
 
@@ -88,6 +90,17 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         _nextStageBg.gameObject.SetActive(false);
+
+        //Omer - does the music can involve changes from here? - is this the code of a senario wheere the Player is about to win because she has arrived to the end of the game (bus)?
+
+
+
+        //Omer - are these the button section of the Instructions Panel when the Bus level starts? I can add sounds for the buttons here
+        //Omer - I realised the other way to implement the UI button sounds - within the buttons themselves throught Tutorial PopUp -> Screen01 -> image01
+        //Omer - I should understand where exactly the UI windows of _endWin or _endLose are popping so I can try change the soundtrack each time - or just specific paramteres in the main Soundtrack level
+
+
+
     }
 
     /*public IEnumerator NextStageBlink(float time, int numberOfBlinksDiv2)

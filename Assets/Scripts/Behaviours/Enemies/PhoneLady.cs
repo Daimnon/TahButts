@@ -52,6 +52,10 @@ public class PhoneLady : Enemy
     {
         _isTimerOn = true;
         StartCoroutine(_timer);
+
+        //Omer - here I can add a gossip attitude kind of talk towards the Player 
+
+
     }
     public void StopHarmingPlayer()
     {

@@ -43,8 +43,8 @@ public class PlayerController : MonoBehaviour
     public bool IsHurt { get => _isHurt; set => _isHurt = value; }
 
     public AudioSource _audioSource;
-    public AudioClip[] _audioClip;       //שתי שורות של עומר 
-
+    public AudioClip[] _audioClip;       //שורות של עומר 
+    private int currentIndex = 0; // האינדקס של הקליפ הנוכחי
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         _moveInput = context.ReadValue<Vector2>();
         // animation speed = Mathf.Abs(_input.x != 0 ? _input.x : _inpt.y)
 
-
+        _audioSource.PlayOneShot(_audioClip[4]); //תוספת של עומר - יכול להעביר את זה לקלאס Move
 
 
     }
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-            _audioSource.PlayOneShot(_audioClip[3]); //תוספת של עומר, סאונד קפיצה
+            _audioSource.PlayOneShot(_audioClip[3]); //תוספת של עומר, סאונד קפיצה, אפשר להעביר אותו לקלאס Jump
 
 
         }
@@ -122,6 +122,11 @@ public class PlayerController : MonoBehaviour
         {
             _currentHeadphones = Instantiate(_player.Data.HeadPhonesPrefab, _items[0]);
             _isUsingHeadphones = true;
+
+
+           // _audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד כשהדמות מרכיבה אוזניות
+
+
             // other logic
             Debug.Log("Player Used Headphones.");
         }
@@ -130,6 +135,10 @@ public class PlayerController : MonoBehaviour
             Destroy(_currentHeadphones);
             _isUsingHeadphones = false;
             // other logic
+
+            // _audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד כשהדמות מורידה אוזניות
+
+
             Debug.Log("Player Unused Headphones.");
         }
         else Debug.LogError("InteractOne action failed: Player don't have headphones.");
@@ -143,6 +152,13 @@ public class PlayerController : MonoBehaviour
         {
             _currentShield = Instantiate(_player.Data.ShieldPrefab, _items[1]);
             _isUsingMask = true;
+
+
+
+            //it's Omer - here i think we can add an if statement for cases when the Player isHurt with a mask on - use a low pass filter or smth
+            // _audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד בלי מסיכה ונפגעת ומשמיעה אנחת כאב
+
+
             // other logic
             Debug.Log("Player Used Shield.");
         }
@@ -150,6 +166,15 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(_currentShield);
             _isUsingMask = false;
+
+
+            //it's Omer - here i think we can add an if statement for cases when the Player isHurt with a mask on - use a low pass filter or smth
+            // _audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד כשהדמות בלי מסיכה ונפגעת ומשמיעה אנחת כאב
+
+
+
+
+
             // other logic
             Debug.Log("Player Unused Shield.");
         }
@@ -162,12 +187,25 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0;
             UIManager.Instance.PauseMenu.SetActive(true);
             Debug.Log("Game Paused.");
+
+
+
+            //_audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד כשהמשתמש רוצה לעצור את המשחק
+
+
+
         }
         else if (context.started && UIManager.Instance.PauseMenu.activeInHierarchy)
         {
             Time.timeScale = 1;
             UIManager.Instance.PauseMenu.SetActive(false);
             Debug.Log("Game Unpaused.");
+
+
+
+            //_audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד כשהמשתמש מחליט לחזור לשחק
+
+
         }
         else Debug.LogError("Pause action failed.");
     }
@@ -192,6 +230,18 @@ public class PlayerController : MonoBehaviour
             {
                 UIManager.Instance.EndPopUp.SetActive(true);
                 UIManager.Instance.EndLose.SetActive(true);
+
+
+                //_audioSource.PlayOneShot(_audioClip[6]); טסט להשמעת טראק של הפסד במשחק
+
+
+
+
+
+
+
+
+
             }
             return;
         }
@@ -266,11 +316,16 @@ public class PlayerController : MonoBehaviour
         _rb.Sleep();
         _heightBeforeJumping = transform.position.y;
         _animator.SetBool("IsJumping", false);
+
+        // _audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד כשהדמות נוחתת חזרה אל הקרקע
+
     }
     private void Walk()
     {
         transform.position += _speed * Time.fixedDeltaTime * _moveDirection;
 
+
+        // _audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד כשהדמות הולכת
 
 
     }
@@ -278,7 +333,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb.AddForce(Vector2.up * _jumpForce);
 
-
+        // _audioSource.PlayOneShot(_audioClip[6]); - טסט לסאונד כשהדמות קופצת
 
 
     }
@@ -304,7 +359,7 @@ public class PlayerController : MonoBehaviour
         UIManager.Instance.RemoveHeart();
         _player.Data.Health -= damage;
 
-        _audioSource.PlayOneShot(_audioClip[1]); //תוספת של עומר
+        _audioSource.PlayOneShot(_audioClip[1]); //תוספת של עומר, הסאונד פגיעה בשחקנית
 
 
     }
@@ -368,8 +423,7 @@ public class PlayerController : MonoBehaviour
         _isAlive = false;
         _animator.SetTrigger("HasDied");
 
-
-        
+        // _audioSource.PlayOneShot(_audioClip[8]); - טסט לסאונד כשהדמות גוססת למוות
 
 
         //if (_player.Data.Lives <= 0)
