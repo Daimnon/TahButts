@@ -12,13 +12,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator _animator;
     public Animator Animator => _animator;
 
-    [SerializeField] private Vector2 _xBounds = new(129.95f, 166.0f), _yBounds = new (-6.45f, -1.5f);
+    [SerializeField] private Vector2 _xBounds = new(129.95f, 166.0f), _yBounds = new(-6.45f, -1.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
 
     [SerializeField] private Transform[] _items;
     [SerializeField] private float _gravityScale = 1.5f, _jumpForce = 300.0f, _speed = 10.0f;
     [SerializeField] private float _xMoveOffset = -7.8f, _yMoveOffset = 3.5f;
-    [Range(0.2f, 2.0f)][SerializeField] private float _comboTime = 1.0f;
+    [Range(0.2f, 2.0f)] [SerializeField] private float _comboTime = 1.0f;
     [SerializeField] private bool _isTesting;
 
     private GameObject _currentHeadphones, _currentShield;
@@ -42,6 +42,10 @@ public class PlayerController : MonoBehaviour
     public bool IsStunned { get => _isStunned; set => _isStunned = value; }
     public bool IsHurt { get => _isHurt; set => _isHurt = value; }
 
+    public AudioSource _audioSource;
+    public AudioClip[] _audioClip;       //שתי שורות של עומר 
+
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if (!GameManager.Instance.IsLevelPlaying && !_isTesting)
@@ -49,6 +53,10 @@ public class PlayerController : MonoBehaviour
 
         _moveInput = context.ReadValue<Vector2>();
         // animation speed = Mathf.Abs(_input.x != 0 ? _input.x : _inpt.y)
+
+
+
+
     }
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -65,6 +73,12 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("IsJumping", true);
             // animation isJumping = isJumping
             Debug.Log("Player Jumped.");
+
+
+
+            _audioSource.PlayOneShot(_audioClip[3]); //תוספת של עומר, סאונד קפיצה
+
+
         }
         else Debug.LogError("Jump action failed: Player is in the air.");
     }
@@ -88,7 +102,8 @@ public class PlayerController : MonoBehaviour
                 }*/
                 _animator.SetBool("IsPunching", true);
 
-
+                _audioSource.PlayOneShot(_audioClip[4]); //תוספת של עומר, סאונד התקפה
+                Debug.Log(_audioClip + "is playing right now !"); //וידוא סאונד מתקפה מופעל - עומר
 
             }
 
@@ -288,6 +303,10 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Hurt());
         UIManager.Instance.RemoveHeart();
         _player.Data.Health -= damage;
+
+        _audioSource.PlayOneShot(_audioClip[1]); //תוספת של עומר
+
+
     }
     public void HoldConversation()
     {
@@ -304,6 +323,8 @@ public class PlayerController : MonoBehaviour
 
         Destroy(enemyDamager.gameObject);
     }
+
+
     private IEnumerator Hurt()
     {
         if (_player.Data.Health == 1)

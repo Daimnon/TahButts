@@ -491,6 +491,18 @@ MonoBehaviour:
   _yMoveOffset: 3.5
   _comboTime: 0.5
   _isTesting: 0
+  _audioSource: {fileID: -398009728808727392}
+  _audioClip:
+  - {fileID: 8300000, guid: 82fb396fec56047e39d36ca5a3462d1b, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
+  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
 --- !u!82 &-398009728808727392
 AudioSource:
   m_ObjectHideFlags: 0

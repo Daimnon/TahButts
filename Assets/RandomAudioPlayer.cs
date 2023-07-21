@@ -11,7 +11,7 @@ public class RandomAudioPlayer : MonoBehaviour
     // פעולת ההתחלה
     private void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.loop = false;
 
 
