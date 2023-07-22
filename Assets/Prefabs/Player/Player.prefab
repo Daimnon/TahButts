@@ -253,7 +253,6 @@ GameObject:
   - component: {fileID: 534419562651151932}
   - component: {fileID: 7529188736840930603}
   - component: {fileID: -398009728808727392}
-  - component: {fileID: -7573614827545890177}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -479,6 +478,14 @@ MonoBehaviour:
   _player: {fileID: 8889638828426675569}
   _rb: {fileID: 717522144259439809}
   _animator: {fileID: 1285575451}
+  _audioSource: {fileID: -398009728808727392}
+  _idleClip: {fileID: 0}
+  _jumpClip: {fileID: 0}
+  _loseClip: {fileID: 0}
+  _walkClips: []
+  _punchClips: []
+  _landClips: []
+  _hurtClips: []
   _xBounds: {x: 129.95, y: 166}
   _yBounds: {x: -6.45, y: -1.5}
   _items:
@@ -491,18 +498,6 @@ MonoBehaviour:
   _yMoveOffset: 3.5
   _comboTime: 0.5
   _isTesting: 0
-  _audioSource: {fileID: -398009728808727392}
-  _audioClip:
-  - {fileID: 8300000, guid: 82fb396fec56047e39d36ca5a3462d1b, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}
 --- !u!82 &-398009728808727392
 AudioSource:
   m_ObjectHideFlags: 0
@@ -514,7 +509,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -599,18 +594,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-7573614827545890177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7529188736840930647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4edaaa96abf8d43c09950e1a1c2c7416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClips:
-  - {fileID: 8300000, guid: 82fb396fec56047e39d36ca5a3462d1b, type: 3}
-  - {fileID: 8300000, guid: c9da1fe54257e493398650682b2ab0ca, type: 3}

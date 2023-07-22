@@ -10,7 +10,6 @@ public class MainMenuManager : MonoBehaviour
 
     [SerializeField] private Image _busImage, _playerImage;
     [SerializeField] private Transform _btnsMenu;
-    [SerializeField] private AudioSource _mainMenuSounds;
     [SerializeField] private float _busFirstTargetX = 1930.0f, _busSecondTargetX = -2060.0f;
     [SerializeField] private int _newGameBuildIndex = 1;
     [SerializeField] private float _timeToGetOnBus = 1.0f, _timeToQuit = 1.0f;
@@ -19,10 +18,6 @@ public class MainMenuManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
-    }
-    private void Start()
-    {
-        _mainMenuSounds.volume = 0.1f;
     }
 
     public void StartNewGame()
