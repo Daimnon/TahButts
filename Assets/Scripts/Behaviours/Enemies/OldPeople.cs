@@ -4,11 +4,22 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class Grandma : Enemy
+public enum OldPeopleType { Grandma, Grandpa }
+
+public class OldPeople : Enemy
 {
+    [SerializeField] private OldPeopleType _type;
     [SerializeField] private float _lookDistance, _interactionDistance, _yOffset, _stunDuration, _stunCooldown;
     [SerializeField] private float _playerPassDistance = 2.0f;
     [SerializeField] private SpriteRenderer _renderer;
+
+    [SerializeField] private AudioSource _audioSource;
+    public AudioSource AudioSource => _audioSource;
+
+    [SerializeField] private AudioClip[] _grandmaClips, _grandpaClips;
+    public AudioClip[] GrandmaClips => _grandmaClips;
+    public AudioClip[] GrandpaClips => _grandpaClips;
+
     private bool _isPlayerStunned = false;
     private IEnumerator _stunRoutine;
 
@@ -63,6 +74,11 @@ public class Grandma : Enemy
             IsInteracting = true;
         }
     }
+
+    public OldPeopleType GetOldPeopleType()
+    {
+        return _type;
+    }
     /*private void Die()
     {
         Destroy(gameObject);
@@ -113,5 +129,25 @@ public class Grandma : Enemy
         _isPlayerStunned = false;
         AnimController.SetBool("IsTalking", false);
         IsInteracting = false;
+    }
+
+    public void PlayRandomOldPeopleLine()
+    {
+        int clipIndex = 0;
+        AudioClip clip = _grandmaClips[0];
+
+        switch (_type)
+        {
+            case OldPeopleType.Grandma:
+                clipIndex = UnityEngine.Random.Range(0, _grandmaClips.Length);
+                clip = _grandmaClips[clipIndex];
+                break;
+            case OldPeopleType.Grandpa:
+                clipIndex = UnityEngine.Random.Range(0, _grandpaClips.Length);
+                clip = _grandpaClips[clipIndex];
+                break;
+        }
+
+        _audioSource.PlayOneShot(clip);
     }
 }
