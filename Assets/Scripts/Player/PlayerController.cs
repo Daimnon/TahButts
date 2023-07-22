@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum PlayerSimpleSounds { IdleClip, JumpClip, LoseClip}
+public enum PlayerComplexSounds { WalkClips, PunchClips, LandClips, HurtClips }
+
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInputHandler _player;
@@ -11,6 +14,12 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Animator _animator;
     public Animator Animator => _animator;
+
+    [SerializeField] private AudioSource _audioSource;
+    public AudioSource AudioSource => _audioSource;
+
+    [SerializeField] private AudioClip _idleClip, _jumpClip, _loseClip;
+    [SerializeField] private AudioClip[] _walkClips, _punchClips, _landClips, _hurtClips;
 
     [SerializeField] private Vector2 _xBounds = new(4.139f, 166.0f), _yBounds = new (-6.45f, -1.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
@@ -62,6 +71,7 @@ public class PlayerController : MonoBehaviour
             _rb.gravityScale = _gravityScale;
             _rb.WakeUp();
             Jump();
+            PlayPlayerSource(PlayerSimpleSounds.JumpClip);
             _animator.SetBool("IsJumping", true);
             // animation isJumping = isJumping
             Debug.Log("Player Jumped.");
@@ -87,6 +97,7 @@ public class PlayerController : MonoBehaviour
                     _animator.SetBool("IsPunching", true);
                 }*/
                 _animator.SetBool("IsPunching", true);
+                PlayPlayerSource(PlayerComplexSounds.PunchClips);
             }
 
             Debug.Log("Player Attacked.");
@@ -245,13 +256,12 @@ public class PlayerController : MonoBehaviour
         _rb.Sleep();
         _heightBeforeJumping = transform.position.y;
         _animator.SetBool("IsJumping", false);
+        PlayPlayerSource(PlayerComplexSounds.LandClips);
     }
     private void Walk()
     {
         transform.position += _speed * Time.fixedDeltaTime * _moveDirection;
-
-
-
+        PlayPlayerSource(PlayerComplexSounds.WalkClips);
     }
     private void Jump()
     {
@@ -282,10 +292,46 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(Hurt());
         UIManager.Instance.RemoveHeart();
         _player.Data.Health -= damage;
+        PlayPlayerSource(PlayerComplexSounds.HurtClips);
     }
     public void HoldConversation()
     {
         StartCoroutine(Converse());
+    }
+    private void PlayPlayerSource(PlayerSimpleSounds simpleSoundID)
+    {
+        switch (simpleSoundID)
+        {
+            case PlayerSimpleSounds.IdleClip:
+                AudioManager.Instance.ChangeAudioClip(_audioSource, _idleClip);
+                break;
+            case PlayerSimpleSounds.JumpClip:
+                AudioManager.Instance.ChangeAudioClip(_audioSource, _jumpClip);
+                break;
+            case PlayerSimpleSounds.LoseClip:
+                AudioManager.Instance.ChangeAudioClip(_audioSource, _loseClip);
+                break;
+        }
+        AudioManager.Instance.PlaySource(_audioSource);
+    }
+    private void PlayPlayerSource(PlayerComplexSounds complexSoundID)
+    {
+        switch (complexSoundID)
+        {
+            case PlayerComplexSounds.WalkClips:
+                AudioManager.Instance.ChangeAudioClips(_audioSource, _walkClips);
+                break;
+            case PlayerComplexSounds.PunchClips:
+                AudioManager.Instance.ChangeAudioClips(_audioSource, _punchClips);
+                break;
+            case PlayerComplexSounds.LandClips:
+                AudioManager.Instance.ChangeAudioClips(_audioSource, _landClips);
+                break;
+            case PlayerComplexSounds.HurtClips:
+                AudioManager.Instance.ChangeAudioClips(_audioSource, _hurtClips);
+                break;
+        }
+        AudioManager.Instance.PlaySource(_audioSource);
     }
 
     private IEnumerator HandleHitCollider()
@@ -331,7 +377,6 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("IsConversing", false);
     }
 
-
     private void Die()
     {
         if (!_isAlive)
@@ -339,6 +384,11 @@ public class PlayerController : MonoBehaviour
 
         _isAlive = false;
         _animator.SetTrigger("HasDied");
+
+        PlayPlayerSource(PlayerSimpleSounds.LoseClip);
+
+        AudioManager.Instance.ChangePopUpClip(false);
+        AudioManager.Instance.PlaySource(AudioManager.Instance.PopUpSource);
 
         //if (_player.Data.Lives <= 0)
         //    Respawn();

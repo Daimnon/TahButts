@@ -16,9 +16,8 @@ public class OldPeople : Enemy
     [SerializeField] private AudioSource _audioSource;
     public AudioSource AudioSource => _audioSource;
 
-    [SerializeField] private AudioClip[] _grandmaClips, _grandpaClips;
-    public AudioClip[] GrandmaClips => _grandmaClips;
-    public AudioClip[] GrandpaClips => _grandpaClips;
+    [SerializeField] private AudioClip[] _lineClips, _grandpaClips;
+    public AudioClip[] LineClips => _lineClips;
 
     private bool _isPlayerStunned = false;
     private IEnumerator _stunRoutine;
@@ -134,19 +133,10 @@ public class OldPeople : Enemy
     public void PlayRandomOldPeopleLine()
     {
         int clipIndex = 0;
-        AudioClip clip = _grandmaClips[0];
+        AudioClip clip;
 
-        switch (_type)
-        {
-            case OldPeopleType.Grandma:
-                clipIndex = UnityEngine.Random.Range(0, _grandmaClips.Length);
-                clip = _grandmaClips[clipIndex];
-                break;
-            case OldPeopleType.Grandpa:
-                clipIndex = UnityEngine.Random.Range(0, _grandpaClips.Length);
-                clip = _grandpaClips[clipIndex];
-                break;
-        }
+        clipIndex = UnityEngine.Random.Range(0, _lineClips.Length);
+        clip = _lineClips[clipIndex];
 
         _audioSource.PlayOneShot(clip);
     }

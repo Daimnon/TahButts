@@ -17,12 +17,22 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioClip _mainMenuMusicClip, _level01MusicClip;
 
-    [Header("ambience")]
+    [Header("Ambience")]
     [Range(0.0f, 1.0f)][SerializeField] private float _ambienceVolume = 1.0f;
     public float AmbienceVolume => _ambienceVolume;
 
     [SerializeField] private AudioSource _ambienceSource;
     public AudioSource AmbienceSource => _ambienceSource;
+
+    [Header("Pop Up")]
+    [Range(0.0f, 1.0f)][SerializeField] private float _popUpVolume = 1.0f;
+    public float PopUpVolume => _popUpVolume;
+
+    [SerializeField] private AudioSource _popUpSource;
+    public AudioSource PopUpSource => _popUpSource;
+
+    [SerializeField] private AudioClip[] _popUpClips; // _popUpClips[0] = lose, _popUpClips[1] = true.
+    public AudioClip[] PopUpClips => _popUpClips;
 
     private void Awake()
     {
@@ -89,6 +99,20 @@ public class AudioManager : MonoBehaviour
     {
         source.Play();
     }
+    public void ChangeAudioClip(AudioSource source, AudioClip clip)
+    {
+        source.clip = clip;
+    }
+    public void ChangeAudioClips(AudioSource source, AudioClip[] clips)
+    {
+        int clipIndex = 0;
+        AudioClip clip;
+
+        clipIndex = UnityEngine.Random.Range(0, clips.Length);
+        clip = clips[clipIndex];
+
+        source.PlayOneShot(clip);
+    }
     public void ChangeMusicClip(AudioClip clip)
     {
         _musicSource.clip = clip;
@@ -96,6 +120,13 @@ public class AudioManager : MonoBehaviour
     public void ChangeAmbienceClip(AudioClip clip)
     {
         _ambienceSource.clip = clip;
+    }
+    public void ChangePopUpClip(bool isWin)
+    {
+        if (!isWin)
+            _popUpSource.clip = _popUpClips[0];
+        else
+            _popUpSource.clip = _popUpClips[1];
     }
     public void StopSource(AudioSource source)
     {

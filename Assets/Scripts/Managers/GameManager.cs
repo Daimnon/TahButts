@@ -145,6 +145,18 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    private void ShowVictoryPopUp()
+    {
+        if (_enemiesToDefeat.Count < 1)
+        {
+            Player.gameObject.SetActive(false);
+            UIManager.Instance.EndPopUp.SetActive(true);
+            UIManager.Instance.EndWin.SetActive(true);
+
+            AudioManager.Instance.ChangePopUpClip(true);
+            AudioManager.Instance.PlaySource(AudioManager.Instance.PopUpSource);
+        }
+    }
     private void DelistEnemy(Enemy enemy)
     {
         if (_enemiesToDefeat.Contains(enemy))
@@ -164,12 +176,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (_enemiesToDefeat.Count < 1)
-        {
-            GameManager.Instance.Player.gameObject.SetActive(false);
-            UIManager.Instance.EndPopUp.SetActive(true);
-            UIManager.Instance.EndWin.SetActive(true);
-        }
+        ShowVictoryPopUp();
     }
 
     public IEnumerator PlayerLoadingScreen(bool isLeavingLevel)
