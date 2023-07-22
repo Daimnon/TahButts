@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 272df8f0ee6a6764cb38c036f77e637a
+guid: 74ab54b0d4993cf4990f15671de4346e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Atlas_Smell_08_0
+      name: Img_Connector_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 1159
-        width: 845
-        height: 606
+        x: 316
+        y: 467
+        width: 1423
+        height: 507
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca50582df9c4c24478b7ce7d978aec2f
-      internalID: -1363369031
+      spriteID: d5e1d77500d66fc4a8397512c17e42f3
+      internalID: -381894209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_Smell_08_1
+      name: Img_Connector_1
       rect:
         serializedVersion: 2
-        x: 1090
-        y: 1120
-        width: 848
-        height: 605
+        x: 324
+        y: 1017
+        width: 1420
+        height: 273
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,20 +151,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb33f74dd168c9d40ac1a79bc573f587
-      internalID: -1675188209
+      spriteID: 458ca9ce259a123439d92b9cebe0feb0
+      internalID: 970788887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_Smell_08_2
+      name: Img_Connector_2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 221
-        width: 851
-        height: 605
+        x: 322
+        y: 1457
+        width: 1422
+        height: 484
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,29 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aa9d1e73adf86c47bc23b45ba7ce546
-      internalID: 456504102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atlas_Smell_08_3
-      rect:
-        serializedVersion: 2
-        x: 1054
-        y: 176
-        width: 853
-        height: 604
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff0c2a172f7235445950d9f9b540eaf7
-      internalID: -267731741
+      spriteID: f4ba104a4db44f1478f51064d49886aa
+      internalID: 157512497
       vertices: []
       indices: 
       edges: []
@@ -210,10 +189,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Atlas_Smell_08_2: 456504102
-      Atlas_Smell_08_3: -267731741
-      Atlas_Smell_08_0: -1363369031
-      Atlas_Smell_08_1: -1675188209
+      Img_Connector_0: -599707278
+      Img_Connector_1: 655123045
+      Img_Connector_2: 385792654
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

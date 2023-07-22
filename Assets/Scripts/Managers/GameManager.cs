@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Stages")]
     [SerializeField] private float[] _stageMaxX = new float[] { 131.5f, 167.55f, 203.6f};
+    [SerializeField] private List<Enemy> _enemiesToDefeat;
     [SerializeField] private List<Enemy> _stageOne, _stageTwo, _stageThree, _stageFour;
     [Range (0, 1)][SerializeField] private float _timeBetweenBlinks = 0.5f;
     [Range(0, 3)][SerializeField] private int _stageCount = 4;
@@ -52,15 +53,15 @@ public class GameManager : MonoBehaviour
         if (_isTesting)
             return;
 
-        _allStagesEnemies = new List<List<Enemy>>();
-        _stageState = FirstStage;
+        /*_allStagesEnemies = new List<List<Enemy>>();
+        _stageState = FirstStage;*/
     }
     private void Start()
     {
         if (_isTesting)
             return;
 
-        _allStagesEnemies = new List<List<Enemy>> { _stageOne, _stageTwo, _stageThree, _stageFour };
+        /*_allStagesEnemies = new List<List<Enemy>> { _stageOne, _stageTwo, _stageThree, _stageFour };*/
 
         OnEnemyDeath += DelistEnemy;
         OnEnemyPass += DelistEnemy;
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
         if (_isTesting)
             return;
 
-        _stageState.Invoke();
+        /*_stageState.Invoke();*/
     }
     private void OnDisable()
     {
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Stage States
-    private void FirstStage()
+    /*private void FirstStage()
     {
         if (_stageOne.Count <= 0 && _player.transform.position.x < _stageMaxX[3])
         {
@@ -124,7 +125,7 @@ public class GameManager : MonoBehaviour
             UIManager.Instance.EndWin.SetActive(true);
             Debug.Log("Stage: 04 completed");
         }
-    }
+    }*/
     #endregion
 
     #region Events
@@ -146,21 +147,28 @@ public class GameManager : MonoBehaviour
 
     private void DelistEnemy(Enemy enemy)
     {
-        if (_allStagesEnemies[_currentStage].Contains(enemy))
+        if (_enemiesToDefeat.Contains(enemy))
         {
-            for (int i = 0; i < _allStagesEnemies[_currentStage].Count; i++)
+            for (int i = 0; i < _enemiesToDefeat.Count; i++)
             {
-                if (_allStagesEnemies[_currentStage][i] == enemy)
+                if (_enemiesToDefeat[i] == enemy)
                 {
-                    Debug.Log($"Removing: {_allStagesEnemies[_currentStage][i]}");
-                    _allStagesEnemies[_currentStage].RemoveAt(i);
+                    Debug.Log($"Removing: {_enemiesToDefeat[i]}");
+                    _enemiesToDefeat.RemoveAt(i);
 
-                    foreach (Enemy remainingEnemy in _allStagesEnemies[_currentStage]) // debug
+                    foreach (Enemy remainingEnemy in _enemiesToDefeat) // debug
                         Debug.Log($"{remainingEnemy.name}");
 
                     break;
                 }
             }
+        }
+
+        if (_enemiesToDefeat.Count < 1)
+        {
+            GameManager.Instance.Player.gameObject.SetActive(false);
+            UIManager.Instance.EndPopUp.SetActive(true);
+            UIManager.Instance.EndWin.SetActive(true);
         }
     }
 
@@ -215,7 +223,13 @@ public class GameManager : MonoBehaviour
     {
         _isLevelPlaying = true;
     }
-    public IEnumerator UnlockNextArea()
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+        UIManager.Instance.PauseMenu.SetActive(false);
+        Debug.Log("Game Unpaused.");
+    }
+    /*public IEnumerator UnlockNextArea()
     {
         StartCoroutine(UIManager.Instance.NextStageBlink(_timeBetweenBlinks));
         yield return new WaitForSeconds(_timeBetweenBlinks * 2);
@@ -273,7 +287,7 @@ public class GameManager : MonoBehaviour
     public void UnlockNextAreaUI()
     {
         StartCoroutine(UnlockNextArea());
-    }
+    }*/
 
     public void Quit()
     {

@@ -8,6 +8,7 @@ public class Grandma : Enemy
 {
     [SerializeField] private float _lookDistance, _interactionDistance, _yOffset, _stunDuration, _stunCooldown;
     [SerializeField] private float _playerPassDistance = 2.0f;
+    [SerializeField] private SpriteRenderer _renderer;
     private bool _isPlayerStunned = false;
     private IEnumerator _stunRoutine;
 
@@ -32,8 +33,8 @@ public class Grandma : Enemy
 
         EnemyState.Invoke();*/
 
-        if (Target.transform.position.x < transform.position.x - _playerPassDistance)
-            GameManager.Instance.InvokeEnemyPass(this);
+        /*if (Target.transform.position.x < transform.position.x - _playerPassDistance)
+            GameManager.Instance.InvokeEnemyPass(this);*/
     }
 
     protected override void PlayerInsight() //chase after player
@@ -51,8 +52,8 @@ public class Grandma : Enemy
     }
     protected override void PlayerNotInsight() //patrol
     {
-        if (Target.transform.position.x < transform.position.x - _playerPassDistance)
-            GameManager.Instance.InvokeEnemyPass(this);
+        /*if (Target.transform.position.x < transform.position.x - _playerPassDistance)
+            GameManager.Instance.InvokeEnemyPass(this);*/
     }
     protected override void Interacting()
     {
@@ -107,6 +108,7 @@ public class Grandma : Enemy
         player.Controller.Rb.velocity = Vector2.zero;
         player.Input.enabled = false;
         player.Controller.Animator.SetTrigger("WasStunned");
+        _renderer.enabled = true;
         //player.Controller.IsStunned = true;
         yield return new WaitForSeconds(_stunDuration);
 
@@ -114,6 +116,7 @@ public class Grandma : Enemy
         //player.Controller.IsStunned = false;
         player.Input.enabled = true;
         player.Controller.Animator.ResetTrigger("WasStunned");
+        _renderer.enabled = false;
         _isPlayerStunned = false;
         AnimController.SetBool("IsTalking", false);
         IsInteracting = false;

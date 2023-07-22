@@ -228,6 +228,7 @@ MonoBehaviour:
   _stunDuration: 2
   _stunCooldown: 5
   _playerPassDistance: 2
+  _renderer: {fileID: 9081400479719433870}
 --- !u!1 &3102998364841208684
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +392,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9081400479719433868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
