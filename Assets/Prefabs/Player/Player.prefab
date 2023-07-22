@@ -478,6 +478,14 @@ MonoBehaviour:
   _player: {fileID: 8889638828426675569}
   _rb: {fileID: 717522144259439809}
   _animator: {fileID: 1285575451}
+  _audioSource: {fileID: -398009728808727392}
+  _idleClip: {fileID: 0}
+  _jumpClip: {fileID: 0}
+  _loseClip: {fileID: 0}
+  _walkClips: []
+  _punchClips: []
+  _landClips: []
+  _hurtClips: []
   _xBounds: {x: 129.95, y: 166}
   _yBounds: {x: -6.45, y: -1.5}
   _items:
@@ -489,6 +497,7 @@ MonoBehaviour:
   _xMoveOffset: -7.8
   _yMoveOffset: 3.5
   _comboTime: 0.5
+  _isTesting: 0
 --- !u!82 &-398009728808727392
 AudioSource:
   m_ObjectHideFlags: 0
