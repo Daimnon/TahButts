@@ -461,7 +461,7 @@ MonoBehaviour:
   _shieldPrefab: {fileID: 5356826112866338646, guid: 4851e2354ed8c0345a90367db44f2c9d, type: 3}
   _hitColliderTr: {fileID: 1474859105031182735}
   _lives: 3
-  _health: 5
+  _health: 7
   _power: 1
 --- !u!114 &7529188736840930603
 MonoBehaviour:
@@ -480,12 +480,29 @@ MonoBehaviour:
   _animator: {fileID: 1285575451}
   _audioSource: {fileID: -398009728808727392}
   _idleClip: {fileID: 0}
-  _jumpClip: {fileID: 0}
-  _loseClip: {fileID: 0}
-  _walkClips: []
-  _punchClips: []
-  _landClips: []
-  _hurtClips: []
+  _loseClip: {fileID: 8300000, guid: dd3daf55afd3e4297ac09f7a8ccd18ca, type: 3}
+  _walkClips:
+  - {fileID: 8300000, guid: 864313980bd3041bba99726fb0fcf59d, type: 3}
+  - {fileID: 8300000, guid: ad47b42473b9347ddbd0e3902b66d4c0, type: 3}
+  - {fileID: 8300000, guid: 7c03fb495a3674299b136a46fda528e3, type: 3}
+  - {fileID: 8300000, guid: 3e96b7fc94274408d837686212731556, type: 3}
+  _jumpClips:
+  - {fileID: 8300000, guid: 296c1f9561464476ea131a18b39a8d1e, type: 3}
+  - {fileID: 8300000, guid: 9b4cdc22502f442efba2d1ec5bce5934, type: 3}
+  _punchClips:
+  - {fileID: 8300000, guid: ed39b1a1f4ec848d694b2c380b733cf9, type: 3}
+  - {fileID: 8300000, guid: 18cbf8975c02a4c459cfd01e11532e3c, type: 3}
+  - {fileID: 8300000, guid: 8563c005928674f9ebef75e6e779bcfb, type: 3}
+  - {fileID: 8300000, guid: ca051ee61791e4e84802c98906f3991a, type: 3}
+  - {fileID: 8300000, guid: 6688462653c874ff4bf14eeeffb1d37c, type: 3}
+  _landClips:
+  - {fileID: 8300000, guid: 4f06914c56b5f41ffa681f36c5d17f03, type: 3}
+  - {fileID: 8300000, guid: fee3725cdd0ee4a2a88c55df62542f7b, type: 3}
+  - {fileID: 8300000, guid: 630ddd9c126104af8ab0d6cc71ac82ba, type: 3}
+  _hurtClips:
+  - {fileID: 8300000, guid: e67799d1b2576487a995a5e28d540efa, type: 3}
+  - {fileID: 8300000, guid: 069d7ae5b15cc4157a70b04045f7ccb9, type: 3}
+  - {fileID: 8300000, guid: 837f00e17c5884e1c9be4c7d39c371d5, type: 3}
   _xBounds: {x: 129.95, y: 166}
   _yBounds: {x: -6.45, y: -1.5}
   _items:
@@ -509,7 +526,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

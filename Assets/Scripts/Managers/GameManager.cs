@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour
     {
         if (_enemiesToDefeat.Count < 1)
         {
+            AudioManager.Instance.StopSource(AudioManager.Instance.MusicSource);
             Player.gameObject.SetActive(false);
             UIManager.Instance.EndPopUp.SetActive(true);
             UIManager.Instance.EndWin.SetActive(true);

@@ -38,16 +38,31 @@ public class AudioManager : MonoBehaviour
     {
         _instance = this;
         Initialize();
-        DontDestroyOnLoad(this);
+        /*DontDestroyOnLoad(this);*/
     }
     private void Start()
     {
-        PlaySource(_musicSource);
-        PlaySource(_ambienceSource);
-
-        SceneManager.activeSceneChanged += OnSceneChanged;
+        switch (CustomSceneManager.currentSceneID)
+        {
+            case SceneID.MainMenu:
+                PlaySource(_musicSource);
+                PlaySource(_ambienceSource);
+                break;
+            case SceneID.LevelSelect:
+                PlaySource(_musicSource);
+                PlaySource(_ambienceSource);
+                break;
+            case SceneID.Level01:
+                PlaySource(_musicSource);
+                break;
+            case SceneID.Level02:
+                break;
+            case SceneID.Level03:
+                break;
+        }
+        /*SceneManager.activeSceneChanged += OnSceneChanged;*/
     }
-    private void OnSceneChanged(Scene current, Scene next)
+    /*private void OnSceneChanged(Scene current, Scene next)
     {
         switch (CustomSceneManager.currentSceneID)
         {
@@ -66,7 +81,7 @@ public class AudioManager : MonoBehaviour
             case SceneID.Level03:
                 break;
         }
-    }
+    }*/
     
     private void Initialize()
     {

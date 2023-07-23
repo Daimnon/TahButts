@@ -16,7 +16,7 @@ public class OldPeople : Enemy
     [SerializeField] private AudioSource _audioSource;
     public AudioSource AudioSource => _audioSource;
 
-    [SerializeField] private AudioClip[] _lineClips, _grandpaClips;
+    [SerializeField] private AudioClip[] _lineClips;
     public AudioClip[] LineClips => _lineClips;
 
     private bool _isPlayerStunned = false;

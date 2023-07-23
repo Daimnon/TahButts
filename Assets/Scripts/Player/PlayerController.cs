@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public enum PlayerSimpleSounds { IdleClip, JumpClip, LoseClip}
-public enum PlayerComplexSounds { WalkClips, PunchClips, LandClips, HurtClips }
+public enum PlayerSimpleSounds { IdleClip, LoseClip}
+public enum PlayerComplexSounds { WalkClips, JumpClips, PunchClips, LandClips, HurtClips }
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,8 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource _audioSource;
     public AudioSource AudioSource => _audioSource;
 
-    [SerializeField] private AudioClip _idleClip, _jumpClip, _loseClip;
-    [SerializeField] private AudioClip[] _walkClips, _punchClips, _landClips, _hurtClips;
+    [SerializeField] private AudioClip _idleClip, _loseClip;
+    [SerializeField] private AudioClip[] _walkClips, _jumpClips, _punchClips, _landClips, _hurtClips;
 
     [SerializeField] private Vector2 _xBounds = new(4.139f, 166.0f), _yBounds = new (-6.45f, -1.5f);
     public Vector2 XBounds { get => _xBounds; set => _xBounds = value; }
@@ -71,7 +70,7 @@ public class PlayerController : MonoBehaviour
             _rb.gravityScale = _gravityScale;
             _rb.WakeUp();
             Jump();
-            PlayPlayerSource(PlayerSimpleSounds.JumpClip);
+            PlayPlayerSource(PlayerComplexSounds.JumpClips);
             _animator.SetBool("IsJumping", true);
             // animation isJumping = isJumping
             Debug.Log("Player Jumped.");
@@ -261,7 +260,7 @@ public class PlayerController : MonoBehaviour
     private void Walk()
     {
         transform.position += _speed * Time.fixedDeltaTime * _moveDirection;
-        PlayPlayerSource(PlayerComplexSounds.WalkClips);
+        //PlayPlayerSource(PlayerComplexSounds.WalkClips);
     }
     private void Jump()
     {
@@ -305,9 +304,6 @@ public class PlayerController : MonoBehaviour
             case PlayerSimpleSounds.IdleClip:
                 AudioManager.Instance.ChangeAudioClip(_audioSource, _idleClip);
                 break;
-            case PlayerSimpleSounds.JumpClip:
-                AudioManager.Instance.ChangeAudioClip(_audioSource, _jumpClip);
-                break;
             case PlayerSimpleSounds.LoseClip:
                 AudioManager.Instance.ChangeAudioClip(_audioSource, _loseClip);
                 break;
@@ -320,6 +316,9 @@ public class PlayerController : MonoBehaviour
         {
             case PlayerComplexSounds.WalkClips:
                 AudioManager.Instance.ChangeAudioClips(_audioSource, _walkClips);
+                break;
+            case PlayerComplexSounds.JumpClips:
+                AudioManager.Instance.ChangeAudioClips(_audioSource, _jumpClips);
                 break;
             case PlayerComplexSounds.PunchClips:
                 AudioManager.Instance.ChangeAudioClips(_audioSource, _punchClips);
@@ -385,6 +384,7 @@ public class PlayerController : MonoBehaviour
         _isAlive = false;
         _animator.SetTrigger("HasDied");
 
+        AudioManager.Instance.StopSource(AudioManager.Instance.MusicSource);
         PlayPlayerSource(PlayerSimpleSounds.LoseClip);
 
         AudioManager.Instance.ChangePopUpClip(false);

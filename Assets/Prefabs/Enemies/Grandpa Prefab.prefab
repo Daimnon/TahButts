@@ -232,10 +232,10 @@ MonoBehaviour:
   _playerPassDistance: 2
   _renderer: {fileID: 9081400479719433870}
   _audioSource: {fileID: 1612624468700002806}
-  _grandmaClips:
-  - {fileID: 8300000, guid: 692eab111e58c4fb2bcd6d4180422fac, type: 3}
-  _grandpaClips:
-  - {fileID: 8300000, guid: 692eab111e58c4fb2bcd6d4180422fac, type: 3}
+  _lineClips:
+  - {fileID: 8300000, guid: f9657ba048c694670a31fb21c2ffeea2, type: 3}
+  - {fileID: 8300000, guid: b2a4c2d9486684c5b8e8bcdb44017e72, type: 3}
+  - {fileID: 8300000, guid: f81053892bde94aea9ee0a247eb7c6da, type: 3}
 --- !u!82 &1612624468700002806
 AudioSource:
   m_ObjectHideFlags: 0
