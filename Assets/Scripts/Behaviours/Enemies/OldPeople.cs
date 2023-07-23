@@ -56,6 +56,7 @@ public class OldPeople : Enemy
         else
             Renderer.flipX = false;
 
+
         Debug.Log("Grandma sees you");
         // feedback for seeing player
     }
@@ -86,6 +87,12 @@ public class OldPeople : Enemy
     {
         AnimController.SetBool("IsTalking", true);
         IsInteracting = true;
+
+
+        //_audioSource.PlayOneShot(_audioClip[6]); טסט לסאונד דיבור מופנה לשחקנית כשהאנימצית הזזת שפתיים של האדם המבוגר מופעלת
+        //the line above this one - should be supported by making sure we connected the AudioSource of the Prefab within this script.
+        //i haven't found any space in the scripts of Grandpa/Grandma's prefabs where I can implement two different sounds for different genders - fe/male
+
 
         StartCoroutine(_stunRoutine);
     }

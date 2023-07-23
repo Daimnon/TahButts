@@ -34,7 +34,17 @@ public class Homeless : Enemy
         DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
         EnemyState.Invoke();
 
+
+
+
+
+
         Debug.Log(EnemyState.Method.Name);
+
+
+
+
+
     }
 
     private void Sleep()
@@ -180,14 +190,25 @@ public class Homeless : Enemy
             EnemyState = PlayerNotInsight;
             return;
         }
+
+        //Omer - here I can add some sounds for different interactions - Homeless has seen/hitten/chasing the Player
+
     }
 
     private void Die()
     {
         AnimController.SetTrigger("HasDied");
         AnimController.SetBool("IsAlive", false);
+
+        //Omer - here I can add a Homeless dying sound 
+
         _isAlive = false;
         GameManager.Instance.InvokeEnemyDeath(this);
+
+
+     
+
+
     }
 
     private void Attack2()
@@ -206,6 +227,13 @@ public class Homeless : Enemy
         {
             _currentPlayerDamager = Instantiate(Data.HitColliderGO, Data.HitColliderTr);
             CurrentHitCollider = _currentPlayerDamager.GetComponent<Collider2D>();
+
+
+
+
+
+
+
         }
 
         //PlayerDamagerKnockback playerDamager;

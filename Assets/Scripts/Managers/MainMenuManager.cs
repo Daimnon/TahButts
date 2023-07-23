@@ -31,15 +31,32 @@ public class MainMenuManager : MonoBehaviour
 
     private IEnumerator StartNewGameSequence()
     {
+
+
+
+
         // player audio que
+
+
+        //Omer - should I add the bus sound coming within the while loops?
+
+
         // while _busImage is not at _busFirstTargetX move _busImage at _busSpeed on x axis
         while (_busImage.rectTransform.position.x > _busFirstTargetX)
         {
             Vector2 newPos = _busImage.rectTransform.position;
             newPos.x = _busImage.rectTransform.position.x - _busSpeed * Time.deltaTime;
+
+            //Omer - here I add the sound?
+            Debug.Log("bus is coming! Engine sound should play - but only one shot!");
             
             _busImage.rectTransform.position = newPos;
             yield return null;
+
+
+
+
+            
         }
         
         // stop for Time and play another audio que
@@ -52,12 +69,21 @@ public class MainMenuManager : MonoBehaviour
             Vector2 newBusPos = _busImage.rectTransform.position;
             newBusPos.x = _busImage.rectTransform.position.x -  _busSpeed * Time.deltaTime;
 
+
+            //Omer - here I add the sound?
+            Debug.Log("bus is leaving! Engine sound should play - but only one shot!");
+
+
             Vector2 newBtnMenuPos = _btnsMenu.position;
             newBtnMenuPos.x = _btnsMenu.position.x - _busSpeed * Time.deltaTime;
 
             _busImage.rectTransform.position = newBusPos;
             _btnsMenu.position = newBtnMenuPos;
             yield return null;
+
+
+
+
         }
 
         // change scene

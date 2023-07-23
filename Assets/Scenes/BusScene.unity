@@ -2873,7 +2873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &205398900
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2884,7 +2884,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e1867b5c1460b48fbb89255350fd2905, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 912f5e5892e5544d6b155fec1d01674b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -23008,6 +23008,10 @@ PrefabInstance:
     - target: {fileID: 7529188736840930603, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: _xBounds.x
       value: 4.139
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529188736840930603, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
+      propertyPath: _walkClips.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7529188736840930644, guid: 70af5325f57ade24d8e94ba3c6810374, type: 3}
       propertyPath: m_RootOrder

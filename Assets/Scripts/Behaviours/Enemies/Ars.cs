@@ -37,9 +37,18 @@ public class Ars : Enemy
         }
 
         DistanceFromTarget = Vector2.Distance(transform.position, Target.transform.position);
-        EnemyState.Invoke();   
+        EnemyState.Invoke();
+
+
+
 
         Debug.Log(EnemyState.Method.Name);
+
+
+
+
+
+
     }
 
     private void Sleep()
@@ -47,6 +56,9 @@ public class Ars : Enemy
         if (DistanceFromTarget <= _wakingUpDistance)
         {
             AnimController.SetTrigger("HasAwoken");
+
+            //Omer - here I can add an Ars snoring/gibbrishing sound 
+
             EnemyState = StandUp;
         }
     }
@@ -55,6 +67,10 @@ public class Ars : Enemy
         if (_isAwake)
         {
             AnimController.SetTrigger("HasStoodUp");
+
+            //Omer - here I can add a small sound of the Ars standing up with his whole body
+
+
             EnemyState = PlayerNotInsight;
             return;
         }
@@ -84,12 +100,18 @@ public class Ars : Enemy
         else if (DistanceFromTarget <= _chaseDistance)
         {
             AnimController.SetBool("IsChasingPlayer", true);
+
+            //Omer - here I can add an Ars sound of singing while chasing the Player girl/yelling something to here
+
             EnemyState = ChasingPlayer;
             return;
         }
         else if (DistanceFromTarget > _inSightDistance)
         {
             AnimController.SetBool("IsChasingPlayer", false);
+
+            //Omer - here I can add an Ars saying something after he stopped chasing the Player
+
             EnemyState = PlayerNotInsight;
             return;
         }
@@ -106,6 +128,9 @@ public class Ars : Enemy
         else if (DistanceFromTarget > _chaseDistance)
         {
             AnimController.SetBool("IsChasingPlayer", false);
+
+            //Omer - here I can add an Ars saying something after the Player has escaped from the minimum _chaseDistance of the Ars but still in it's distance sight (DistancefromTarget)
+
             EnemyState = PlayerInsight;
             return;
         }
@@ -188,7 +213,11 @@ public class Ars : Enemy
     private void Die()
     {
         AnimController.SetTrigger("HasDied"); 
-        AnimController.SetBool("IsAlive", false); 
+        AnimController.SetBool("IsAlive", false);
+
+        //Omer - here I can add an Ars dying sound
+
+
         _isAlive = false;
         GameManager.Instance.InvokeEnemyDeath(this);
     }
@@ -196,6 +225,9 @@ public class Ars : Enemy
     private void Attack2()
     {
         AnimController.SetTrigger("HasPunched");
+
+        //Omer - here I can add an Ars punching sound
+
         Vector3 newScale = Data.HitColliderTr.localScale;
 
         if (Renderer.flipX)
